@@ -1,4 +1,4 @@
-[skorudzhiev.github.io](https://github.com/skorudzhiev/skorudzhiev.github.io)
+[skorudzhiev.github.io](skorudzhiev.github.io)
 
 Useful references
 https://jekyllrb.com/docs/pages/
