@@ -1,18 +1,13 @@
 ---
 layout: page
-# title: About
+title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+<br/>
+<br/>
+<br/>
+I'm an experienced Android developer working in the FinTech industry with a focus <br/>on banking solutions for mobile apps.  
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+My technical career started as a System administrator supporting a large environment of mission-critical servers distributed across the world, while I was paving my way through the field of software development. For the period of 2017/2018, I've been accepted to participate in the Developer Challenge Scholarship sponsored by Google. <br/>
+<br/>The provided opportunity had a significant impact on my ambition to thrive in the industry as later that year in 2018, I've released my first app on Google Play. I'm inspired by the opportunity to work on projects that drive social impact as a positive effect оn the community.
