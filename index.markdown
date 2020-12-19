@@ -5,8 +5,11 @@
 layout: home
 ---
 
-<!-- <br/><br/>
-<br/><br/>
-<br/><br/>
+<!-- // todo: https://www.w3schools.com/howto/howto_css_flip_box.asp -->
+<!-- Might be useful in the Projects section. -->
 
-<p style="text-align: center;">Let's build the next exciting project.</p> -->
+<p style="text-align: center;">
+<span style="color:grey">Let's build the next generation of great apps to enhance everyday life experiences around the world.</span>
+</p>
+
+<div style="text-align:center"><img src="https://raw.githubusercontent.com/skorudzhiev/skorudzhiev.github.io/master/assets/globe.gif" /></div>
