@@ -1,12 +1,9 @@
 ---
-layout: page
+layout: about
 title: About
 permalink: /about/
 ---
 
-<br/>
-<br/>
-<br/>
 I'm an experienced Android developer working in the FinTech industry with a focus <br/>on banking solutions for mobile apps.  
 
 My technical career started as a System administrator supporting a large environment of mission-critical servers distributed across the world, while I was paving my way through the field of software development. For the period of 2017/2018, I've been accepted to participate in the Developer Challenge Scholarship sponsored by Google. <br/>
