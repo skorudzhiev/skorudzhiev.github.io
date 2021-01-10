@@ -6,25 +6,4 @@ layout: default
 
   {{ content }}
 
-<br></br>  
-<br></br>
-<p style="text-align: center; color: grey;" id="demo"></p>
-
-<script>
-var i = 0;
-var txt = 
-'Perfect dream == Perfect focus';
-var speed = 40;
-
-function typeWriter() {
-  if (i < txt.length) {
-    document.getElementById("demo").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
-}
-</script>
-
-<script>typeWriter();</script>
-
 </div>
