@@ -4,7 +4,10 @@ title: About
 permalink: /about/
 ---
 
-I'm an experienced Android developer working in the FinTech industry with a focus <br/>on banking solutions for mobile apps.  
+I am an experienced Android developer with more than five years of experience gained in the FinTech and recently Healthcare industry. I specialize in building innovative and user-friendly mobile solutions, aiming to enhance the user experience and streamline the product success. <br>
 
-My technical career started as a System administrator supporting a large environment of mission-critical servers distributed across the world, while I was paving my way through the field of software development. For the period of 2017/2018, I've been accepted to participate in a Developer Challenge Scholarship sponsored by Google. <br/>
-<br/>The provided opportunity had a significant impact on my ambition to thrive in the industry as later that year in 2018, I've released my first app on Google Play. I'm inspired by the opportunity to work on projects that drive social impact as a positive effect оn the community.
+My technical journey began as a System Administrator, where I supported a large environment of mission-critical servers distributed across the globe. This experience instilled in me a strong understanding of server infrastructure, which complements my software development skills. <br>
+
+My passion for technology and its potential to drive positive change led me to participate in the Google Developer Challenge Scholarship in 2017-2018. This program significantly fueled my ambition to enter the industry, and later in 2018, I successfully launched my first app on Google Play. <br>
+
+I'm constantly motivated by the opportunity to create impactful solutions that not only address user needs but also contribute positively to the community. My ultimate goal is to leverage my technical expertise and passion to develop innovative mobile applications that empower users and make a lasting social impact.
