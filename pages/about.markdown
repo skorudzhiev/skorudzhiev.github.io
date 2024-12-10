@@ -4,10 +4,20 @@ title: About
 permalink: /about/
 ---
 
-I am an experienced Android developer with more than five years of experience gained in the FinTech and recently Healthcare industry. I specialize in building innovative and user-friendly mobile solutions, aiming to enhance the user experience and streamline the product success. <br>
+👋 Hi, I’m Stoyan!
 
-My technical journey began as a System Administrator, where I supported a large environment of mission-critical servers distributed across the globe. This experience instilled in me a strong understanding of server infrastructure, which complements my software development skills. <br>
+I’m an enthusiastic Android developer passionate about transforming ideas into functional, user-friendly mobile apps. My journey into tech began with a fascination for how technology solves real-world problems, and today, I’m driven to create meaningful solutions that inspire positive change.
 
-My passion for technology and its potential to drive positive change led me to participate in the Google Developer Challenge Scholarship in 2017-2018. This program significantly fueled my ambition to enter the industry, and later in 2018, I successfully launched my first app on Google Play. <br>
+💡 Why I’m Here:
+I’m the creator of [Green Compass](https://play.google.com/store/apps/details?id=com.act4zero.greencompass.android), a platform empowering individuals to live more sustainably. My mission is to bridge the gap between intention and action, offering tools and knowledge to help people make a lasting impact.
 
-I'm constantly motivated by the opportunity to create impactful solutions that not only address user needs but also contribute positively to the community. My ultimate goal is to leverage my technical expertise and passion to develop innovative mobile applications that empower users and make a lasting social impact.
+✨ What I Bring to the Table:
+
+* Proficient in native Android development with expertise in Kotlin Multiplatform Mobile (KMM).
+* A dedicated learner, overcoming tech challenges with persistence and creativity.
+* Motivated by innovation and solving real-world challenges through thoughtful solutions.
+
+🌱 Beyond the Code:
+Outside of app development, I stay active with occasional Jiu-Jitsu practice and cycling, which I use as tools to get into a flow state and recharge. I enjoy exploring new ideas, continuous learning, and finding ways to improve myself and the world around me. I believe technology, when used wisely, can be a transformative force for good.
+
+Let’s connect, collaborate, and build something extraordinary! 🚀
