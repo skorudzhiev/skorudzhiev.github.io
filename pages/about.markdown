@@ -18,6 +18,6 @@ I’m the creator of [Green Compass](https://play.google.com/store/apps/details?
 * Motivated by innovation and solving real-world challenges through thoughtful solutions.
 
 🌱 Beyond the Code:
-Outside of app development, I stay active with occasional Jiu-Jitsu practice and cycling, which I use as tools to get into a flow state and recharge. I enjoy exploring new ideas, continuous learning, and finding ways to improve myself and the world around me. I believe technology, when used wisely, can be a transformative force for good.
+I enjoy exploring new ideas, continuous learning, and finding ways to improve myself and the world around me. I believe technology, when used wisely, can be a transformative force for good.
 
 Let’s connect, collaborate, and build something extraordinary! 🚀
