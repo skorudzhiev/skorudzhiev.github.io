@@ -4,20 +4,23 @@ title: About
 permalink: /about/
 ---
 
-👋 Hi, I’m Stoyan!
+# 👋 Hi, I’m Stoyan!
 
-I’m an enthusiastic Android developer passionate about transforming ideas into functional, user-friendly mobile apps. My journey into tech began with a fascination for how technology solves real-world problems, and today, I’m driven to create meaningful solutions that inspire positive change.
+I’m a **sustainability advocate** and **tech enthusiast** passionate about creating solutions that empower individuals and communities to make a positive impact. My journey into technology began with a curiosity for how innovation can solve real-world challenges, and today, I’m focused on bridging the gap between **intention and action** through thoughtful, user-friendly tools.
 
-💡 Why I’m Here:
-I’m the creator of [Green Compass](https://play.google.com/store/apps/details?id=com.act4zero.greencompass.android), a platform empowering individuals to live more sustainably. My mission is to bridge the gap between intention and action, offering tools and knowledge to help people make a lasting impact.
+## 💡 What I’m Building:
 
-✨ What I Bring to the Table:
+I’m the creator of [Green Compass](https://greencompass.app/), a platform designed to make sustainable living actionable and accessible. By combining education, habit-building, and community engagement, Green Compass helps individuals turn small, daily choices into collective climate action.
 
-* Proficient in native Android development with expertise in Kotlin Multiplatform Mobile (KMM).
-* A dedicated learner, overcoming tech challenges with persistence and creativity.
-* Motivated by innovation and solving real-world challenges through thoughtful solutions.
+## ✨ What Drives Me:
 
-🌱 Beyond the Code:
-I enjoy exploring new ideas, continuous learning, and finding ways to improve myself and the world around me. I believe technology, when used wisely, can be a transformative force for good.
+- **Mission-Driven Innovation**: Building tools that inspire meaningful change.  
+- **Strategic Problem Solving**: Tackling challenges with creativity and persistence.  
+- **Empowering Communities**: Enabling people to live sustainably with clarity and confidence.
 
-Let’s connect, collaborate, and build something extraordinary! 🚀
+## 🌱 Beyond the Screen:
+
+I’m constantly exploring ways to grow—whether it’s learning new skills, reflecting on sustainability practices, or connecting with others who share a vision for a greener, better future. I believe that technology, when used wisely, is one of the most powerful tools we have to create lasting change.
+
+Let’s connect, collaborate, and shape a more sustainable tomorrow! 🚀
+
