@@ -57,3 +57,4 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - google5aa1b9db3defe36c.html
