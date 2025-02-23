@@ -1,0 +1,18 @@
+# List of projects
+- title: Green Compass
+  description: A platform that empowers individuals to make sustainable choices.
+  technologies:
+    - Kotlin Multiplatform
+    - React
+    - Next.js
+    - Tailwind CSS
+  link: "https://greencompass.app/"
+  icon: GCLogo-no-bg.png
+
+- title: Cookery
+  description: A recipe management app that helps you save, organize, and reference recipes quickly and easily.
+  technologies:
+    - Kotlin
+    - Jetpack Compose
+  link: "https://github.com/skorudzhiev/Cookery"
+  icon: cookery.svg
