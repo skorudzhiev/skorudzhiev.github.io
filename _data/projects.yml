@@ -1,11 +1,24 @@
 # List of projects
+- title: Pangolines
+  description: A modern Vue 3 reinterpretation of the classic arcade game Pang, featuring polished bubble-popping mechanics, responsive controls, retro visuals
+  technologies:
+    - Vue 3
+    - Vite
+    - JavaScript
+    - Vercel
+  link: "https://pangolines.vercel.app/"
+  icon: Pangolines.png
+
 - title: Green Compass
   description: A platform that empowers individuals to make sustainable choices.
   technologies:
-    - Kotlin Multiplatform
-    - React
+    - Expo
+    - React Native
+    - TypeScript
     - Next.js
-    - Tailwind CSS
+    - Tailwind
+    - Vercel
+    - Supabase
   link: "https://greencompass.app/"
   icon: GCLogo-no-bg.png
 
