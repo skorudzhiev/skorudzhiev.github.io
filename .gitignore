@@ -1,4 +1,5 @@
 .jekyll-cache/
-_site/
+_site
+_site/feed.xml
 .DS_Store
 Gemfile.lock
