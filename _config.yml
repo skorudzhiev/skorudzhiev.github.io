@@ -21,12 +21,12 @@
 title: Stoyan Korudzhiev
 email: skorudzhiev@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
- Sustainability Advocate | Builder of Purpose-Driven Mobile Apps | Lifelong Learner 
+ Indie Developer | Building Apps & Digital Solutions | Lifelong Learner 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: StoyanBuilds
 github_username:  skorudzhiev
 linkedin_username: skorudzhiev
-twitter_username: StoyanBuilds
 
 # Build settings
 theme: minima
