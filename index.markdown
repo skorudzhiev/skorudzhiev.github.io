@@ -9,7 +9,7 @@ layout: home
 <!-- Might be useful in the Projects section. -->
 
 <p style="text-align: center;">
-<span style="color:grey">Let's build the next generation of great apps to enhance everyday life experiences around the world.</span>
+<span style="color:grey">Building digital products that people love, one line of code at a time.</span>
 </p>
 
 <div style="text-align:center"><img src="https://raw.githubusercontent.com/skorudzhiev/skorudzhiev.github.io/master/assets/globe.gif" /></div>
