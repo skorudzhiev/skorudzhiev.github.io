@@ -10,7 +10,7 @@ permalink: /projects/
         {% include project-card.html
             title=project.title
             description=project.description
-            technologies=project.technologies
+            tech=project.tech
             link=project.link
             icon=project.icon
         %}

@@ -1,7 +1,7 @@
 # List of projects
 - title: Pangolines
   description: A modern Vue 3 reinterpretation of the classic arcade game Pang, featuring polished bubble-popping mechanics, responsive controls, retro visuals
-  technologies:
+  tech:
     - Vue 3
     - Vite
     - JavaScript
@@ -11,20 +11,18 @@
 
 - title: Green Compass
   description: A platform that empowers individuals to make sustainable choices.
-  technologies:
+  tech:
     - Expo
-    - React Native
     - TypeScript
     - Next.js
     - Tailwind
-    - Vercel
     - Supabase
   link: "https://greencompass.app/"
   icon: GCLogo-no-bg.png
 
 - title: Cookery
   description: A recipe management app that helps you save, organize, and reference recipes quickly and easily.
-  technologies:
+  tech:
     - Kotlin
     - Jetpack Compose
   link: "https://github.com/skorudzhiev/Cookery"
