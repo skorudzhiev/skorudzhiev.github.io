@@ -6,7 +6,7 @@ permalink: /about/
 
 # 👋 Hi, I'm Stoyan!
 
-I'm an **indie developer** and **digital creator** passionate about building apps and solutions that enhance everyday experiences. My journey into technology began with a curiosity for how code can solve real problems, and today, I'm focused on creating **intuitive, well-crafted digital products** that people actually want to use.
+I'm passionate about building apps and solutions that enhance everyday experiences. My journey into technology began with a curiosity for how code can solve real problems, and today, I'm focused on creating **intuitive, well-crafted digital products** that people actually want to use.
 
 ## 💡 What I'm Building:
 
@@ -21,6 +21,6 @@ I'm constantly working on various projects, from mobile apps to web platforms. M
 
 ## 🚀 Beyond the Code:
 
-When I'm not coding, I'm usually exploring new tools, reading about product development, or connecting with other indie makers and developers. I believe the best products come from understanding both the technical and human sides of problem-solving.
+When I'm not coding, I'm usually exploring new tools, reading about product development, or connecting with others like me. I believe the best products come from understanding both the technical and human sides of problem-solving.
 
 Let's connect and build something awesome together! 🚀
