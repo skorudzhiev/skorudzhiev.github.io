@@ -33,6 +33,10 @@ theme: minima
 plugins:
   - jekyll-feed
 
+header_pages:
+  - pages/about.markdown
+  - pages/projects.markdown
+
 # Default path for project pages
 defaults:
   -

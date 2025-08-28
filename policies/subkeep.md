@@ -1,4 +1,8 @@
-# Privacy Policy for SubKeep
+---
+layout: policy
+title: Privacy Policy for SubKeep
+permalink: /policies/subkeep/
+---
 
 _Last updated: 28.08.2025_
 

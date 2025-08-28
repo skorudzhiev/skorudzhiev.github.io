@@ -1,3 +1,9 @@
+---
+layout: policy
+title: Privacy Policy for Veranda
+permalink: /policies/veranda/
+---
+
 **Privacy Policy**
 
 Stoyan Korudzhiev built the Veranda app as a Free app. This SERVICE is provided by Stoyan Korudzhiev at no cost and is intended for use as is.

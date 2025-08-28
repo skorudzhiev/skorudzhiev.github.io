@@ -1,5 +1,20 @@
 [skorudzhiev.github.io](https://skorudzhiev.github.io/)
 
+Clean caches and output:
+```
+bundle exec jekyll clean
+```
+
+Build:
+```
+bundle exec jekyll build
+```
+
+Serve:
+```
+bundle exec jekyll serve
+```
+
 Useful references
 https://jekyllrb.com/docs/pages/
 
