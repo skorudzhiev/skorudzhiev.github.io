@@ -1,5 +1,8 @@
-<div class="project-card">
+<div class="project-card" data-category="{{ include.category }}">
     <div class="project-content">
+        {% if include.status %}
+            <div class="project-status status-{{ include.status }}">{{ include.status }}</div>
+        {% endif %}
         <div class="project-header">
             <div class="project-icon">
                 <img src="/assets/images/projects/{{ include.icon }}" 
@@ -11,7 +14,7 @@
         </div>
         <p class="project-description">{{ include.description }}</p>
         <div class="project-tech">
-            {% for tech in include.technologies %}
+            {% for tech in include.tech %}
                 <span class="tech-tag">{{ tech }}</span>
             {% endfor %}
         </div>
@@ -21,98 +24,4 @@
     </div>
 </div>
 
-<style>
-.project-card {
-    background: white;
-    border-radius: 16px;
-    padding: 24px;
-    margin-bottom: 32px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    border: 1px solid rgba(0,0,0,0.05);
-}
-
-.project-header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 16px;
-}
-
-.project-icon {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f8f9fa;
-    border-radius: 12px;
-    border: 1px solid rgba(0,0,0,0.05);
-    overflow: hidden;
-    padding: 0;
-    flex-shrink: 0;
-}
-
-.project-icon-image {
-    display: block;
-    width: 48px !important;
-    height: 48px !important;
-    min-width: 48px !important;
-    min-height: 48px !important;
-    max-width: none !important;
-    max-height: none !important;
-    object-fit: contain;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-.project-card h2 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: #2d3748;
-    font-weight: 600;
-    line-height: 1.2;
-}
-
-.project-description {
-    color: #4a5568;
-    line-height: 1.6;
-    margin: 0 0 16px 0;
-    font-size: 1rem;
-}
-
-.project-tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 16px;
-}
-
-.tech-tag {
-    background: #f1f5f9;
-    color: #475569;
-    padding: 6px 12px;
-    border-radius: 16px;
-    font-size: 14px;
-}
-
-.project-link {
-    color: #3b82f6;
-    text-decoration: none;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.project-link:hover {
-    color: #2563eb;
-}
-
-.project-link .arrow {
-    transition: transform 0.2s;
-}
-
-.project-link:hover .arrow {
-    transform: translateX(4px);
-}
-</style>
+<!-- CSS is now handled in the main projects page -->

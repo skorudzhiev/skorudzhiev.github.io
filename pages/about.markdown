@@ -4,23 +4,42 @@ title: About
 permalink: /about/
 ---
 
-# 👋 Hi, I'm Stoyan!
+# 👋 Hi, I’m Stoyan  
 
-I'm an **indie developer** and **digital creator** passionate about building apps and solutions that enhance everyday experiences. My journey into technology began with a curiosity for how code can solve real problems, and today, I'm focused on creating **intuitive, well-crafted digital products** that people actually want to use.
+I build things that (hopefully) make life a little easier.  
+My obsession with tech started with the classic *“what happens if I change this line of code?”* curiosity,  
+and now it’s evolved into creating apps and platforms that people actually *use*.  
 
-## 💡 What I'm Building:
+---
 
-I'm constantly working on various projects, from mobile apps to web platforms. My latest focus has been [Green Compass](https://greencompass.app/), where I've been exploring how to build engaging user experiences that drive meaningful behavior change. I love the entire process—from initial concept to shipping and iterating based on user feedback.
+## 💡 What I’m Building  
+I like to keep myself busy (read: I can’t stop starting new projects).  
+Right now, my spotlight is on **Green Compass** — a sustainability app with a not-so-boring mission:  
+making eco-friendly habits stick without feeling like homework.  
 
-## ✨ What Drives Me:
+Along the way, I tinker with web apps, mobile platforms, and occasionally games —  
+because who doesn’t need an excuse to pop digital bubbles as a pangolin?  
 
-- **Crafting Great Products**: Building apps with attention to detail and user experience.  
-- **Independent Creation**: The freedom to explore ideas and build what I believe in.  
-- **Continuous Learning**: Always picking up new technologies, frameworks, and design patterns.
-- **Shipping & Iterating**: Getting products into users' hands and improving based on real feedback.
+---
 
-## 🚀 Beyond the Code:
+## ✨ What Drives Me  
+- **Crafting Products That Don’t Suck**: Thoughtful design, clean code, and experiences people don’t rage-quit.  
+- **Indie Spirit**: I like the freedom to build what I believe in (and the chaos that comes with it).  
+- **Always Leveling Up**: New frameworks, new tools, new headaches—sign me up.  
+- **Ship > Perfect**: Get it out, break it, learn, fix, repeat.  
 
-When I'm not coding, I'm usually exploring new tools, reading about product development, or connecting with other indie makers and developers. I believe the best products come from understanding both the technical and human sides of problem-solving.
+---
 
-Let's connect and build something awesome together! 🚀
+## 🚀 Beyond the Code  
+When I’m not buried in a terminal or design doc, you’ll probably find me:  
+- experimenting with new tools  
+- reading about product development  
+- doomscrolling my way through indie hacker threads
+
+I believe the best products come from balancing the *human side* of problems  
+with the *nerdy side* of solutions.  
+
+---
+
+👉 Let’s connect, swap ideas, and maybe even build something awesome together.  
+*(Worst case? We’ll at least complain together.)*  

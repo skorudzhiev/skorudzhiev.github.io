@@ -1,7 +1,22 @@
 # List of projects
+
+- title: SubKeep - Chrome Extension 
+  description: Organize Google Keep notes like never before.
+  category: web-apps
+  status: live
+  tech:
+    - Svelte
+    - Vite 
+    - Tailwind 
+    - MV3
+  link: "https://chromewebstore.google.com/detail/subkeep/mhikglflelkigbdlaebmfoopkoejecic?authuser=0&hl=en"
+  icon: SubKeep.png
+
 - title: Pangolines
-  description: A modern Vue 3 reinterpretation of the classic arcade game Pang, featuring polished bubble-popping mechanics, responsive controls, retro visuals
-  technologies:
+  description: My nostalgic arcade side quest - A reinterpretation of the classic arcade game Pang, featuring polished bubble-popping mechanics, responsive controls, retro visuals
+  category: games
+  status: live
+  tech:
     - Vue 3
     - Vite
     - JavaScript
@@ -10,21 +25,23 @@
   icon: Pangolines.png
 
 - title: Green Compass
-  description: A platform that empowers individuals to make sustainable choices.
-  technologies:
+  description: Climate action in your pocket.
+  category: web-apps
+  status: live
+  tech:
     - Expo
-    - React Native
     - TypeScript
     - Next.js
     - Tailwind
-    - Vercel
     - Supabase
   link: "https://greencompass.app/"
   icon: GCLogo-no-bg.png
 
 - title: Cookery
   description: A recipe management app that helps you save, organize, and reference recipes quickly and easily.
-  technologies:
+  category: mobile-apps
+  status: github
+  tech:
     - Kotlin
     - Jetpack Compose
   link: "https://github.com/skorudzhiev/Cookery"
