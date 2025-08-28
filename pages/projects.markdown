@@ -73,10 +73,25 @@ permalink: /projects/
 
 /* Projects Grid */
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    align-items: start;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 2rem !important;
+    align-items: start !important;
+    width: 100% !important;
+}
+
+/* Fallback for older browsers */
+@supports not (display: grid) {
+    .projects-grid {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: space-between !important;
+    }
+    
+    .project-card {
+        flex: 0 1 calc(50% - 1rem) !important;
+        margin-bottom: 2rem !important;
+    }
 }
 
 .project-card {
@@ -87,6 +102,8 @@ permalink: /projects/
     transition: all 0.3s ease;
     border: 1px solid rgba(0, 0, 0, 0.1);
     height: fit-content;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .project-card:hover {
