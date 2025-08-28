@@ -4,27 +4,112 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 2rem;
+      padding: 1rem 0;
     }
+    
     .footer-col {
       flex: 1 1 0;
       text-align: center;
     }
-    .footer-col-1 { text-align: left; }
-    .footer-col-3 { text-align: right; }
+    
+    .footer-col-1 { 
+      text-align: left; 
+      flex: 0 0 auto;
+      min-width: 200px;
+    }
+    
+    .footer-col-2 { 
+      flex: 0 0 auto;
+    }
+    
+    .footer-col-3 { 
+      text-align: right;
+      flex: 1 1 auto;
+      max-width: 400px;
+    }
+    
+    .footer-col-3 p {
+      margin: 0;
+      line-height: 1.4;
+      font-size: 0.9rem;
+      word-wrap: break-word;
+    }
+    
+    /* Social links */
+    .social-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+    .social-links a {
+      color: inherit;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+    .social-links a:hover {
+      background-color: rgba(0,0,0,0.06);
+      transform: translateY(-1px);
+    }
+    .social-links svg {
+      width: 22px;
+      height: 22px;
+      display: block;
+    }
+    
+    .contact-list {
+      margin: 0;
+      list-style: none;
+      padding: 0;
+    }
+    
+    .contact-list li {
+      margin-bottom: 0.25rem;
+    }
+    
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .footer-col-wrapper {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+      }
+      
+      .footer-col-1,
+      .footer-col-2,
+      .footer-col-3 {
+        text-align: center;
+        flex: none;
+        max-width: none;
+        min-width: none;
+      }
+      
+      .footer-col-3 p {
+        font-size: 0.85rem;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+    }
   </style>
   <data class="u-url" href="{{ "/" | relative_url }}"></data>
 
   <div class="wrapper">
-
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
           <li class="p-name">
-              {{ site.title | escape }}
-            </li>
-            {%- if site.email -%}
-            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            {%- endif -%}
+            {{ site.title | escape }}
+          </li>
+          {%- if site.email -%}
+          <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          {%- endif -%}
         </ul>
       </div>
 
@@ -36,7 +121,6 @@
         <p>{{- site.description | escape -}}</p>
       </div>
     </div>
-
   </div>
 
 </footer>
