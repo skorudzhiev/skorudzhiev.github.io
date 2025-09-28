@@ -1,9 +1,124 @@
 ---
 layout: default
 ---
+<style>
+  /* Hide default header/footer for a full-viewport portal on this page */
+  .site-header, .site-footer { display: none !important; }
+  .about-portal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: grid;
+    place-items: center;
+    background:
+      radial-gradient(1000px 600px at 10% 10%, rgba(29,161,242,.15), transparent 60%),
+      radial-gradient(800px 500px at 90% 90%, rgba(0,231,181,.12), transparent 60%),
+      linear-gradient(180deg, #0a0a0a, #0f1115);
+    color: #e6e6e6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  }
+  .portal-card {
+    width: min(680px, 92vw);
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04);
+    backdrop-filter: blur(6px);
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    color: #9aa4b2;
+  }
+  .eyebrow .dot {
+    width: 6px; height: 6px; border-radius: 50%; background: #1DA1F2;
+    box-shadow: 0 0 12px #1DA1F2; opacity: 1;
+    animation: throb 1.6s ease-in-out infinite;
+  }
+  h1 {
+    margin: 10px 0 8px;
+    font-size: clamp(28px, 4.5vw, 40px);
+    line-height: 1.15;
+    color: #f7f8fa;
+  }
+  .sub {
+    margin: 0 0 18px;
+    color: #c2c8d0;
+    font-size: clamp(14px, 2.5vw, 16px);
+  }
+  .cta-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .btn-primary {
+    appearance: none; border: 0;
+    background: #1DA1F2; color: #0a0a0a;
+    padding: 12px 18px; border-radius: 12px;
+    font-weight: 600; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 10px;
+    box-shadow: 0 10px 24px rgba(29,161,242,0.35);
+    transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 14px 28px rgba(29,161,242,0.45); background: #33a8ff; }
+  .btn-secondary {
+    color: #c2c8d0; text-decoration: none; font-weight: 500;
+    padding: 10px 12px; border-radius: 10px;
+    transition: background-color .15s ease, color .15s ease;
+  }
+  .btn-secondary:hover { color: #e6eef7; background: rgba(255,255,255,0.05); }
+  .progress { margin-top: 18px; height: 6px; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden; }
+  .progress > span {
+    display: block; height: 100%; width: 0%;
+    background: linear-gradient(90deg, #1DA1F2, #00e7b5);
+    animation: load var(--redirect-delay, 1.6s) linear forwards;
+  }
+  @keyframes load { to { width: 100%; } }
+  @keyframes throb { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.3); opacity: .6; } }
+  @media (prefers-reduced-motion: reduce) {
+    .eyebrow .dot { animation: none; }
+    .progress > span { animation: none; width: 100%; }
+  }
+</style>
 
-<div class="about">
-
-  {{ content }}
-
+<div class="about-portal" role="dialog" aria-labelledby="aboutPortalTitle" aria-describedby="aboutPortalSub">
+  <div class="portal-card">
+    <div class="eyebrow"><span class="dot" aria-hidden="true"></span><span>About</span></div>
+    <h1 id="aboutPortalTitle">Follow the journey</h1>
+    <p class="sub" id="aboutPortalSub">Indie dev builds, product notes, and shipping logs — in real time on X.</p>
+    <div class="cta-row">
+      <a class="btn-primary" href="https://x.com/StoyanBuilds/bio" target="_self" rel="noopener" aria-label="Go to my X bio (redirects soon)">
+        Go to my X bio
+      </a>
+      <a class="btn-secondary" href="https://x.com/StoyanBuilds" target="_blank" rel="noopener" aria-label="Open @StoyanBuilds in a new tab">
+        Open @StoyanBuilds
+      </a>
+      <span aria-live="polite" style="color:#9aa4b2; font-size:14px;">Redirecting shortly…</span>
+    </div>
+    <div class="progress" aria-hidden="true"><span></span></div>
+    <noscript>
+      <p style="margin-top:12px;">JavaScript is disabled. Continue to <a href="https://x.com/StoyanBuilds/bio">my X bio</a>.</p>
+    </noscript>
+  </div>
 </div>
+<script>
+  (function() {
+    var url = 'https://x.com/StoyanBuilds';
+    var delay = 1600; // ms
+    // Sync progress bar animation with redirect delay
+    document.documentElement.style.setProperty('--redirect-delay', (delay/1000) + 's');
+    var navigate = function() { window.location.replace(url); };
+    var timer = setTimeout(navigate, delay);
+    // Allow keyboard to trigger immediate navigation ("playable")
+    document.addEventListener('keydown', function(e) {
+      if (e.key === ' ' || e.key === 'Enter') { clearTimeout(timer); navigate(); }
+    });
+    // If user clicks either CTA, prevent double navigation
+    document.addEventListener('click', function(e) {
+      var a = e.target.closest('a');
+      if (!a) return;
+      if (a.href && a.href.indexOf('x.com') !== -1) { clearTimeout(timer); }
+    }, { capture: true });
+  })();
+</script>
