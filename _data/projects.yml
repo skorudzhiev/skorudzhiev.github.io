@@ -1,5 +1,18 @@
 # List of projects
 
+- title: GitGlow - Cross Platform Git Client 
+  description: Get more out of your Git contributions.
+  category: desktop-apps
+  status: live
+  tech: 
+    - Rust
+    - Tauri
+    - React
+    - TypeScript
+    - Tailwind
+  link: "https://gitglow.dev"
+  icon: GitGlow.png
+
 - title: SubKeep - Chrome Extension 
   description: Organize Google Keep notes like never before.
   category: web-apps
