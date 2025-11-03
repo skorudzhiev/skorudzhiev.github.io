@@ -34,8 +34,8 @@ plugins:
   - jekyll-feed
 
 header_pages:
-  - pages/about.markdown
   - pages/projects.markdown
+  - pages/about.markdown
 
 # Default path for project pages
 defaults:
