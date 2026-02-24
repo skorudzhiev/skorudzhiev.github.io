@@ -14,11 +14,32 @@ permalink: /blog/
   </header>
 
   <section class="blog-list">
-    <a class="blog-card" href="https://medium.com/" target="_blank" rel="noopener noreferrer">
-      <h3>Self-Healing OpenClaw Gateway</h3>
-      <p>How I built a production-ready watchdog using systemd timers and real health checks after random gateway failures.</p>
-      <p class="card-meta"><span class="meta-pill">Linux</span><span class="meta-pill">systemd</span><span class="meta-pill">Monitoring</span><span class="meta-pill">OpenClaw</span></p>
-      <p class="card-source">Published on: Medium</p>
+    <a class="blog-card" href="https://medium.com/p/30ecd396415f" target="_blank" rel="noopener noreferrer">
+      <h3>Prevent Your OpenClaw Gateway From Randomly Stopping</h3>
+      <p>Self-Healing systemd Setup on Linux</p>
+      <p class="card-date">Published: Feb 24, 2026</p>
+      <p class="card-meta"><span class="meta-pill">Openclaw</span><span class="meta-pill">Health Check</span><span class="meta-pill">Gateway</span></p>
+    </a>
+
+    <a class="blog-card" href="https://medium.com/p/915429fc1e1f" target="_blank" rel="noopener noreferrer">
+      <h3>Building SubKeep in Public</h3>
+      <p>Behind the Scenes, Real Numbers, and the Quiet Reality of Organic Growth</p>
+      <p class="card-date">Published: Jan 12, 2026</p>
+      <p class="card-meta"><span class="meta-pill">Growth</span><span class="meta-pill">Digital Marketing</span></p>
+    </a>
+
+    <a class="blog-card" href="https://medium.com/p/3602f8893139" target="_blank" rel="noopener noreferrer">
+      <h3>Why I Built a Local-First Git Analytics Tool (Without AI)</h3>
+      <p>An experiment in understanding developer work patterns using nothing but local Git history.</p>
+      <p class="card-date">Published: Dec 16, 2025</p>
+      <p class="card-meta"><span class="meta-pill">Git Analytics</span><span class="meta-pill">Developer Productivity</span></p>
+    </a>
+
+    <a class="blog-card" href="https://medium.com/p/ee7454e897f5" target="_blank" rel="noopener noreferrer">
+      <h3>Google Keep is great, but its labels are broken</h3>
+      <p>Here&rsquo;s how I fixed it with SubKeep</p>
+      <p class="card-date">Published: Aug 30, 2025</p>
+      <p class="card-meta"><span class="meta-pill">Google Keep</span><span class="meta-pill">Chrome Extension</span></p>
     </a>
   </section>
 </div>
@@ -86,6 +107,12 @@ permalink: /blog/
   color: #3a485c;
 }
 
+.card-date {
+  margin-top: 0.55rem;
+  font-size: 0.9rem;
+  color: #55667b;
+}
+
 .card-meta {
   display: flex;
   flex-wrap: wrap;
@@ -103,12 +130,6 @@ permalink: /blog/
   font-size: 0.73rem;
   font-weight: 600;
   letter-spacing: 0.01em;
-}
-
-.card-source {
-  margin-top: 0.55rem;
-  font-size: 0.9rem;
-  color: #55667b;
 }
 
 @media (max-width: 640px) {
