@@ -35,7 +35,7 @@ plugins:
 
 header_pages:
   - pages/projects.markdown
-  - pages/about.markdown
+  - pages/blog.markdown
 
 # Default path for project pages
 defaults:
