@@ -1,5 +1,32 @@
 # List of projects
 
+- title: Continuum - Decision Modeling Workspace
+  description: Write your numbers like notes and see the consequences instantly.
+  category: web-apps
+  status: live
+  tech:
+    - Next.js
+    - React
+    - TypeScript
+    - Tailwind
+    - CodeMirror
+  link: "https://continuum-landing-ivory.vercel.app/"
+  icon: Continuum.png
+
+  - title: Lattice
+  description: An AI-assisted workspace for shaping messy ideas into structured decisions, living project context, and reusable creative output across research, writing, visuals, and feedback.
+  category: web-apps
+  status: live
+  tech:
+    - AI Workflows
+    - Decision Modeling
+    - Research Workspace
+    - Creative Tooling
+    - Multi-project System
+  link: "https://github.com/skorudzhiev/Lattice"
+  icon: favicon.ico
+
+
 - title: GitGlow - Cross Platform Git Client 
   description: Get more out of your Git contributions.
   category: desktop-apps
@@ -25,18 +52,6 @@
   link: "https://subkeep.fyi/"
   icon: SubKeep.png
 
-- title: Pangolines
-  description: My nostalgic arcade side quest - A reinterpretation of the classic arcade game Pang, featuring polished bubble-popping mechanics, responsive controls, retro visuals
-  category: games
-  status: live
-  tech:
-    - Vue 3
-    - Vite
-    - JavaScript
-    - Vercel
-  link: "https://pangolines.vercel.app/"
-  icon: Pangolines.png
-
 - title: Green Compass
   description: Climate action in your pocket.
   category: web-apps
@@ -49,13 +64,3 @@
     - Supabase
   link: "https://greencompass.app/"
   icon: GCLogo-no-bg.png
-
-- title: Cookery
-  description: A recipe management app that helps you save, organize, and reference recipes quickly and easily.
-  category: mobile-apps
-  status: github
-  tech:
-    - Kotlin
-    - Jetpack Compose
-  link: "https://github.com/skorudzhiev/Cookery"
-  icon: Cookery.svg
