@@ -125,16 +125,15 @@ a {
   letter-spacing: -0.01em;
 }
 
-.wordmark-mark {
-  display: grid;
+.wordmark-portrait {
+  display: block;
   width: 37px;
   height: 37px;
-  place-items: center;
-  color: var(--cream);
-  background: var(--ink);
+  border: 1px solid rgba(20, 20, 18, 0.12);
   border-radius: 50%;
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
+  object-fit: cover;
+  object-position: 50% 36%;
+  filter: saturate(0.72) contrast(1.03);
 }
 
 .site-navigation {
