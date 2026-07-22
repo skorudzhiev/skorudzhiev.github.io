@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import WritingCard from "../../components/WritingCard.astro";
+
+const writing = (await getCollection("writing")).sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+const featured = writing.filter((article) => article.data.featured);
+const archive = writing.filter((article) => !article.data.featured);
+---
+
+<BaseLayout title="Writing" description="Field notes on product engineering, local-first software, automation, growth, and independent product building.">
+  <header class="page-intro shell">
+    <p class="eyebrow">Ideas and field notes</p>
+    <h1>Writing from the work itself.</h1>
+    <p class="page-lede">Notes on product choices, technical constraints, operating real systems, and the quieter lessons that only appear after something ships.</p>
+  </header>
+
+  <section class="page-section shell">
+    <div class="writing-grid">
+      {featured.map((article) => <WritingCard article={article} featured />)}
+    </div>
+  </section>
+
+  <section class="page-section shell">
+    <div class="section-heading">
+      <div><p class="eyebrow">Archive</p><h2>Technical notes and product lessons.</h2></div>
+      <p>The current archive remains on Medium while future long-form work will be published here first and syndicated outward.</p>
+    </div>
+    <div class="writing-list">
+      {archive.map((article) => <WritingCard article={article} />)}
+    </div>
+  </section>
+</BaseLayout>

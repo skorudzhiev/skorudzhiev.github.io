@@ -1,0 +1,97 @@
+---
+import { getEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { siteConfig } from "../../site-config";
+
+const continuum = await getEntry("work", "continuum");
+if (!continuum) throw new Error("Continuum work entry is missing");
+---
+
+<BaseLayout title="Continuum — product case study" description="A restrained case-study preview of Continuum: a local-first calculation workspace, macOS companion, and connected launch system.">
+  <header class="case-hero shell">
+    <p class="eyebrow">Flagship case study · {continuum.data.stage}</p>
+    <div class="case-title-row">
+      <img class="case-logo" src={continuum.data.image} alt="Continuum app icon" width="112" height="112" />
+      <div>
+        <h1>Continuum</h1>
+        <p class="page-lede">{continuum.data.summary}</p>
+        <div class="button-row">
+          <a class="button button--primary" href={continuum.data.externalUrl} target="_blank" rel="noopener">View the public product ↗</a>
+          <a class="button button--secondary" href="/start/">Discuss a similar challenge</a>
+        </div>
+      </div>
+    </div>
+    <div class="case-facts">
+      <div class="case-fact"><span>Role</span><strong>Product, design, engineering, launch systems</strong></div>
+      <div class="case-fact"><span>Surfaces</span><strong>Browser, macOS, quick calculation</strong></div>
+      <div class="case-fact"><span>Disclosure</span><strong>{siteConfig.continuumDisclosure === "teaser" ? "Selected public details" : "Full case study"}</strong></div>
+    </div>
+  </header>
+
+  <section class="shell">
+    <div class="teaser-note">This is a restrained preview while the product approaches launch. It focuses on the public product thesis and the shape of the work without exposing private implementation details.</div>
+  </section>
+
+  <section class="story-grid shell">
+    <div><p class="eyebrow">The product thesis</p><h2>Write the thought. Keep the model.</h2></div>
+    <div class="story-copy">
+      <p>{continuum.data.problem}</p>
+      <p><strong>Continuum keeps assumptions readable and consequences attached.</strong> Change one value and the downstream model answers immediately, without asking the user to turn an early thought into a spreadsheet first.</p>
+    </div>
+  </section>
+
+  <section class="section method-section">
+    <div class="shell">
+      <div class="section-heading">
+        <div><p class="eyebrow">The public product system</p><h2>More than one interface.</h2></div>
+        <p>The product follows a thought from quick capture to a durable workspace, while keeping the data local and the interaction focused.</p>
+      </div>
+      <div class="workspace-preview">
+        <div class="workspace-window">
+          <div class="workspace-toolbar"><span><img src={continuum.data.image} alt="" width="24" height="24" />Continuum workspace</span><span>Local document</span></div>
+          <div class="workspace-body">
+            <div class="workspace-editor"><pre># Product runway
+cash = 84000 in usd
+monthly_costs = 12500 in usd
+new_revenue = 2400 in usd
+
+<mark>runway = cash /
+(monthly_costs - new_revenue)</mark></pre></div>
+            <div class="workspace-results"><small>Live results</small><output>$84,000</output><output>$12,500</output><output>$2,400</output><output><strong>8.32 months</strong></output></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section shell">
+    <div class="section-heading">
+      <div><p class="eyebrow">Three connected surfaces</p><h2>Capture, explore, keep.</h2></div>
+      <p>Each surface handles a different moment without turning Continuum into three unrelated products.</p>
+    </div>
+    <div class="surface-grid">
+      <article class="surface-card"><span>01</span><h3>Calculation workspace</h3><p>Readable documents, aligned results, reusable assumptions, and a place for models to live.</p></article>
+      <article class="surface-card"><span>02</span><h3>macOS companion</h3><p>A focused native presence for the moment a question arrives outside the main workspace.</p></article>
+      <article class="surface-card"><span>03</span><h3>Quick calculation</h3><p>A compact path from rough thought to live result, with room to expand into the full product.</p></article>
+    </div>
+  </section>
+
+  <section class="section shell">
+    <div class="section-heading">
+      <div><p class="eyebrow">Product to presentation</p><h2>The launch work comes from the same source.</h2></div>
+      <p>The campaign system reuses product definitions, real interface states, and brand tokens instead of recreating the product by hand for every channel.</p>
+    </div>
+    <div class="pipeline-grid">
+      <article class="pipeline-card"><span>Input</span><h3>Product truth</h3><p>Real UI, product language, brand tokens, examples, and documented constraints.</p></article>
+      <article class="pipeline-card"><span>System</span><h3>Repeatable production</h3><p>Programmatic SVG, PNG, WebP, and GIF generation with reusable compositions.</p></article>
+      <article class="pipeline-card"><span>Output</span><h3>Coherent campaign kit</h3><p>Launch assets and written material that stay visually and conceptually connected to the product.</p></article>
+    </div>
+  </section>
+
+  <section class="closing-cta">
+    <div class="shell closing-cta-grid">
+      <div><p class="eyebrow">The case study will grow after launch</p><h2>For now, the product can speak.</h2><p>Explore the public Continuum experience, or start a conversation about a similarly connected product problem.</p></div>
+      <div class="button-row"><a class="button" href={continuum.data.externalUrl} target="_blank" rel="noopener">View Continuum ↗</a></div>
+    </div>
+  </section>
+</BaseLayout>

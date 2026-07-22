@@ -1,0 +1,41 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  project: CollectionEntry<"work">;
+  compact?: boolean;
+}
+
+const { project, compact = false } = Astro.props;
+const href = project.id === "continuum" ? "/work/continuum/" : project.data.externalUrl;
+---
+
+<article class:list={["project-card", compact && "project-card--compact"]} style={`--project-accent:${project.data.accent}`}>
+  <div class="project-card-topline">
+    <span>{project.data.stage}</span>
+    <span>{project.data.year}</span>
+  </div>
+  <div class="project-card-heading">
+    <div class="project-icon">
+      <img src={project.data.image} alt="" width="64" height="64" loading="lazy" />
+    </div>
+    <div>
+      <h3>{project.data.title}</h3>
+      <p>{project.data.summary}</p>
+    </div>
+  </div>
+  {!compact && (
+    <div class="project-evidence">
+      <p><strong>The problem</strong>{project.data.problem}</p>
+      <p><strong>My contribution</strong>{project.data.contribution}</p>
+    </div>
+  )}
+  <div class="tag-row" aria-label="Capabilities">
+    {project.data.capabilities.slice(0, compact ? 3 : 4).map((capability) => <span>{capability}</span>)}
+  </div>
+  {href && (
+    <a class="card-link" href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noopener" : undefined}>
+      {project.id === "continuum" ? "Read the case study" : "View the product"} <span aria-hidden="true">↗</span>
+    </a>
+  )}
+</article>

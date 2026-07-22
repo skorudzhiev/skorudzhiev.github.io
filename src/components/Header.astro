@@ -1,0 +1,40 @@
+---
+import { siteConfig } from "../site-config";
+---
+
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="wordmark" href="/" aria-label={`${siteConfig.name}, home`}>
+      <span class="wordmark-mark" aria-hidden="true">SK</span>
+      <span>{siteConfig.name}</span>
+    </a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation">
+      Menu
+    </button>
+    <nav id="site-navigation" class="site-navigation" aria-label="Primary navigation">
+      <a href="/work/">Work</a>
+      <a href="/services/">Services</a>
+      <a href="/writing/">Writing</a>
+      <a href="/about/">About</a>
+      <a class="nav-cta" href="/start/">Discuss a product <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const button = document.querySelector<HTMLButtonElement>(".menu-button");
+  const navigation = document.querySelector<HTMLElement>(".site-navigation");
+
+  button?.addEventListener("click", () => {
+    const expanded = button.getAttribute("aria-expanded") === "true";
+    button.setAttribute("aria-expanded", String(!expanded));
+    navigation?.classList.toggle("is-open", !expanded);
+  });
+
+  navigation?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      button?.setAttribute("aria-expanded", "false");
+      navigation.classList.remove("is-open");
+    });
+  });
+</script>
