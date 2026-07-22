@@ -1167,6 +1167,60 @@ h3 {
   min-height: 270px;
 }
 
+.writing-page-intro {
+  padding-top: clamp(2.75rem, 4.5vw, 4.5rem);
+  padding-bottom: clamp(2rem, 3vw, 3rem);
+}
+
+.writing-page-intro h1 {
+  font-size: clamp(2.6rem, 4.5vw, 4.5rem);
+}
+
+.writing-page-intro .page-lede {
+  max-width: 620px;
+  margin-top: 1.25rem;
+  font-size: clamp(0.96rem, 1.2vw, 1.08rem);
+}
+
+.writing-page-section {
+  padding-top: 1rem;
+  padding-bottom: 4.5rem;
+}
+
+.writing-page-section + .writing-page-section {
+  padding-top: 3rem;
+}
+
+.writing-page-section .section-heading {
+  margin-bottom: 2.5rem;
+}
+
+.writing-page-section .section-heading h2 {
+  font-size: clamp(1.9rem, 3.2vw, 3.1rem);
+}
+
+.writing-page-section .writing-card {
+  min-height: 225px;
+  padding: 1.45rem;
+}
+
+.writing-page-section .writing-card h3 {
+  margin-bottom: 0.85rem;
+  font-size: clamp(1.4rem, 2vw, 1.95rem);
+}
+
+.writing-page-section .writing-grid--editorial .writing-card:first-child {
+  min-height: 220px;
+}
+
+.writing-page-section .writing-grid--editorial .writing-card:first-child h3 {
+  font-size: clamp(1.75rem, 2.6vw, 2.45rem);
+}
+
+.writing-page-section .writing-list .writing-card {
+  min-height: 205px;
+}
+
 .about-timeline {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1575,6 +1629,10 @@ h3 {
     font-size: clamp(2.5rem, 12vw, 3.6rem);
   }
 
+  .writing-page-intro h1 {
+    font-size: clamp(2.5rem, 12vw, 3.6rem);
+  }
+
   .form-shell--compact {
     width: min(calc(100% - 28px), var(--max));
     gap: 1.5rem;
@@ -1609,6 +1667,12 @@ h3 {
 
   .writing-card {
     min-height: 300px;
+  }
+
+  .writing-page-section .writing-card,
+  .writing-page-section .writing-grid--editorial .writing-card:first-child,
+  .writing-page-section .writing-list .writing-card {
+    min-height: 220px;
   }
 
   .method-step {
