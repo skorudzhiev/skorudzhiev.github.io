@@ -6,13 +6,13 @@ const services = (await getCollection("services")).sort((a, b) => a.data.order -
 ---
 
 <BaseLayout title="How I can help" description="Product clarity, end-to-end engineering, launch systems, and technical product advisory from Stoyan Korudzhiev.">
-  <header class="page-intro shell">
+  <header class="page-intro services-page-intro shell">
     <p class="eyebrow">How I can help</p>
     <h1>Useful when the product still has hard questions.</h1>
     <p class="page-lede">I’m interested in problems that need both judgment and implementation: shaping the product, proving the critical path, building it properly, and connecting the result to the way it reaches people.</p>
   </header>
 
-  <section class="page-section shell services-stack">
+  <section class="page-section services-page-section shell services-stack">
     {services.map((service) => (
       <article class="service-detail">
         <div><p class="eyebrow">{service.data.eyebrow}</p><h2>{service.data.title}</h2></div>
@@ -28,7 +28,7 @@ const services = (await getCollection("services")).sort((a, b) => a.data.order -
     ))}
   </section>
 
-  <section class="page-section shell">
+  <section class="page-section services-page-section services-advisory-section shell">
     <div class="section-heading">
       <div><p class="eyebrow">A lighter format</p><h2>Technical product advisory.</h2></div>
       <p>For situations where the most valuable next step is a sharper decision rather than a larger build.</p>
@@ -40,7 +40,7 @@ const services = (await getCollection("services")).sort((a, b) => a.data.order -
     </div>
   </section>
 
-  <section class="closing-cta">
+  <section class="closing-cta services-closing-cta">
     <div class="shell closing-cta-grid">
       <div><p class="eyebrow">Selective conversations</p><h2>Start with the product context.</h2><p>No polished request for proposal required. A clear problem, current stage, and honest constraint are enough.</p></div>
       <a class="button" href="/start/">Share what you’re building <span aria-hidden="true">↗</span></a>
