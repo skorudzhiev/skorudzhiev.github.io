@@ -1261,6 +1261,19 @@ h3 {
   grid-column: 1 / -1;
 }
 
+.form-status--success {
+  color: #31643e;
+}
+
+.form-status--error {
+  color: var(--signal-dark);
+}
+
+.project-form[aria-busy="true"] .button {
+  cursor: wait;
+  opacity: 0.72;
+}
+
 .field label {
   font-size: 0.76rem;
   font-weight: 750;

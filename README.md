@@ -15,4 +15,4 @@ Run the production checks and build with:
 npm run build
 ```
 
-The project inquiry form falls back to a prepared email when `PUBLIC_FORMSPREE_ENDPOINT` is not set. To enable direct submissions, copy `.env.example` to `.env` and provide a Formspree endpoint. Add the same value as a GitHub Actions secret for production.
+The project inquiry form uses the dedicated Formspree endpoint configured in the page. `PUBLIC_FORMSPREE_ENDPOINT` can override it for local or alternate deployments; if no endpoint is available, the form falls back to a prepared email.
