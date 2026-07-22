@@ -5,6 +5,7 @@ import { siteConfig } from "../../site-config";
 
 const continuum = await getEntry("work", "continuum");
 if (!continuum) throw new Error("Continuum work entry is missing");
+const designSystemArticle = await getEntry("writing", "design-system-marketing-engine");
 ---
 
 <BaseLayout title="Continuum — product case study" description="A restrained case-study preview of Continuum: a local-first calculation workspace, macOS companion, and connected launch system.">
@@ -86,6 +87,13 @@ new_revenue = 2400 in usd
       <article class="pipeline-card"><span>System</span><h3>Repeatable production</h3><p>Programmatic SVG, PNG, WebP, and GIF generation with reusable compositions.</p></article>
       <article class="pipeline-card"><span>Output</span><h3>Coherent campaign kit</h3><p>Launch assets and written material that stay visually and conceptually connected to the product.</p></article>
     </div>
+    {designSystemArticle && (
+      <div class="section-link-row">
+        <a class="text-link" href={designSystemArticle.data.canonicalUrl} target="_blank" rel="noopener">
+          Read how the design system became a marketing engine <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    )}
   </section>
 
   <section class="closing-cta">

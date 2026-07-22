@@ -16,7 +16,7 @@ const archive = writing.filter((article) => !article.data.featured);
   </header>
 
   <section class="page-section shell">
-    <div class="writing-grid">
+    <div class="writing-grid writing-grid--editorial">
       {featured.map((article) => <WritingCard article={article} featured />)}
     </div>
   </section>
