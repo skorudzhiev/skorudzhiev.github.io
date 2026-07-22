@@ -7,17 +7,17 @@ const work = (await getCollection("work")).sort((a, b) => a.data.featuredOrder -
 ---
 
 <BaseLayout title="Selected work" description="Selected products across mobile, web, desktop, product systems, and launch execution by Stoyan Korudzhiev.">
-  <header class="page-intro shell">
+  <header class="page-intro work-page-intro shell">
     <p class="eyebrow">Selected work</p>
     <h1>Products, not just screens.</h1>
     <p class="page-lede">Each project starts with a different constraint. The through-line is ownership: clarify what matters, build the system, and make the result useful and understandable.</p>
   </header>
-  <section class="page-section shell">
+  <section class="page-section work-page-section shell">
     <div class="work-grid work-grid--wide">
       {work.map((project) => <ProjectCard project={project} />)}
     </div>
   </section>
-  <section class="closing-cta">
+  <section class="closing-cta work-closing-cta">
     <div class="shell closing-cta-grid">
       <div><p class="eyebrow">A relevant problem?</p><h2>Share the context, not a polished brief.</h2><p>A useful conversation can start before every detail is settled.</p></div>
       <a class="button" href="/start/">Discuss a product <span aria-hidden="true">↗</span></a>

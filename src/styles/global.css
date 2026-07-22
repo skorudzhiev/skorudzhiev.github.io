@@ -763,6 +763,66 @@ h3 {
   text-transform: uppercase;
 }
 
+.work-page-intro {
+  padding-top: clamp(2.75rem, 4.5vw, 4.5rem);
+  padding-bottom: clamp(2rem, 3vw, 3rem);
+}
+
+.work-page-intro h1 {
+  font-size: clamp(2.6rem, 4.5vw, 4.5rem);
+}
+
+.work-page-intro .page-lede {
+  max-width: 620px;
+  margin-top: 1.25rem;
+  font-size: clamp(0.96rem, 1.2vw, 1.08rem);
+}
+
+.work-page-section {
+  padding-top: 1rem;
+  padding-bottom: 4.5rem;
+}
+
+.work-page-section .project-card {
+  padding: 1.4rem;
+}
+
+.work-page-section .project-card-topline {
+  margin-bottom: 1.4rem;
+}
+
+.work-page-section .project-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.work-page-section .project-icon img {
+  width: 34px;
+  height: 34px;
+}
+
+.work-page-section .project-card h3 {
+  font-size: clamp(1.25rem, 1.7vw, 1.65rem);
+}
+
+.work-page-section .project-evidence {
+  margin: 1.1rem 0;
+  padding-top: 1rem;
+}
+
+.work-page-section .tag-row {
+  margin-bottom: 1.1rem;
+  padding-top: 1rem;
+}
+
+.work-closing-cta {
+  padding: clamp(3.5rem, 5vw, 5rem) 0;
+}
+
+.work-closing-cta h2 {
+  font-size: clamp(2rem, 3.5vw, 3.4rem);
+}
+
 .tag-row {
   display: flex;
   flex-wrap: wrap;
@@ -974,6 +1034,39 @@ h3 {
   padding: 4rem 0 5.5rem;
 }
 
+.continuum-case-hero {
+  padding-top: 3rem;
+  padding-bottom: 3.75rem;
+}
+
+.continuum-case-hero h1 {
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+}
+
+.continuum-case-hero .case-logo {
+  width: 92px;
+  height: 92px;
+  padding: 15px;
+  border-radius: 23px;
+}
+
+.continuum-case-hero .case-title-row {
+  grid-template-columns: 100px 1fr;
+  gap: 1.5rem;
+}
+
+.continuum-case-hero .page-lede {
+  font-size: 1.05rem;
+}
+
+.continuum-case-hero .case-facts {
+  margin-top: 2rem;
+}
+
+.continuum-case-hero .case-fact {
+  padding: 1.05rem 1.2rem;
+}
+
 .case-title-row {
   display: grid;
   grid-template-columns: 120px 1fr;
@@ -1033,6 +1126,42 @@ h3 {
   grid-template-columns: 0.65fr 1.35fr;
   gap: clamp(2rem, 7vw, 7rem);
   padding: 4.5rem 0;
+}
+
+.continuum-story-grid {
+  gap: clamp(2rem, 5vw, 5rem);
+  padding: 3.25rem 0;
+}
+
+.continuum-story-grid h2 {
+  font-size: clamp(1.75rem, 2.7vw, 2.65rem);
+}
+
+.continuum-story-grid .story-copy {
+  font-size: 0.98rem;
+}
+
+.continuum-case-section {
+  padding-top: clamp(3.5rem, 5vw, 5rem);
+  padding-bottom: clamp(3.5rem, 5vw, 5rem);
+}
+
+.continuum-case-section .section-heading {
+  margin-bottom: 2.75rem;
+}
+
+.continuum-case-section .section-heading h2 {
+  font-size: clamp(1.9rem, 3.2vw, 3.1rem);
+}
+
+.continuum-case-section .surface-card,
+.continuum-case-section .pipeline-card {
+  padding: 1.4rem;
+}
+
+.continuum-case-section .surface-card h3,
+.continuum-case-section .pipeline-card h3 {
+  margin-top: 1.8rem;
 }
 
 .story-grid h2 {
@@ -1707,6 +1836,11 @@ h3 {
   }
 
   .services-page-intro h1 {
+    font-size: clamp(2.5rem, 12vw, 3.6rem);
+  }
+
+  .work-page-intro h1,
+  .continuum-case-hero h1 {
     font-size: clamp(2.5rem, 12vw, 3.6rem);
   }
 

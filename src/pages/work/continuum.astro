@@ -9,7 +9,7 @@ const designSystemArticle = await getEntry("writing", "design-system-marketing-e
 ---
 
 <BaseLayout title="Continuum — product case study" description="A restrained case-study preview of Continuum: a local-first calculation workspace, macOS companion, and connected launch system.">
-  <header class="case-hero shell">
+  <header class="case-hero continuum-case-hero shell">
     <p class="eyebrow">Flagship case study · {continuum.data.stage}</p>
     <div class="case-title-row">
       <img class="case-logo" src={continuum.data.image} alt="Continuum app icon" width="112" height="112" />
@@ -33,7 +33,7 @@ const designSystemArticle = await getEntry("writing", "design-system-marketing-e
     <div class="teaser-note">This is a restrained preview while the product approaches launch. It focuses on the public product thesis and the shape of the work without exposing private implementation details.</div>
   </section>
 
-  <section class="story-grid shell">
+  <section class="story-grid continuum-story-grid shell">
     <div><p class="eyebrow">The product thesis</p><h2>Write the thought. Keep the model.</h2></div>
     <div class="story-copy">
       <p>{continuum.data.problem}</p>
@@ -41,7 +41,7 @@ const designSystemArticle = await getEntry("writing", "design-system-marketing-e
     </div>
   </section>
 
-  <section class="section method-section">
+  <section class="section method-section continuum-case-section">
     <div class="shell">
       <div class="section-heading">
         <div><p class="eyebrow">The public product system</p><h2>More than one interface.</h2></div>
@@ -65,7 +65,7 @@ new_revenue = 2400 in usd
     </div>
   </section>
 
-  <section class="section shell">
+  <section class="section continuum-case-section shell">
     <div class="section-heading">
       <div><p class="eyebrow">Three connected surfaces</p><h2>Capture, explore, keep.</h2></div>
       <p>Each surface handles a different moment without turning Continuum into three unrelated products.</p>
@@ -77,7 +77,7 @@ new_revenue = 2400 in usd
     </div>
   </section>
 
-  <section class="section shell">
+  <section class="section continuum-case-section shell">
     <div class="section-heading">
       <div><p class="eyebrow">Product to presentation</p><h2>The launch work comes from the same source.</h2></div>
       <p>The campaign system reuses product definitions, real interface states, and brand tokens instead of recreating the product by hand for every channel.</p>
@@ -96,7 +96,7 @@ new_revenue = 2400 in usd
     )}
   </section>
 
-  <section class="closing-cta">
+  <section class="closing-cta work-closing-cta">
     <div class="shell closing-cta-grid">
       <div><p class="eyebrow">The case study will grow after launch</p><h2>For now, the product can speak.</h2><p>Explore the public Continuum experience, or start a conversation about a similarly connected product problem.</p></div>
       <div class="button-row"><a class="button" href={continuum.data.externalUrl} target="_blank" rel="noopener">View Continuum ↗</a></div>
