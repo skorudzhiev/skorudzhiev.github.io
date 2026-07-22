@@ -1,0 +1,113 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { siteConfig } from "../../site-config";
+
+const formEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT ?? "https://formspree.io/f/xrenakkk";
+---
+
+<BaseLayout title="Discuss a product" description="Share the context behind an ambitious product, technical problem, or selected collaboration with Stoyan Korudzhiev.">
+  <header class="page-intro start-page-intro shell">
+    <p class="eyebrow">Discuss a product</p>
+    <h1>Share the context.<br />It does not need to be polished.</h1>
+    <p class="page-lede">This is an invitation to a thoughtful conversation, not a promise of availability. A useful starting point is the problem, where things stand, and what a better outcome would look like.</p>
+  </header>
+
+  <section class="form-shell form-shell--compact shell">
+    <aside class="form-context">
+      <p><strong>A good fit usually has:</strong>A meaningful user or business problem, room for technical judgment, and ambition beyond a disposable prototype.</p>
+      <p><strong>What happens next:</strong>I’ll read the context and reply by email if there is a useful overlap or a clear way I can help.</p>
+      <p><strong>Prefer email?</strong><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></p>
+    </aside>
+
+    <form class="project-form" action={formEndpoint} method="POST" data-endpoint={formEndpoint} novalidate>
+      <div class="honeypot" aria-hidden="true">
+        <label>Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
+      </div>
+
+      <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required /></div>
+      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required /></div>
+      <div class="field field--full"><label for="company">Company or product URL <span class="field-help">(optional)</span></label><input id="company" name="company" type="url" inputmode="url" placeholder="https://" /></div>
+      <div class="field field--full"><label for="context">What are you building or exploring?</label><textarea id="context" name="context" required></textarea></div>
+      <div class="field field--full"><label for="outcome">What would a useful outcome look like?</label><textarea id="outcome" name="outcome" required></textarea></div>
+      <div class="field field--full"><label for="constraint">Current stage and main constraint</label><textarea id="constraint" name="constraint" required></textarea></div>
+      <div class="field"><label for="budget">Expected budget or range</label><input id="budget" name="budget" placeholder="A range is enough" required /></div>
+      <div class="field"><label for="timing">Timing</label><input id="timing" name="timing" placeholder="Target date or general window" required /></div>
+      <div class="field field--full"><label for="links">Relevant links or additional context <span class="field-help">(optional)</span></label><textarea id="links" name="links"></textarea></div>
+
+      <input type="hidden" name="_subject" value="Product conversation from skorudzhiev.github.io" />
+      <input type="hidden" name="inquiry_source" value="Personal website — Discuss a product" />
+      <div class="form-actions">
+        <button class="button button--primary" type="submit" data-default-label="Share the context" data-pending-label="Sending">
+          <span class="submit-label">Share the context</span> <span aria-hidden="true">↗</span>
+        </button>
+        <span class="form-privacy">Your details are used only to reply to this conversation.</span>
+      </div>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <script is:inline define:vars={{ fallbackEmail: siteConfig.email }}>
+    const form = document.querySelector(".project-form");
+    const status = form?.querySelector(".form-status");
+    const submitButton = form?.querySelector('button[type="submit"]');
+    const submitLabel = submitButton?.querySelector(".submit-label");
+
+    const setStatus = (message, state = "") => {
+      if (!status) return;
+      status.className = `form-status${state ? ` form-status--${state}` : ""}`;
+      status.textContent = message;
+    };
+
+    form?.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+
+      const data = new FormData(form);
+      if (data.get("_gotcha")) return;
+      const endpoint = form.dataset.endpoint;
+
+      if (!endpoint) {
+        const lines = [
+          `Name: ${data.get("name")}`,
+          `Email: ${data.get("email")}`,
+          `Company / product: ${data.get("company") || "Not provided"}`,
+          "",
+          "What I am building or exploring:",
+          String(data.get("context")),
+          "",
+          "Useful outcome:",
+          String(data.get("outcome")),
+          "",
+          "Current stage and constraint:",
+          String(data.get("constraint")),
+          "",
+          `Budget or range: ${data.get("budget")}`,
+          `Timing: ${data.get("timing")}`,
+          "",
+          "Links / additional context:",
+          String(data.get("links") || "None"),
+        ];
+        window.location.href = `mailto:${fallbackEmail}?subject=${encodeURIComponent("Product conversation")}&body=${encodeURIComponent(lines.join("\n"))}`;
+        setStatus("Your email app should open with the brief prepared. You can also email me directly if it does not.");
+        return;
+      }
+
+      submitButton.disabled = true;
+      form.setAttribute("aria-busy", "true");
+      if (submitLabel) submitLabel.textContent = submitButton.dataset.pendingLabel;
+      setStatus("Sending your context…");
+      try {
+        const response = await fetch(endpoint, { method: "POST", body: data, headers: { Accept: "application/json" } });
+        if (!response.ok) throw new Error("Submission failed");
+        form.reset();
+        setStatus("Thank you. Your context has been sent. I’ll reply by email if there is a useful overlap.", "success");
+      } catch {
+        setStatus(`That did not send. Please email ${fallbackEmail} instead.`, "error");
+      } finally {
+        submitButton.disabled = false;
+        form.removeAttribute("aria-busy");
+        if (submitLabel) submitLabel.textContent = submitButton.dataset.defaultLabel;
+      }
+    });
+  </script>
+</BaseLayout>

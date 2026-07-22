@@ -1,0 +1,23 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  article: CollectionEntry<"writing">;
+  featured?: boolean;
+}
+
+const { article, featured = false } = Astro.props;
+const date = article.data.publishedAt.toLocaleDateString("en", { month: "short", year: "numeric" });
+---
+
+<article class:list={["writing-card", featured && "writing-card--featured"]}>
+  <div class="writing-meta">
+    <span>{date}</span>
+    <span>{article.data.topics[0]}</span>
+  </div>
+  <h3>{article.data.title}</h3>
+  <p>{article.data.description}</p>
+  <a class="card-link" href={article.data.canonicalUrl} target={article.data.external ? "_blank" : undefined} rel={article.data.external ? "noopener" : undefined}>
+    Read the article <span aria-hidden="true">↗</span>
+  </a>
+</article>

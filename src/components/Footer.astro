@@ -1,0 +1,21 @@
+---
+import { siteConfig } from "../site-config";
+---
+
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div>
+      <a class="footer-name" href="/">{siteConfig.name}</a>
+      <p>Software engineer &amp; product builder.</p>
+    </div>
+    <div class="footer-links" aria-label="Social links">
+      <a href={siteConfig.social.github} rel="me noopener" target="_blank">GitHub ↗</a>
+      <a href={siteConfig.social.linkedin} rel="me noopener" target="_blank">LinkedIn ↗</a>
+      <a href={siteConfig.social.x} rel="me noopener" target="_blank">X ↗</a>
+    </div>
+    <div class="footer-meta">
+      <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+      <span>© {new Date().getFullYear()} Stoyan Korudzhiev</span>
+    </div>
+  </div>
+</footer>

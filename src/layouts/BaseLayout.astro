@@ -1,0 +1,66 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { siteConfig } from "../site-config";
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  hideChrome?: boolean;
+  canonicalPath?: string;
+}
+
+const {
+  title,
+  description = siteConfig.description,
+  image = "/og.png",
+  hideChrome = false,
+  canonicalPath = Astro.url.pathname,
+} = Astro.props;
+const pageTitle = title ? `${title} — ${siteConfig.name}` : `${siteConfig.name} — ${siteConfig.title}`;
+const canonical = new URL(canonicalPath, siteConfig.url);
+const socialImage = new URL(image, siteConfig.url);
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: siteConfig.name,
+  url: siteConfig.url,
+  jobTitle: "Software engineer and product builder",
+  sameAs: Object.values(siteConfig.social),
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#f2efe7" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/jpeg" href="/assets/images/stoyan-korudzhiev.jpeg" />
+    <link rel="alternate" type="application/rss+xml" title={`${siteConfig.name} writing`} href="/feed.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    {!hideChrome && <Header />}
+    <main id="main-content">
+      <slot />
+    </main>
+    {!hideChrome && <Footer />}
+  </body>
+</html>

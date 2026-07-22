@@ -1,23 +1,18 @@
-[skorudzhiev.github.io](https://skorudzhiev.github.io/)
+# skorudzhiev.github.io
 
-Clean caches and output:
-```
-bundle exec jekyll clean
-```
+Personal website for Stoyan Korudzhiev, built with Astro and deployed as a static GitHub Pages site.
 
-Build:
-```
-bundle exec jekyll build
-```
+## Local development
 
-Serve:
-```
-bundle exec jekyll serve
+```sh
+npm install
+npm run dev
 ```
 
-Useful references
-https://jekyllrb.com/docs/pages/
+Run the production checks and build with:
 
-https://github.com/jekyll/minima/blob/v2.5.0/README.md
+```sh
+npm run build
+```
 
-https://skorudzhiev.github.io/jekyll/update/2020/02/20/welcome-to-jekyll.html
+The project inquiry form uses the dedicated Formspree endpoint configured in the page. `PUBLIC_FORMSPREE_ENDPOINT` can override it for local or alternate deployments; if no endpoint is available, the form falls back to a prepared email.

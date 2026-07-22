@@ -1,0 +1,21 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  service: CollectionEntry<"services">;
+  index: number;
+}
+
+const { service, index } = Astro.props;
+---
+
+<article class="service-card">
+  <div class="service-number">0{index + 1}</div>
+  <p class="eyebrow">{service.data.eyebrow}</p>
+  <h3>{service.data.title}</h3>
+  <p>{service.data.outcome}</p>
+  <ul>
+    {service.data.deliverables.map((item) => <li>{item}</li>)}
+  </ul>
+  <span class="service-format">{service.data.engagement}</span>
+</article>
