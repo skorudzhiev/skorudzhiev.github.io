@@ -1497,6 +1497,98 @@ h3 {
   font-size: 0.84rem;
 }
 
+.ai-delivery-section {
+  padding: clamp(4rem, 6vw, 6rem) 0;
+  color: var(--cream);
+  background: var(--night);
+}
+
+.ai-delivery-section .eyebrow {
+  color: #f18268;
+}
+
+.ai-delivery-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: end;
+  margin-bottom: clamp(2.5rem, 4vw, 4rem);
+}
+
+.ai-delivery-heading h2 {
+  margin-bottom: 0;
+  font-size: clamp(2rem, 3.5vw, 3.4rem);
+}
+
+.ai-delivery-heading > p {
+  margin: 0;
+  color: #aaa89f;
+  font-size: 0.94rem;
+}
+
+.ai-delivery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-block: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.ai-delivery-step {
+  padding: 1.5rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.ai-delivery-step:last-child {
+  border-right: 0;
+}
+
+.ai-delivery-step span {
+  display: block;
+  margin-bottom: 2.25rem;
+  color: #f18268;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.ai-delivery-step h3 {
+  margin-bottom: 1rem;
+  font-size: clamp(1.25rem, 1.8vw, 1.7rem);
+}
+
+.ai-delivery-step p {
+  margin: 0;
+  color: #b6b3aa;
+  font-size: 0.88rem;
+}
+
+.ai-delivery-footer {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.ai-delivery-footer p {
+  margin: 0;
+  color: #aaa89f;
+  font-size: 0.82rem;
+}
+
+.ai-delivery-footer strong {
+  color: var(--cream);
+}
+
+.ai-delivery-footer .text-link {
+  flex: 0 0 auto;
+  font-size: 0.86rem;
+}
+
+.ai-delivery-section + .services-page-section {
+  padding-top: 4.5rem;
+}
+
 .services-advisory-section .section-heading {
   margin-bottom: 2.5rem;
 }
@@ -2056,6 +2148,7 @@ h3 {
   .continuum-feature,
   .section-heading,
   .architecture-heading,
+  .ai-delivery-heading,
   .closing-cta-grid,
   .story-grid,
   .service-detail,
@@ -2132,6 +2225,28 @@ h3 {
 
   .architecture-evidence {
     grid-template-columns: 1fr;
+  }
+
+  .ai-delivery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-delivery-step {
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .ai-delivery-step:last-child {
+    border-bottom: 0;
+  }
+
+  .ai-delivery-step span {
+    margin-bottom: 1.25rem;
+  }
+
+  .ai-delivery-footer {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .home-section .about-strip {
