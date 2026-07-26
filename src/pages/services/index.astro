@@ -1,11 +1,12 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const services = (await getCollection("services")).sort((a, b) => a.data.order - b.data.order);
+const aiWorkflowArticle = await getEntry("writing", "design-system-marketing-engine");
 ---
 
-<BaseLayout title="How I can help" description="Product clarity, end-to-end engineering, launch systems, and technical product advisory from Stoyan Korudzhiev.">
+<BaseLayout title="How I can help" description="Product clarity, end-to-end engineering, AI-enabled delivery, launch systems, and technical product advisory from Stoyan Korudzhiev.">
   <header class="page-intro services-page-intro shell">
     <p class="eyebrow">How I can help</p>
     <h1>Useful when the product still has hard questions.</h1>
@@ -28,6 +29,45 @@ const services = (await getCollection("services")).sort((a, b) => a.data.order -
     ))}
   </section>
 
+  <section class="ai-delivery-section">
+    <div class="shell">
+      <div class="ai-delivery-heading">
+        <div>
+          <p class="eyebrow">AI-enabled delivery</p>
+          <h2>Models in the loop.<br />Judgment at the center.</h2>
+        </div>
+        <p>I use AI to shorten the path from an ambiguous question to a reviewed, useful output. The leverage comes from fitting models into a clear product workflow—not asking them to replace context, verification, or responsibility.</p>
+      </div>
+
+      <div class="ai-delivery-grid">
+        <article class="ai-delivery-step">
+          <span>01 · Explore</span>
+          <h3>Turn raw context into options.</h3>
+          <p>Synthesize research, test alternative directions, and create rapid prototypes before committing to the expensive path.</p>
+        </article>
+        <article class="ai-delivery-step">
+          <span>02 · Build</span>
+          <h3>Accelerate the critical path.</h3>
+          <p>Use engineering assistance for implementation, failure-case exploration, QA, tests, and documentation—then verify it against the real product.</p>
+        </article>
+        <article class="ai-delivery-step">
+          <span>03 · Operate</span>
+          <h3>Make repeatable work repeatable.</h3>
+          <p>Connect content variation, launch assets, and production steps into workflows with explicit review and approval points.</p>
+        </article>
+      </div>
+
+      <div class="ai-delivery-footer">
+        <p><strong>The guardrail:</strong> meaningful decisions and shipped output remain human-reviewed.</p>
+        {aiWorkflowArticle && (
+          <a class="text-link" href={aiWorkflowArticle.data.canonicalUrl} target="_blank" rel="noopener">
+            See an AI-assisted production system in practice <span aria-hidden="true">↗</span>
+          </a>
+        )}
+      </div>
+    </div>
+  </section>
+
   <section class="page-section services-page-section services-advisory-section shell">
     <div class="section-heading">
       <div><p class="eyebrow">A lighter format</p><h2>Technical product advisory.</h2></div>
@@ -36,7 +76,7 @@ const services = (await getCollection("services")).sort((a, b) => a.data.order -
     <div class="advisory-grid">
       <article class="advisory-card"><h3>Architecture and scope</h3><p>Review tradeoffs, reduce unnecessary surface area, and identify the risks worth solving early.</p></article>
       <article class="advisory-card"><h3>Product rescue planning</h3><p>Untangle a stalled product, clarify the critical path, and turn broad frustration into a workable sequence.</p></article>
-      <article class="advisory-card"><h3>AI-assisted workflows</h3><p>Design concrete, human-reviewed research, engineering, QA, and content workflows without “AI transformation” theatre.</p></article>
+      <article class="advisory-card"><h3>AI workflow review</h3><p>Identify where models can create useful leverage, define the guardrails, and turn the strongest opportunity into one small, testable workflow.</p></article>
     </div>
   </section>
 
