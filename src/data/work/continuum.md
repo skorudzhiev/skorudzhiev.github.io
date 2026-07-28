@@ -16,7 +16,7 @@ proofPoints:
   - Focused macOS quick-calculation companion
   - Product tokens reused across launch assets
 image: /assets/images/projects/Continuum.png
-externalUrl: https://continuum-landing-ivory.vercel.app/
+externalUrl: https://cntnm.xyz/
 featuredOrder: 1
 disclosure: teaser
 accent: "#7157d9"
