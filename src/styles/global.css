@@ -1396,6 +1396,14 @@ h3 {
   text-transform: uppercase;
 }
 
+.teaser-note p {
+  margin: 0;
+}
+
+.teaser-note .text-link {
+  margin-top: 0.55rem;
+}
+
 .services-stack {
   display: grid;
   gap: 1rem;
