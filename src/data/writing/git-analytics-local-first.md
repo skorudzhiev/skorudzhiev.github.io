@@ -10,6 +10,6 @@ canonicalUrl: https://medium.com/p/3602f8893139
 mediumUrl: https://medium.com/p/3602f8893139
 relatedWork: gitglow
 relatedCapability: Product clarity and prototyping
-featured: true
+featured: false
 external: true
 ---
