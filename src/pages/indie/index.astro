@@ -65,8 +65,8 @@ function shortDate(value: string) {
     <main id="indie-main">
       <section class="indie-hero indie-shell" aria-labelledby="indie-title">
         <div class="hero-main">
-          <p class="journal-kicker">An honest operating record / issue no. 01</p>
-          <h1 id="indie-title">Twelve bets.<br /><em>Three years.</em><br />Still building.</h1>
+          <p class="journal-kicker">A small studio journal / issue no. 01</p>
+          <h1 id="indie-title">Twelve projects.<br /><em>Three years.</em><br />Still curious.</h1>
           <p class="hero-lede">
             A field journal of products, utilities, games, collaborations, and small experiments—what shipped, what paused, what changed, and what each one taught me.
           </p>
@@ -77,10 +77,10 @@ function shortDate(value: string) {
         </div>
 
         <aside class="hero-note" aria-label="About this log">
-          <p class="hand-note">Build in public,<br />without the theatre.</p>
+          <p class="hand-note">Some shipped.<br />Some still taking shape.</p>
           <div class="hero-note__rule"></div>
           <p>
-            No invented MRR. No repository-count theatre. Metrics appear only when they are dated, sourced, and ready to be shared.
+            A welcoming corner for release notes, turning points, and the small decisions that shape each project over time.
           </p>
           <dl>
             <div><dt>Snapshot</dt><dd>{snapshotLabel}</dd></div>
@@ -109,10 +109,10 @@ function shortDate(value: string) {
         <div class="section-heading section-heading--split">
           <div>
             <p class="section-number">01 / Portfolio snapshot</p>
-            <h2 id="overview-title">The work, without flattening it.</h2>
+            <h2 id="overview-title">A place for every kind of build.</h2>
           </div>
           <p>
-            A live product and a two-week experiment should not wear the same badge. The ledger keeps both, but names their stage honestly.
+            A live product and a two-week experiment have different stories to tell. The ledger keeps room for both and makes each stage easy to understand.
           </p>
         </div>
 
@@ -244,7 +244,7 @@ function shortDate(value: string) {
 
                 <div class="story-note-grid">
                   <div><span>What it taught me</span><p>{project.lesson}</p></div>
-                  <div><span>Next honest objective</span><p>{project.nextObjective}</p></div>
+                  <div><span>Next on the workbench</span><p>{project.nextObjective}</p></div>
                 </div>
 
                 <div class="story-footer">
@@ -307,10 +307,10 @@ function shortDate(value: string) {
         <div class="section-heading section-heading--split">
           <div>
             <p class="section-number">05 / Full project ledger</p>
-            <h2 id="ledger-title">Everything meaningful.<br />Nothing padded.</h2>
+            <h2 id="ledger-title">Every project,<br />in its own season.</h2>
           </div>
           <p>
-            Filter the full record, then open any entry for milestones, the lesson, and the next objective. Supporting infrastructure stays attached to its parent story.
+            Wander through the full collection, filter by stage, or open a card for milestones, lessons, and what might come next.
           </p>
         </div>
 
@@ -334,18 +334,28 @@ function shortDate(value: string) {
               style={`--project-accent: ${project.accent}`}
             >
               <div class="ledger-card__topline">
-                <span>{shortDate(project.startedAt)} → {shortDate(project.lastUpdatedAt)}</span>
-                <span>{tierLabels[project.tier]}</span>
+                <span class="ledger-date">{shortDate(project.startedAt)} <i aria-hidden="true">→</i> {shortDate(project.lastUpdatedAt)}</span>
+                <span class="ledger-tier">{tierLabels[project.tier]}</span>
               </div>
               <div class="ledger-card__heading">
-                <div class="project-monogram" aria-hidden="true">{project.title.split(/\s+/).map((word) => word[0]).slice(0, 2).join("")}</div>
-                <div><p>{project.role}</p><h3>{project.title}</h3></div>
+                <div class:list={["project-icon", !project.icon && "project-icon--monogram"]} aria-hidden="true">
+                  {project.icon ? (
+                    <img src={project.icon} alt="" data-project-icon />
+                  ) : (
+                    <span>{project.title.split(/\s+/).map((word) => word[0]).slice(0, 2).join("")}</span>
+                  )}
+                </div>
+                <div class="ledger-card__identity"><p>{project.role}</p><h3>{project.title}</h3></div>
               </div>
               <p class="ledger-summary">{project.summary}</p>
 
+              <div class="ledger-capabilities" aria-label="Project capabilities">
+                {project.capabilities.slice(0, 3).map((capability) => <span>{capability}</span>)}
+              </div>
+
               <div class="ledger-status">
                 <span class="status-chip"><i aria-hidden="true"></i>{project.statusLabel}</span>
-                <span>{project.progressLabel}</span>
+                <span class="ledger-progress">{project.progressLabel}</span>
               </div>
 
               <dl class="ledger-metrics">
@@ -355,7 +365,7 @@ function shortDate(value: string) {
               </dl>
 
               <details>
-                <summary>Open project notes <span aria-hidden="true">+</span></summary>
+                <summary><span>Explore project notes</span><i aria-hidden="true">↘</i></summary>
                 <div class="ledger-details">
                   <p class="ledger-current">{project.currentState}</p>
                   <ol class="milestone-list">
@@ -384,9 +394,9 @@ function shortDate(value: string) {
       <section class="method-note indie-shell" aria-labelledby="method-note-title">
         <span class="method-note__label">A note on the numbers</span>
         <div>
-          <h2 id="method-note-title">The absence of a metric is not a zero.</h2>
+          <h2 id="method-note-title">A little context for the numbers.</h2>
           <p>
-            Dates, releases, versions, platforms, and product states come from verified project history. Usage, traffic, downloads, or revenue will appear only with an explicit source, an “as of” date, and a deliberate decision to make the number public.
+            Dates, releases, versions, platforms, and product states come from project history. Usage, traffic, downloads, or revenue join the journal when there is a clear source, an “as of” date, and something useful to learn from the snapshot.
           </p>
         </div>
         <span class="method-note__mark" aria-hidden="true">∴</span>
@@ -400,7 +410,7 @@ function shortDate(value: string) {
           </div>
           <div class="follow-copy">
             <p>
-              I share product decisions, release notes, and the useful parts of the unfinished work. No growth theatre—just what changed and why.
+              I share product decisions, release notes, and the useful parts of unfinished work. Follow along for what changed, what I learned, and where each project wanders next.
             </p>
             <div class="follow-links">
               <a href={siteConfig.social.x} target="_blank" rel="me noopener noreferrer"><span>X / @StoyanBuilds</span><i aria-hidden="true">↗</i></a>
@@ -420,7 +430,7 @@ function shortDate(value: string) {
     <footer class="indie-footer">
       <div class="indie-shell">
         <p>Stoyan's Indie Log · snapshot {snapshotLabel}</p>
-        <p>Direct-link edition · public, unlisted, deliberately honest.</p>
+        <p>Direct-link edition · public, unlisted, made for curious builders.</p>
       </div>
     </footer>
   </div>

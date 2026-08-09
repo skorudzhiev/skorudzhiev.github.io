@@ -50,6 +50,7 @@ export interface IndieProject {
   links: IndieProjectLink[];
   featured: boolean;
   accent: string;
+  icon?: string;
   image?: string;
   imageAlt?: string;
   imagePosition?: string;
@@ -79,7 +80,7 @@ export const indieProjects: IndieProject[] = [
     progressStage: 5,
     progressLabel: "Shipped, learning, refining",
     lesson:
-      "A product becomes easier to trust when its calculations, feature catalogue, documentation, and public claims all share one source of truth.",
+      "A product becomes easier to trust when its calculations, feature catalogue, documentation, and public claims all draw from the same product record.",
     nextObjective:
       "Keep tightening the public learning loop around the calculations people actually use and the macOS companion workflow.",
     capabilities: ["Web", "macOS", "Local-first", "Product system"],
@@ -126,6 +127,7 @@ export const indieProjects: IndieProject[] = [
     links: [{ label: "Open Continuum", href: "https://cntnm.xyz/" }],
     featured: true,
     accent: "#c85b3f",
+    icon: "/assets/images/projects/Continuum.png",
     image: "/assets/images/indie/continuum.png",
     imageAlt: "Continuum editorial artwork showing a live calculation workspace",
     imagePosition: "center",
@@ -147,7 +149,7 @@ export const indieProjects: IndieProject[] = [
     progressStage: 5,
     progressLabel: "Shipped, listening, improving",
     lesson:
-      "Browser-extension quality depends as much on defensive DOM behavior and honest permission boundaries as it does on the visible feature.",
+      "Browser-extension quality depends as much on defensive DOM behavior and clear permission boundaries as it does on the visible feature.",
     nextObjective:
       "Use feedback and retention signals to decide which organization workflows deserve the next release.",
     capabilities: ["Chrome extension", "Svelte", "Local-first", "Fixture E2E"],
@@ -189,6 +191,7 @@ export const indieProjects: IndieProject[] = [
     links: [{ label: "Visit SubKeep", href: "https://subkeep.fyi/" }],
     featured: true,
     accent: "#d69a15",
+    icon: "/assets/images/projects/SubKeep.png",
     image: "/assets/images/indie/subkeep.jpg",
     imageAlt: "SubKeep folder organization artwork",
     imagePosition: "center",
@@ -251,6 +254,7 @@ export const indieProjects: IndieProject[] = [
     links: [{ label: "Visit GitGlow", href: "https://gitglow.dev/" }],
     featured: true,
     accent: "#df744d",
+    icon: "/assets/images/projects/GitGlow.png",
     image: "/assets/images/projects/GitGlow.png",
     imageAlt: "GitGlow app icon",
     supportingSystems: ["Entitlement API", "Public release artifacts"],
@@ -313,6 +317,7 @@ export const indieProjects: IndieProject[] = [
     links: [{ label: "Visit Green Compass", href: "https://greencompass.app/" }],
     featured: true,
     accent: "#4a7b59",
+    icon: "/assets/images/projects/GCLogo-no-bg.png",
     image: "/assets/images/indie/green-compass.jpg",
     imageAlt: "Person walking through a green landscape used in the Green Compass product story",
     imagePosition: "center 45%",
@@ -375,6 +380,7 @@ export const indieProjects: IndieProject[] = [
     links: [{ label: "Play Pangolines", href: "https://pangolines.vercel.app/" }],
     featured: true,
     accent: "#2c8c80",
+    icon: "/assets/images/indie/icons/pangolines.png",
     image: "/assets/images/indie/pangolines.png",
     imageAlt: "Pangolines gameplay in the neon forest biome",
     imagePosition: "center",
@@ -423,6 +429,7 @@ export const indieProjects: IndieProject[] = [
     links: [],
     featured: false,
     accent: "#8a604d",
+    icon: "/assets/images/indie/icons/attik.svg",
   },
   {
     id: "cozy-tower-climber",
@@ -476,6 +483,7 @@ export const indieProjects: IndieProject[] = [
     links: [],
     featured: false,
     accent: "#775f93",
+    icon: "/assets/images/indie/icons/cozy-tower-climber.svg",
     image: "/assets/images/indie/cozy-tower-climber.png",
     imageAlt: "Pip at the beginning of a cozy clockwork tower climb",
     imagePosition: "center 20%",
@@ -572,6 +580,7 @@ export const indieProjects: IndieProject[] = [
     links: [],
     featured: false,
     accent: "#7d6540",
+    icon: "/assets/images/indie/icons/lattice.png",
   },
   {
     id: "postiz-chat-bridge",
