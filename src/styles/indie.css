@@ -1105,11 +1105,15 @@ button {
 }
 
 .ledger-toolbar {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.65rem;
+  padding: 0.65rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem 2rem;
+  background: rgba(255, 253, 247, 0.52);
+  border: 1px solid rgba(30, 29, 25, 0.11);
+  border-radius: 18px;
 }
 
 .filter-group {
@@ -1119,13 +1123,21 @@ button {
 }
 
 .filter-group button {
-  padding: 0.6rem 0.78rem;
+  min-height: 40px;
+  padding: 0.58rem 0.86rem;
   color: var(--ink-soft);
-  background: transparent;
-  border: 1px solid rgba(30, 29, 25, 0.24);
+  background: rgba(255, 253, 247, 0.72);
+  border: 1px solid rgba(30, 29, 25, 0.15);
+  border-radius: 999px;
   cursor: pointer;
   font-size: 0.72rem;
   font-weight: 800;
+  transition: color 160ms ease, background 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.filter-group button:hover {
+  border-color: rgba(30, 29, 25, 0.32);
+  transform: translateY(-1px);
 }
 
 .filter-group button span {
@@ -1139,6 +1151,7 @@ button {
   color: var(--cream);
   background: var(--ink);
   border-color: var(--ink);
+  box-shadow: 0 5px 14px rgba(30, 29, 25, 0.16);
 }
 
 .filter-group button[aria-pressed="true"] span {
@@ -1146,7 +1159,7 @@ button {
 }
 
 .filter-status {
-  margin: 0;
+  margin: 0 0.45rem 0 0;
   color: var(--pencil);
   font-size: 0.7rem;
 }
@@ -1154,15 +1167,59 @@ button {
 .ledger-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 1.35rem;
 }
 
 .ledger-card {
+  position: relative;
   min-width: 0;
-  padding: 1.4rem;
-  background: rgba(251, 247, 237, 0.82);
-  border: 1px solid rgba(30, 29, 25, 0.18);
-  box-shadow: 4px 5px 0 color-mix(in srgb, var(--project-accent) 12%, transparent);
+  padding: clamp(1.25rem, 2.4vw, 1.75rem);
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, rgba(255, 253, 247, 0.96), rgba(249, 242, 228, 0.88)),
+    color-mix(in srgb, var(--project-accent) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--project-accent) 22%, rgba(30, 29, 25, 0.14));
+  border-radius: 28px;
+  box-shadow:
+    0 18px 45px rgba(73, 60, 39, 0.08),
+    0 3px 0 color-mix(in srgb, var(--project-accent) 14%, transparent);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.ledger-card::before {
+  position: absolute;
+  top: 0;
+  left: 1.75rem;
+  width: 92px;
+  height: 4px;
+  content: "";
+  background: var(--project-accent);
+  border-radius: 0 0 999px 999px;
+}
+
+.ledger-card::after {
+  position: absolute;
+  top: -78px;
+  right: -62px;
+  width: 180px;
+  height: 180px;
+  content: "";
+  pointer-events: none;
+  background: color-mix(in srgb, var(--project-accent) 8%, transparent);
+  border-radius: 50%;
+}
+
+.ledger-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.ledger-card:hover {
+  border-color: color-mix(in srgb, var(--project-accent) 40%, rgba(30, 29, 25, 0.12));
+  box-shadow:
+    0 24px 54px rgba(73, 60, 39, 0.13),
+    0 4px 0 color-mix(in srgb, var(--project-accent) 22%, transparent);
+  transform: translateY(-4px);
 }
 
 .ledger-card[hidden] {
@@ -1171,6 +1228,7 @@ button {
 
 .ledger-card__topline {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 1rem;
   color: var(--pencil);
@@ -1180,27 +1238,70 @@ button {
   text-transform: uppercase;
 }
 
+.ledger-date i {
+  margin-inline: 0.25rem;
+  color: var(--project-accent);
+  font-style: normal;
+}
+
+.ledger-tier {
+  padding: 0.3rem 0.55rem;
+  color: color-mix(in srgb, var(--project-accent) 72%, var(--ink));
+  background: color-mix(in srgb, var(--project-accent) 9%, var(--paper-bright));
+  border: 1px solid color-mix(in srgb, var(--project-accent) 20%, transparent);
+  border-radius: 999px;
+}
+
 .ledger-card__heading {
-  margin-top: 1.25rem;
+  margin-top: 1.45rem;
   display: flex;
   align-items: center;
-  gap: 0.9rem;
+  gap: 1rem;
 }
 
-.project-monogram {
+.project-icon {
   flex: none;
-  width: 48px;
-  height: 48px;
+  width: 76px;
+  height: 76px;
   display: grid;
   place-items: center;
-  color: var(--cream);
-  background: var(--project-accent);
-  border-radius: 50%;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.75rem;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 28% 20%, rgba(255, 255, 255, 0.9), transparent 42%),
+    color-mix(in srgb, var(--project-accent) 11%, var(--paper-bright));
+  border: 1px solid color-mix(in srgb, var(--project-accent) 20%, rgba(30, 29, 25, 0.1));
+  border-radius: 22px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 8px 18px color-mix(in srgb, var(--project-accent) 15%, transparent);
 }
 
-.ledger-card__heading p {
+.project-icon img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 5px rgba(30, 29, 25, 0.14));
+}
+
+.project-icon--monogram {
+  color: var(--cream);
+  background:
+    radial-gradient(circle at 28% 20%, rgba(255, 255, 255, 0.24), transparent 38%),
+    var(--project-accent);
+}
+
+.project-icon--monogram span {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  font-style: italic;
+  letter-spacing: 0.04em;
+}
+
+.ledger-card__identity {
+  min-width: 0;
+}
+
+.ledger-card__identity p {
   margin: 0;
   color: var(--pencil);
   font-size: 0.62rem;
@@ -1210,43 +1311,72 @@ button {
 }
 
 .ledger-card h3 {
-  margin: 0.2rem 0 0;
+  margin: 0.28rem 0 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.65rem, 2.5vw, 2.35rem);
+  font-size: clamp(1.75rem, 2.5vw, 2.45rem);
   font-weight: 500;
   letter-spacing: -0.045em;
   line-height: 1;
 }
 
 .ledger-summary {
-  min-height: 3.9em;
-  margin: 1.2rem 0 0;
+  min-height: 4.8em;
+  margin: 1.35rem 0 0;
   color: var(--ink-soft);
-  font-size: 0.84rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.ledger-capabilities {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.38rem;
+}
+
+.ledger-capabilities span {
+  padding: 0.3rem 0.55rem;
+  color: color-mix(in srgb, var(--project-accent) 62%, var(--ink));
+  background: color-mix(in srgb, var(--project-accent) 7%, rgba(255, 253, 247, 0.84));
+  border: 1px solid color-mix(in srgb, var(--project-accent) 15%, rgba(30, 29, 25, 0.08));
+  border-radius: 999px;
+  font-size: 0.6rem;
+  font-weight: 750;
 }
 
 .ledger-status {
-  margin-top: 1.15rem;
+  margin-top: 1.2rem;
+  padding: 0.72rem 0.8rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
   color: var(--pencil);
+  background: rgba(255, 253, 247, 0.62);
+  border: 1px solid rgba(30, 29, 25, 0.09);
+  border-radius: 14px;
   font-size: 0.64rem;
 }
 
+.ledger-progress {
+  max-width: 48%;
+  text-align: right;
+}
+
 .ledger-metrics {
-  margin: 0.9rem 0 0;
+  margin: 0.65rem 0 0;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.45rem;
+  gap: 0.55rem;
 }
 
 .ledger-metrics div {
   min-width: 0;
-  padding: 0.6rem 0.7rem;
-  background: rgba(255, 253, 247, 0.75);
-  border: 1px solid rgba(30, 29, 25, 0.11);
+  padding: 0.75rem 0.8rem;
+  background: rgba(255, 253, 247, 0.76);
+  border: 1px solid rgba(30, 29, 25, 0.09);
+  border-radius: 14px;
 }
 
 .ledger-metrics dt {
@@ -1264,37 +1394,51 @@ button {
 }
 
 .ledger-card details {
-  margin-top: 1rem;
-  border-top: 1px solid rgba(30, 29, 25, 0.16);
+  margin-top: 1.1rem;
 }
 
 .ledger-card summary {
-  padding: 0.9rem 0 0;
+  min-height: 44px;
+  padding: 0.65rem 0.8rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: var(--ink-soft);
+  color: color-mix(in srgb, var(--project-accent) 58%, var(--ink));
+  background: color-mix(in srgb, var(--project-accent) 7%, var(--paper-bright));
+  border: 1px solid color-mix(in srgb, var(--project-accent) 18%, rgba(30, 29, 25, 0.08));
+  border-radius: 14px;
   cursor: pointer;
   font-size: 0.7rem;
   font-weight: 800;
   list-style: none;
+  transition: background 160ms ease, border-color 160ms ease;
 }
 
 .ledger-card summary::-webkit-details-marker {
   display: none;
 }
 
-.ledger-card summary span {
-  font-size: 1rem;
+.ledger-card summary:hover {
+  background: color-mix(in srgb, var(--project-accent) 11%, var(--paper-bright));
+  border-color: color-mix(in srgb, var(--project-accent) 30%, rgba(30, 29, 25, 0.08));
+}
+
+.ledger-card summary i {
+  font-size: 0.95rem;
+  font-style: normal;
   transition: transform 160ms ease;
 }
 
-.ledger-card details[open] summary span {
-  transform: rotate(45deg);
+.ledger-card details[open] summary i {
+  transform: rotate(180deg);
 }
 
 .ledger-details {
-  padding-top: 1.25rem;
+  margin-top: 0.75rem;
+  padding: 1.1rem;
+  background: rgba(255, 253, 247, 0.58);
+  border: 1px solid rgba(30, 29, 25, 0.09);
+  border-radius: 18px;
 }
 
 .ledger-current {
@@ -1336,9 +1480,11 @@ button {
 
 .ledger-note {
   margin-top: 1rem;
-  padding: 0.8rem;
+  padding: 0.9rem;
   background: color-mix(in srgb, var(--project-accent) 7%, var(--paper-bright));
+  border: 1px solid color-mix(in srgb, var(--project-accent) 14%, rgba(30, 29, 25, 0.08));
   border-left: 3px solid var(--project-accent);
+  border-radius: 0 12px 12px 0;
 }
 
 .ledger-note p {
@@ -1726,6 +1872,17 @@ button {
     padding: 1.1rem;
   }
 
+  .project-icon {
+    width: 68px;
+    height: 68px;
+    border-radius: 20px;
+  }
+
+  .project-icon img {
+    width: 57px;
+    height: 57px;
+  }
+
   .ledger-card__topline {
     align-items: flex-start;
     flex-direction: column;
@@ -1735,6 +1892,11 @@ button {
   .ledger-status {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .ledger-progress {
+    max-width: none;
+    text-align: left;
   }
 
   .milestone-list li {

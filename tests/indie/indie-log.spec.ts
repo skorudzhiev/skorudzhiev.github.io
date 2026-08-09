@@ -10,10 +10,22 @@ test("renders the isolated, unlisted field journal", async ({ page }) => {
     "content",
     "noindex, nofollow, noarchive, nosnippet",
   );
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("Twelve bets");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("Twelve projects");
   await expect(page.locator(".site-header")).toHaveCount(0);
   await expect(page.locator(".site-footer")).toHaveCount(0);
   await expect(page.locator("[data-project-card]")).toHaveCount(12);
+  const projectIcons = page.locator("[data-project-icon]");
+  await expect(projectIcons).toHaveCount(8);
+  await expect
+    .poll(() =>
+      projectIcons.evaluateAll(
+        (icons) =>
+          icons.filter(
+            (icon) => !(icon as HTMLImageElement).complete || (icon as HTMLImageElement).naturalWidth === 0,
+          ).length,
+      ),
+    )
+    .toBe(0);
   await expect(page.getByText("OpenClaw-Jarvis", { exact: true })).toHaveCount(0);
 
   const stickyPosition = await page.locator(".indie-index").evaluate((element) => getComputedStyle(element).position);
@@ -39,7 +51,7 @@ test("filters the full ledger without changing the page URL", async ({ page }) =
   expect(page.url()).toBe(originalUrl);
 });
 
-test("opens project notes with the keyboard and exposes honest progress", async ({ page }) => {
+test("opens project notes with the keyboard and exposes clear progress", async ({ page }) => {
   const firstDetails = page.locator("[data-project-card] details").first();
   const summary = firstDetails.locator("summary");
 

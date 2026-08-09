@@ -23,6 +23,10 @@ expect(
   (indieHtml.match(/<article class="ledger-card"[^>]*data-project-card/g) ?? []).length === 12,
   "The project ledger must contain exactly 12 entries.",
 );
+expect(
+  (indieHtml.match(/data-project-icon/g) ?? []).length === 8,
+  "The project ledger must render all eight available original project icons.",
+);
 expect(!indieHtml.includes("OpenClaw-Jarvis"), "Backup repositories must not appear as products.");
 
 async function walk(directory) {
