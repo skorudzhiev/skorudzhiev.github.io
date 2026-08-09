@@ -27,9 +27,12 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
-      - name: Build site
-        run: npm run build
+      - name: Install browser for Indie Log checks
+        run: npx playwright install --with-deps chromium
+      - name: Verify site
+        run: npm run verify
         env:
+          ASTRO_TELEMETRY_DISABLED: "1"
           PUBLIC_FORMSPREE_ENDPOINT: ${{ secrets.PUBLIC_FORMSPREE_ENDPOINT }}
       - name: Configure Pages
         uses: actions/configure-pages@v5
