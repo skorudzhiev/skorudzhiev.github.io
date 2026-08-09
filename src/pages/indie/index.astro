@@ -1,0 +1,450 @@
+---
+import IndieLayout from "../../layouts/IndieLayout.astro";
+import {
+  indieProjects,
+  indieSnapshotDate,
+  tierLabels,
+  type IndieProject,
+  type IndieTier,
+} from "../../data/indie";
+import { siteConfig } from "../../site-config";
+
+const snapshotDate = new Date(`${indieSnapshotDate}T12:00:00+03:00`);
+const snapshotLabel = new Intl.DateTimeFormat("en-GB", {
+  day: "2-digit",
+  month: "short",
+  year: "numeric",
+}).format(snapshotDate);
+
+const projectCounts = (Object.keys(tierLabels) as IndieTier[]).reduce(
+  (counts, tier) => ({ ...counts, [tier]: indieProjects.filter((project) => project.tier === tier).length }),
+  {} as Record<IndieTier, number>,
+);
+
+const featuredProjects = indieProjects.filter((project) => project.featured);
+const activeProjects = indieProjects.filter((project) => project.tier === "active");
+const orderedProjects = [...indieProjects].sort((a, b) => b.lastUpdatedAt.localeCompare(a.lastUpdatedAt));
+const projectYears = [...new Set(indieProjects.map((project) => Number(project.startedAt.slice(0, 4))))].sort();
+const timeline = projectYears.map((year) => ({
+  year,
+  projects: indieProjects
+    .filter((project) => Number(project.startedAt.slice(0, 4)) === year)
+    .sort((a, b) => a.startedAt.localeCompare(b.startedAt)),
+}));
+
+function approvedMetrics(project: IndieProject) {
+  return project.metrics.filter((metric) => metric.approved);
+}
+
+function shortDate(value: string) {
+  return new Intl.DateTimeFormat("en-GB", { month: "short", year: "numeric" }).format(
+    new Date(`${value}T12:00:00Z`),
+  );
+}
+---
+
+<IndieLayout
+  title="Stoyan's Indie Log — Products, experiments, and the work between"
+  description="A direct-link field journal covering twelve products, collaborations, utilities, games, and experiments built from 2024 to today."
+>
+  <div class="indie-page" id="top">
+    <header class="indie-masthead" aria-label="Indie Log masthead">
+      <div class="indie-shell masthead-inner">
+        <a class="log-mark" href="#top" aria-label="Stoyan's Indie Log, back to top">
+          <span class="log-mark__glyph" aria-hidden="true">S/</span>
+          <span><strong>Stoyan's Indie Log</strong><small>Field notes · 2024—now</small></span>
+        </a>
+        <p class="direct-link-note">
+          <i aria-hidden="true"></i>
+          <span class="direct-link-note__long">Direct-link edition · intentionally unlisted</span>
+          <span class="direct-link-note__short">Unlisted · public</span>
+        </p>
+      </div>
+    </header>
+
+    <main id="indie-main">
+      <section class="indie-hero indie-shell" aria-labelledby="indie-title">
+        <div class="hero-main">
+          <p class="journal-kicker">An honest operating record / issue no. 01</p>
+          <h1 id="indie-title">Twelve bets.<br /><em>Three years.</em><br />Still building.</h1>
+          <p class="hero-lede">
+            A field journal of products, utilities, games, collaborations, and small experiments—what shipped, what paused, what changed, and what each one taught me.
+          </p>
+          <div class="hero-actions">
+            <a class="ink-button" href="#stories">Read the stories <span aria-hidden="true">↓</span></a>
+            <a class="paper-link" href="#ledger">Open the full ledger <span aria-hidden="true">↘</span></a>
+          </div>
+        </div>
+
+        <aside class="hero-note" aria-label="About this log">
+          <p class="hand-note">Build in public,<br />without the theatre.</p>
+          <div class="hero-note__rule"></div>
+          <p>
+            No invented MRR. No repository-count theatre. Metrics appear only when they are dated, sourced, and ready to be shared.
+          </p>
+          <dl>
+            <div><dt>Snapshot</dt><dd>{snapshotLabel}</dd></div>
+            <div><dt>Timezone</dt><dd>Europe / Sofia</dd></div>
+            <div><dt>Access</dt><dd>Anyone with the link</dd></div>
+          </dl>
+          <span class="note-stamp" aria-hidden="true">UNLISTED<br />NOT PRIVATE</span>
+        </aside>
+      </section>
+
+      <nav class="indie-index" aria-label="Page sections">
+        <div class="indie-shell indie-index__inner">
+          <span class="index-label">On this page</span>
+          <div class="index-links">
+            <a href="#overview">Overview</a>
+            <a href="#timeline">Timeline</a>
+            <a href="#stories">Stories</a>
+            <a href="#bench">On the bench</a>
+            <a href="#ledger">Full ledger</a>
+            <a href="#follow">Follow</a>
+          </div>
+        </div>
+      </nav>
+
+      <section class="snapshot-section indie-shell" id="overview" aria-labelledby="overview-title">
+        <div class="section-heading section-heading--split">
+          <div>
+            <p class="section-number">01 / Portfolio snapshot</p>
+            <h2 id="overview-title">The work, without flattening it.</h2>
+          </div>
+          <p>
+            A live product and a two-week experiment should not wear the same badge. The ledger keeps both, but names their stage honestly.
+          </p>
+        </div>
+
+        <div class="snapshot-grid">
+          <article class="snapshot-card snapshot-card--total">
+            <span>Documented since 2024</span>
+            <strong>{indieProjects.length}</strong>
+            <p>products, collaborations, utilities, games, and experiments</p>
+          </article>
+          <article class="snapshot-card" style="--card-accent: #b94b36">
+            <span>{tierLabels.shipped}</span>
+            <strong>{projectCounts.shipped}</strong>
+            <p>available products or public collaborations</p>
+          </article>
+          <article class="snapshot-card" style="--card-accent: #446b73">
+            <span>{tierLabels.active}</span>
+            <strong>{projectCounts.active}</strong>
+            <p>private foundations, betas, and working systems</p>
+          </article>
+          <article class="snapshot-card" style="--card-accent: #8c765d">
+            <span>{tierLabels.archive}</span>
+            <strong>{projectCounts.archive}</strong>
+            <p>completed and paused experiments worth keeping</p>
+          </article>
+        </div>
+
+        <div class="snapshot-footnote">
+          <span class="scribble-arrow" aria-hidden="true">↳</span>
+          <p>
+            Support systems—release repositories, entitlement services, and read-only dashboards—are folded into the product they support. Backups are not counted as products.
+          </p>
+        </div>
+      </section>
+
+      <section class="timeline-section" id="timeline" aria-labelledby="timeline-title">
+        <div class="indie-shell">
+          <div class="section-heading section-heading--split">
+            <div>
+              <p class="section-number">02 / Timeline</p>
+              <h2 id="timeline-title">A recent chapter,<br />year by year.</h2>
+            </div>
+            <p>
+              Not every start became a company. Each one sharpened a different part of the practice: native software, product boundaries, interaction, operations, or distribution.
+            </p>
+          </div>
+
+          <ol class="year-timeline">
+            {timeline.map(({ year, projects }) => (
+              <li class="year-row">
+                <div class="year-marker"><span>{year}</span><i aria-hidden="true"></i></div>
+                <div class="year-content">
+                  <p>{year === 2024 ? "A foundation and a first broader product collaboration." : year === 2025 ? "A year of browser products, games, desktop tools, and deliberately short experiments." : "From individual apps into complete product and operating systems."}</p>
+                  <div class="year-projects">
+                    {projects.map((project) => (
+                      <a href={`#project-${project.id}`}>
+                        <span style={`--dot: ${project.accent}`} aria-hidden="true"></span>
+                        {project.title}
+                        <small>{project.statusLabel}</small>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section class="stories-section indie-shell" id="stories" aria-labelledby="stories-title">
+        <div class="section-heading section-heading--split">
+          <div>
+            <p class="section-number">03 / Shipped stories</p>
+            <h2 id="stories-title">The products that<br />made it into the world.</h2>
+          </div>
+          <p>
+            Five different surfaces—browser, desktop, mobile, and games—but the same loop: find the real constraint, build the critical path, and make the public story match the shipped product.
+          </p>
+        </div>
+
+        <div class="featured-stories">
+          {featuredProjects.map((project, index) => (
+            <article
+              class:list={["featured-story", index % 2 === 1 && "featured-story--reverse"]}
+              id={`story-${project.id}`}
+              style={`--project-accent: ${project.accent}`}
+            >
+              <div class:list={["story-visual", project.id === "gitglow" && "story-visual--gitglow"]}>
+                {project.id === "gitglow" ? (
+                  <div class="gitglow-visual" aria-label="A stylized, non-data contribution activity visualization">
+                    <img src={project.image} alt={project.imageAlt} width="256" height="256" loading="lazy" />
+                    <p>Contribution rhythm</p>
+                    <div class="heatmap" aria-hidden="true">
+                      {Array.from({ length: 84 }).map((_, cell) => <i style={`--level: ${(cell * 7 + Math.floor(cell / 6) * 3) % 5}`}></i>)}
+                    </div>
+                    <div class="gitglow-caption"><span>Local repository</span><span>Patterns, not scores</span></div>
+                  </div>
+                ) : (
+                  <img
+                    src={project.image}
+                    alt={project.imageAlt}
+                    loading="lazy"
+                    style={`object-position: ${project.imagePosition ?? "center"}`}
+                  />
+                )}
+                <span class="visual-index">0{index + 1}</span>
+              </div>
+
+              <div class="story-copy">
+                <div class="story-meta">
+                  <span class="status-chip"><i aria-hidden="true"></i>{project.statusLabel}</span>
+                  <span>{project.role}</span>
+                </div>
+                <h3>{project.title}</h3>
+                <p class="story-summary">{project.summary}</p>
+                <p class="story-state">{project.currentState}</p>
+
+                <div class="story-progress" aria-label={`${project.progressLabel}; stage ${project.progressStage} of 5`}>
+                  <div class="progress-heading"><span>Current progress</span><strong>{project.progressLabel}</strong></div>
+                  <div class="progress-track" aria-hidden="true">
+                    {Array.from({ length: 5 }).map((_, stage) => <i class:list={{ "is-filled": stage < project.progressStage }}></i>)}
+                  </div>
+                </div>
+
+                <dl class="story-metrics">
+                  {approvedMetrics(project).map((metric) => (
+                    <div><dt>{metric.label}</dt><dd>{metric.value}</dd><small>as of {shortDate(metric.asOf)}</small></div>
+                  ))}
+                </dl>
+
+                <div class="story-note-grid">
+                  <div><span>What it taught me</span><p>{project.lesson}</p></div>
+                  <div><span>Next honest objective</span><p>{project.nextObjective}</p></div>
+                </div>
+
+                <div class="story-footer">
+                  <div class="tag-row">{project.capabilities.map((capability) => <span>{capability}</span>)}</div>
+                  {project.links.map((link) => (
+                    <a class="project-link" href={link.href} target="_blank" rel="noopener noreferrer">{link.label} <span aria-hidden="true">↗</span></a>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="bench-section" id="bench" aria-labelledby="bench-title">
+        <div class="indie-shell">
+          <div class="section-heading section-heading--split section-heading--light">
+            <div>
+              <p class="section-number">04 / On the bench</p>
+              <h2 id="bench-title">Five builds in<br />different kinds of motion.</h2>
+            </div>
+            <p>
+              “Active” does not always mean public or fast. Some are in daily use, some are private foundations, and one is waiting for the feel to be right before the next decision.
+            </p>
+          </div>
+
+          <div class="bench-grid">
+            {activeProjects.map((project, index) => (
+              <article class="bench-card" style={`--project-accent: ${project.accent}`}>
+                <header>
+                  <span class="bench-index">B{String(index + 1).padStart(2, "0")}</span>
+                  <span class="status-chip status-chip--dark"><i aria-hidden="true"></i>{project.statusLabel}</span>
+                </header>
+
+                {project.image ? (
+                  <div class="bench-image">
+                    <img src={project.image} alt={project.imageAlt} loading="lazy" style={`object-position: ${project.imagePosition ?? "center"}`} />
+                  </div>
+                ) : (
+                  <div class={`bench-sketch bench-sketch--${project.id}`} aria-hidden="true">
+                    <span></span><span></span><span></span><span></span>
+                  </div>
+                )}
+
+                <p class="bench-role">{project.role}</p>
+                <h3>{project.title}</h3>
+                <p>{project.summary}</p>
+                <div class="bench-stage">
+                  <span>Now</span><strong>{project.progressLabel}</strong>
+                  <div aria-hidden="true">{Array.from({ length: 5 }).map((_, stage) => <i class:list={{ "is-filled": stage < project.progressStage }}></i>)}</div>
+                </div>
+                <p class="bench-next"><span>Next:</span> {project.nextObjective}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="ledger-section indie-shell" id="ledger" aria-labelledby="ledger-title">
+        <div class="section-heading section-heading--split">
+          <div>
+            <p class="section-number">05 / Full project ledger</p>
+            <h2 id="ledger-title">Everything meaningful.<br />Nothing padded.</h2>
+          </div>
+          <p>
+            Filter the full record, then open any entry for milestones, the lesson, and the next objective. Supporting infrastructure stays attached to its parent story.
+          </p>
+        </div>
+
+        <div class="ledger-toolbar">
+          <div class="filter-group" role="group" aria-label="Filter projects by stage">
+            <button type="button" data-filter="all" aria-pressed="true">All <span>{indieProjects.length}</span></button>
+            <button type="button" data-filter="shipped" aria-pressed="false">Shipped <span>{projectCounts.shipped}</span></button>
+            <button type="button" data-filter="active" aria-pressed="false">Active <span>{projectCounts.active}</span></button>
+            <button type="button" data-filter="archive" aria-pressed="false">Lab / archive <span>{projectCounts.archive}</span></button>
+          </div>
+          <p id="filter-status" class="filter-status" aria-live="polite">Showing all {indieProjects.length} projects.</p>
+        </div>
+
+        <div class="ledger-grid">
+          {orderedProjects.map((project) => (
+            <article
+              class="ledger-card"
+              id={`project-${project.id}`}
+              data-project-card
+              data-tier={project.tier}
+              style={`--project-accent: ${project.accent}`}
+            >
+              <div class="ledger-card__topline">
+                <span>{shortDate(project.startedAt)} → {shortDate(project.lastUpdatedAt)}</span>
+                <span>{tierLabels[project.tier]}</span>
+              </div>
+              <div class="ledger-card__heading">
+                <div class="project-monogram" aria-hidden="true">{project.title.split(/\s+/).map((word) => word[0]).slice(0, 2).join("")}</div>
+                <div><p>{project.role}</p><h3>{project.title}</h3></div>
+              </div>
+              <p class="ledger-summary">{project.summary}</p>
+
+              <div class="ledger-status">
+                <span class="status-chip"><i aria-hidden="true"></i>{project.statusLabel}</span>
+                <span>{project.progressLabel}</span>
+              </div>
+
+              <dl class="ledger-metrics">
+                {approvedMetrics(project).map((metric) => (
+                  <div><dt>{metric.label}</dt><dd>{metric.value}</dd><small>as of {shortDate(metric.asOf)}</small></div>
+                ))}
+              </dl>
+
+              <details>
+                <summary>Open project notes <span aria-hidden="true">+</span></summary>
+                <div class="ledger-details">
+                  <p class="ledger-current">{project.currentState}</p>
+                  <ol class="milestone-list">
+                    {project.milestones.map((milestone) => (
+                      <li><time datetime={milestone.date}>{shortDate(milestone.date)}</time><div><strong>{milestone.label}</strong><p>{milestone.description}</p></div></li>
+                    ))}
+                  </ol>
+                  <div class="ledger-note"><span>Lesson</span><p>{project.lesson}</p></div>
+                  <div class="ledger-note ledger-note--next"><span>Next</span><p>{project.nextObjective}</p></div>
+                  {project.supportingSystems && (
+                    <div class="supporting-systems"><span>Folded into this story</span>{project.supportingSystems.map((system) => <i>{system}</i>)}</div>
+                  )}
+                  <div class="ledger-card__footer">
+                    <div class="tag-row">{project.capabilities.map((capability) => <span>{capability}</span>)}</div>
+                    {project.links.map((link) => (
+                      <a class="project-link" href={link.href} target="_blank" rel="noopener noreferrer">{link.label} <span aria-hidden="true">↗</span></a>
+                    ))}
+                  </div>
+                </div>
+              </details>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="method-note indie-shell" aria-labelledby="method-note-title">
+        <span class="method-note__label">A note on the numbers</span>
+        <div>
+          <h2 id="method-note-title">The absence of a metric is not a zero.</h2>
+          <p>
+            Dates, releases, versions, platforms, and product states come from verified project history. Usage, traffic, downloads, or revenue will appear only with an explicit source, an “as of” date, and a deliberate decision to make the number public.
+          </p>
+        </div>
+        <span class="method-note__mark" aria-hidden="true">∴</span>
+      </section>
+
+      <section class="follow-section" id="follow" aria-labelledby="follow-title">
+        <div class="indie-shell follow-grid">
+          <div>
+            <p class="section-number">06 / Follow the build</p>
+            <h2 id="follow-title">The next entry<br />is still being made.</h2>
+          </div>
+          <div class="follow-copy">
+            <p>
+              I share product decisions, release notes, and the useful parts of the unfinished work. No growth theatre—just what changed and why.
+            </p>
+            <div class="follow-links">
+              <a href={siteConfig.social.x} target="_blank" rel="me noopener noreferrer"><span>X / @StoyanBuilds</span><i aria-hidden="true">↗</i></a>
+              <a href={siteConfig.social.github} target="_blank" rel="me noopener noreferrer"><span>GitHub / skorudzhiev</span><i aria-hidden="true">↗</i></a>
+            </div>
+            <div class="public-projects">
+              <span>Try something that shipped</span>
+              {featuredProjects.flatMap((project) => project.links.map((link) => (
+                <a href={link.href} target="_blank" rel="noopener noreferrer">{project.title}<i aria-hidden="true">↗</i></a>
+              )))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="indie-footer">
+      <div class="indie-shell">
+        <p>Stoyan's Indie Log · snapshot {snapshotLabel}</p>
+        <p>Direct-link edition · public, unlisted, deliberately honest.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>("[data-filter]"));
+    const cards = Array.from(document.querySelectorAll<HTMLElement>("[data-project-card]"));
+    const status = document.querySelector<HTMLElement>("#filter-status");
+
+    function applyFilter(filter: string) {
+      let visible = 0;
+
+      cards.forEach((card) => {
+        const shouldShow = filter === "all" || card.dataset.tier === filter;
+        card.hidden = !shouldShow;
+        if (shouldShow) visible += 1;
+      });
+
+      buttons.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.filter === filter)));
+      if (status) status.textContent = `Showing ${visible} ${visible === 1 ? "project" : "projects"}.`;
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => applyFilter(button.dataset.filter ?? "all"));
+    });
+  </script>
+</IndieLayout>
