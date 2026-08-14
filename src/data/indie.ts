@@ -1,61 +1,16 @@
-export type IndieTier = "shipped" | "active" | "archive";
+import { applyIndiePublicationPolicy } from "./indie-policy";
+import type { IndieProject, IndieTier } from "./indie-policy";
 
-export type IndieStatus =
-  | "live"
-  | "public-preview"
-  | "private-beta"
-  | "active-build"
-  | "paused";
-
-export type IndieMetricCategory = "progress" | "release" | "traction";
-
-export interface IndieMetric {
-  label: string;
-  value: string;
-  asOf: string;
-  sourceNote: string;
-  approved: boolean;
-  category: IndieMetricCategory;
-}
-
-export interface IndieMilestone {
-  date: string;
-  label: string;
-  description: string;
-}
-
-export interface IndieProjectLink {
-  label: string;
-  href: string;
-}
-
-export interface IndieProject {
-  id: string;
-  title: string;
-  role: string;
-  tier: IndieTier;
-  status: IndieStatus;
-  statusLabel: string;
-  startedAt: string;
-  lastUpdatedAt: string;
-  summary: string;
-  currentState: string;
-  progressStage: 1 | 2 | 3 | 4 | 5;
-  progressLabel: string;
-  lesson: string;
-  nextObjective: string;
-  capabilities: string[];
-  milestones: IndieMilestone[];
-  metrics: IndieMetric[];
-  links: IndieProjectLink[];
-  featured: boolean;
-  accent: string;
-  icon?: string;
-  image?: string;
-  imageAlt?: string;
-  imagePosition?: string;
-  supportingSystems?: string[];
-}
+export type {
+  IndieDisclosure,
+  IndieMetric,
+  IndieMetricCategory,
+  IndieMilestone,
+  IndieProject,
+  IndieProjectLink,
+  IndieStatus,
+  IndieTier,
+} from "./indie-policy";
 
 export const tierLabels: Record<IndieTier, string> = {
   shipped: "Shipped / public",
@@ -63,11 +18,12 @@ export const tierLabels: Record<IndieTier, string> = {
   archive: "Lab / archive",
 };
 
-export const indieProjects: IndieProject[] = [
+const indieProjectRecords: IndieProject[] = [
   {
     id: "continuum",
     title: "Continuum",
     role: "Independent product",
+    disclosure: "public-product",
     tier: "shipped",
     status: "public-preview",
     statusLabel: "Public preview",
@@ -142,6 +98,7 @@ export const indieProjects: IndieProject[] = [
     id: "subkeep",
     title: "SubKeep",
     role: "Independent product",
+    disclosure: "public-product",
     tier: "shipped",
     status: "live",
     statusLabel: "Live product",
@@ -205,6 +162,7 @@ export const indieProjects: IndieProject[] = [
     id: "gitglow",
     title: "GitGlow",
     role: "Independent product",
+    disclosure: "public-product",
     tier: "shipped",
     status: "live",
     statusLabel: "Live product",
@@ -268,6 +226,7 @@ export const indieProjects: IndieProject[] = [
     id: "green-compass",
     title: "Green Compass",
     role: "Product contribution / collaboration",
+    disclosure: "public-product",
     tier: "shipped",
     status: "live",
     statusLabel: "Live collaboration",
@@ -331,15 +290,16 @@ export const indieProjects: IndieProject[] = [
     id: "pangolines",
     title: "Pangolines",
     role: "Independent game",
-    tier: "shipped",
-    status: "live",
-    statusLabel: "Playable on the web",
+    disclosure: "public-product",
+    tier: "active",
+    status: "public-preview",
+    statusLabel: "Public build",
     startedAt: "2025-03-29",
     lastUpdatedAt: "2026-08-02",
     summary:
       "A modern browser reinterpretation of Pang, rebuilt around responsive controls, hand-authored biomes, bubble physics, and a tiny pangolin hero.",
     currentState:
-      "Arcade and campaign play, power-ups, responsive canvas behavior, deterministic biomes, and a complete visual redesign are live in the browser.",
+      "Arcade and campaign play, power-ups, responsive canvas behavior, deterministic biomes, and a complete visual redesign are available in a public browser build.",
     progressStage: 5,
     progressLabel: "Playable, polished, expanding",
     lesson:
@@ -361,7 +321,7 @@ export const indieProjects: IndieProject[] = [
       {
         date: "2026-08-02",
         label: "Neon Canopy",
-        description: "A cohesive procedural-biome redesign shipped across desktop and mobile layouts.",
+        description: "A cohesive procedural-biome redesign landed across desktop and mobile layouts.",
       },
     ],
     metrics: [
@@ -374,16 +334,16 @@ export const indieProjects: IndieProject[] = [
         category: "progress",
       },
       {
-        label: "Release state",
-        value: "Playable web build",
+        label: "Build availability",
+        value: "Public web build",
         asOf: "2026-08-02",
-        sourceNote: "Verified live product and tests",
+        sourceNote: "Verified public build and tests",
         approved: true,
-        category: "release",
+        category: "progress",
       },
     ],
     links: [{ label: "Play Pangolines", href: "https://pangolines.vercel.app/" }],
-    featured: true,
+    featured: false,
     accent: "#2c8c80",
     icon: "/assets/images/indie/icons/pangolines.png",
     image: "/assets/images/indie/pangolines.png",
@@ -394,6 +354,7 @@ export const indieProjects: IndieProject[] = [
     id: "attik",
     title: "Attik",
     role: "Private independent product",
+    disclosure: "private-product-facts",
     tier: "active",
     status: "private-beta",
     statusLabel: "Private foundation",
@@ -440,6 +401,7 @@ export const indieProjects: IndieProject[] = [
     id: "cozy-tower-climber",
     title: "Cozy Tower Climber",
     role: "Independent game",
+    disclosure: "private-product-facts",
     tier: "active",
     status: "active-build",
     statusLabel: "Playable private build",
@@ -502,6 +464,7 @@ export const indieProjects: IndieProject[] = [
     id: "dropstead",
     title: "Dropstead",
     role: "Independent game",
+    disclosure: "private-product-facts",
     tier: "active",
     status: "public-preview",
     statusLabel: "Community preview",
@@ -555,6 +518,7 @@ export const indieProjects: IndieProject[] = [
     id: "lumen-reef",
     title: "Lumen Reef",
     role: "Independent game",
+    disclosure: "private-product-facts",
     tier: "active",
     status: "public-preview",
     statusLabel: "Release 0.1.0",
@@ -603,6 +567,7 @@ export const indieProjects: IndieProject[] = [
     id: "velumis",
     title: "Velumis",
     role: "Independent game",
+    disclosure: "private-product-facts",
     tier: "active",
     status: "active-build",
     statusLabel: "Playable private build",
@@ -661,6 +626,7 @@ export const indieProjects: IndieProject[] = [
     id: "thin-shell",
     title: "ThinShell",
     role: "Independent macOS utility",
+    disclosure: "private-product-facts",
     tier: "active",
     status: "private-beta",
     statusLabel: "Unsigned development beta",
@@ -709,6 +675,7 @@ export const indieProjects: IndieProject[] = [
     id: "lattice",
     title: "Lattice",
     role: "Private independent system",
+    disclosure: "private-product-facts",
     tier: "active",
     status: "active-build",
     statusLabel: "Working private system",
@@ -755,6 +722,7 @@ export const indieProjects: IndieProject[] = [
     id: "postiz-chat-bridge",
     title: "Postiz Chat Bridge",
     role: "Private operations tool",
+    disclosure: "private-product-facts",
     tier: "active",
     status: "active-build",
     statusLabel: "Private operations system",
@@ -805,6 +773,7 @@ export const indieProjects: IndieProject[] = [
     id: "tendli",
     title: "Tendli",
     role: "Product experiment",
+    disclosure: "private-product-facts",
     tier: "archive",
     status: "paused",
     statusLabel: "Paused experiment",
@@ -847,6 +816,7 @@ export const indieProjects: IndieProject[] = [
     id: "better-finder",
     title: "BetterFinder",
     role: "Browser experiment",
+    disclosure: "private-product-facts",
     tier: "archive",
     status: "paused",
     statusLabel: "Completed prototype",
@@ -889,7 +859,7 @@ export const indieProjects: IndieProject[] = [
 
 export const indieSnapshotDate = "2026-08-14";
 
-function validateIndieProjects(projects: IndieProject[]) {
+function validateIndieProjectRecords(projects: IndieProject[]) {
   const ids = new Set<string>();
   const isoDate = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -924,13 +894,22 @@ function validateIndieProjects(projects: IndieProject[]) {
       }
     }
 
+    if (project.disclosure === "private-product-facts" && project.links.length > 0) {
+      throw new Error(`Private-product-facts records must not publish links: ${project.id}`);
+    }
+    if (project.disclosure === "private-product-facts" && project.featured) {
+      throw new Error(`Private-product-facts records must not become featured stories: ${project.id}`);
+    }
+
     for (const link of project.links) {
       const url = new URL(link.href);
-      if (project.role.toLowerCase().includes("private") && url.hostname === "github.com") {
+      if (url.hostname === "github.com" && project.disclosure === "private-product-facts") {
         throw new Error(`Private repository links must not be published: ${project.id}`);
       }
     }
   }
 }
 
-validateIndieProjects(indieProjects);
+validateIndieProjectRecords(indieProjectRecords);
+
+export const indieProjects = applyIndiePublicationPolicy(indieProjectRecords);
