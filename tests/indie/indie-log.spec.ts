@@ -18,6 +18,11 @@ test("renders the isolated, unlisted field journal", async ({ page }) => {
     "href",
     "https://bsky.app/profile/skorudzhiev.bsky.social",
   );
+  const followLinkColors = await page.locator(".follow-links > a").evaluateAll((links) =>
+    links.map((link) => getComputedStyle(link).color),
+  );
+  expect(followLinkColors).toHaveLength(3);
+  expect(new Set(followLinkColors).size).toBe(1);
   const projectIcons = page.locator("[data-project-icon]");
   await expect(projectIcons).toHaveCount(8);
   await expect

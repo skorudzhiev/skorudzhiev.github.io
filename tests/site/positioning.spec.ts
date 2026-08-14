@@ -18,10 +18,22 @@ test("presents MCP as part of the broader product practice", async ({ page }) =>
     "href",
     "/writing/mcp-project-brains/",
   );
-  await expect(page.getByRole("link", { name: /Bluesky @skorudzhiev\.bsky\.social/ })).toHaveAttribute(
+  await expect(page.getByRole("link", { name: "Bluesky ↗", exact: true })).toHaveAttribute(
     "href",
     "https://bsky.app/profile/skorudzhiev.bsky.social",
   );
+  const socialLinkBoxes = await page
+    .getByLabel("Social links")
+    .getByRole("link")
+    .evaluateAll((links) =>
+      links.map((link) => {
+        const box = link.getBoundingClientRect();
+        return { left: box.left, height: box.height };
+      }),
+    );
+  expect(socialLinkBoxes).toHaveLength(4);
+  expect(new Set(socialLinkBoxes.map(({ left }) => Math.round(left))).size).toBe(1);
+  expect(Math.max(...socialLinkBoxes.map(({ height }) => height))).toBeLessThanOrEqual(24);
   await expectNoHorizontalOverflow(page);
 });
 

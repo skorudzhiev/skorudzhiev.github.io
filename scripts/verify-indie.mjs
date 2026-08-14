@@ -28,6 +28,10 @@ expect(
   indieHtml.includes("Bluesky / @skorudzhiev.bsky.social"),
   "The Indie Log Bluesky link is missing its visible profile handle.",
 );
+expect(
+  !indieHtml.includes("follow-link--bluesky"),
+  "The Indie Log Bluesky link must use the same visual treatment as the other follow links.",
+);
 expect(indieHtml.includes('data-filter="shipped"'), "The project stage filters are missing.");
 expect(
   (indieHtml.match(/<article class="ledger-card"[^>]*data-project-card/g) ?? []).length === 15,
