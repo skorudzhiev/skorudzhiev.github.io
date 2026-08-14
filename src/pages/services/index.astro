@@ -4,9 +4,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const services = (await getCollection("services")).sort((a, b) => a.data.order - b.data.order);
 const aiWorkflowArticle = await getEntry("writing", "design-system-marketing-engine");
+const mcpArticle = await getEntry("writing", "mcp-project-brains");
+const mcpArticleHref = mcpArticle?.data.path ?? mcpArticle?.data.canonicalUrl;
 ---
 
-<BaseLayout title="How I can help" description="Product clarity, end-to-end engineering, AI-enabled delivery, launch systems, and technical product advisory from Stoyan Korudzhiev.">
+<BaseLayout title="How I can help" description="Product clarity, end-to-end engineering, AI systems, MCP integrations, launch systems, and technical product advisory from Stoyan Korudzhiev.">
   <header class="page-intro services-page-intro shell">
     <p class="eyebrow">How I can help</p>
     <h1>Useful when the product still has hard questions.</h1>
@@ -27,6 +29,52 @@ const aiWorkflowArticle = await getEntry("writing", "design-system-marketing-eng
         </div>
       </article>
     ))}
+  </section>
+
+  <section class="context-systems-section" id="context-systems">
+    <div class="shell">
+      <div class="context-systems-heading">
+        <div>
+          <p class="eyebrow">Context-aware product systems</p>
+          <h2>Give AI the right context.<br />Keep the boundary visible.</h2>
+        </div>
+        <p>I build and operationalize MCP integrations that connect AI assistants to project knowledge, real workflows, and human-approved actions. The protocol is only the interface; the product still needs clear state, permissions, review, and failure behavior.</p>
+      </div>
+
+      <div class="context-systems-grid">
+        <article class="context-system-offer">
+          <span>Project brain + MCP</span>
+          <h3>Context that survives the conversation.</h3>
+          <p>A project brain keeps the mission, evidence, constraints, decisions, progress, and outcomes attached to the product. MCP exposes only the context and actions a workflow actually needs.</p>
+          <ul>
+            <li>Project-scoped knowledge and source ingestion</li>
+            <li>Typed MCP tools, context contracts, and integration boundaries</li>
+            <li>Proposal, review, confirmation, and audit flows</li>
+            <li>Packaging, health checks, tests, and operational handoff</li>
+          </ul>
+          {mcpArticle && mcpArticleHref && (
+            <a class="text-link" href={mcpArticleHref}>
+              Read the field note <span aria-hidden="true">→</span>
+            </a>
+          )}
+        </article>
+
+        <div class="context-system-evidence" aria-label="MCP integration examples">
+          <article>
+            <span>Continuum</span>
+            <h3>Local product integration</h3>
+            <p>A development-only MCP boundary can validate and export declarative product models or stage a change for review. The running application—not the protocol client—owns approval.</p>
+          </article>
+          <article>
+            <span>Postiz Chat Bridge</span>
+            <h3>Remote operations workflow</h3>
+            <p>A private Marketing Brain grounds campaign and profile work in project evidence, while external publishing actions remain separated behind preview, immutable approval, and explicit confirmation.</p>
+          </article>
+        </div>
+      </div>
+
+      <p class="context-systems-boundary"><strong>The claim is practical:</strong> production-minded integrations and product workflows—not generic protocol demos, autonomous access, or unevidenced commercial outcomes.</p>
+    </div>
   </section>
 
   <section class="ai-delivery-section">

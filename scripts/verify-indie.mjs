@@ -16,12 +16,34 @@ expect(
   "The Indie Log must carry the complete robots exclusion directive.",
 );
 expect(indieHtml.includes('href="https://skorudzhiev.github.io/indie/"'), "The Indie Log canonical URL is missing.");
+expect(!indieHtml.includes("twelve products"), "The social metadata contains a stale twelve-project claim.");
+expect(indieHtml.includes("indie-og-v2.png"), "The current Indie Log social preview image is missing.");
 expect(!indieHtml.includes('class="site-header"'), "The personal-site header leaked into the Indie Log.");
 expect(!indieHtml.includes('class="site-footer"'), "The personal-site footer leaked into the Indie Log.");
+expect(
+  indieHtml.includes('href="https://bsky.app/profile/skorudzhiev.bsky.social"'),
+  "The Indie Log follow section is missing the Bluesky profile link.",
+);
+expect(
+  indieHtml.includes("Bluesky / @skorudzhiev.bsky.social"),
+  "The Indie Log Bluesky link is missing its visible profile handle.",
+);
 expect(indieHtml.includes('data-filter="shipped"'), "The project stage filters are missing.");
 expect(
   (indieHtml.match(/<article class="ledger-card"[^>]*data-project-card/g) ?? []).length === 15,
   "The project ledger must contain exactly 15 entries.",
+);
+expect(
+  indieHtml.includes('id="project-pangolines" data-project-card data-tier="active"'),
+  "A Vercel-only Pangolines build must remain active rather than shipped.",
+);
+expect(
+  !indieHtml.includes('id="story-pangolines"'),
+  "A Vercel-only Pangolines build must not be featured as a shipped story.",
+);
+expect(
+  (indieHtml.match(/data-disclosure="private-product-facts"/g) ?? []).length === 10,
+  "The private-product disclosure boundary must cover exactly ten approved records.",
 );
 expect(
   (indieHtml.match(/data-project-icon/g) ?? []).length === 8,
@@ -72,4 +94,4 @@ if (failures.length > 0) {
   process.exit(1);
 }
 
-console.log("Indie Log static verification passed: metadata, isolation, inventory, sitemap, and link checks.");
+console.log("Indie Log static verification passed: metadata, publication policy, isolation, inventory, sitemap, and link checks.");

@@ -31,6 +31,7 @@ const timeline = projectYears.map((year) => ({
     .filter((project) => Number(project.startedAt.slice(0, 4)) === year)
     .sort((a, b) => a.startedAt.localeCompare(b.startedAt)),
 }));
+const indieDescription = `A direct-link field journal covering ${indieProjects.length} products, collaborations, utilities, games, and experiments built from 2024 to today.`;
 
 function approvedMetrics(project: IndieProject) {
   return project.metrics.filter((metric) => metric.approved);
@@ -45,7 +46,8 @@ function shortDate(value: string) {
 
 <IndieLayout
   title="Stoyan's Indie Log — Products, experiments, and the work between"
-  description="A direct-link field journal covering twelve products, collaborations, utilities, games, and experiments built from 2024 to today."
+  description={indieDescription}
+  imageAlt="Stoyan's Indie Log: Fifteen projects. Three years. Still building."
 >
   <div class="indie-page" id="top">
     <header class="indie-masthead" aria-label="Indie Log masthead">
@@ -130,7 +132,7 @@ function shortDate(value: string) {
           <article class="snapshot-card" style="--card-accent: #446b73">
             <span>{tierLabels.active}</span>
             <strong>{projectCounts.active}</strong>
-            <p>private foundations, playable releases, betas, and working systems</p>
+            <p>public builds, private foundations, playable betas, and working systems</p>
           </article>
           <article class="snapshot-card" style="--card-accent: #8c765d">
             <span>{tierLabels.archive}</span>
@@ -188,7 +190,7 @@ function shortDate(value: string) {
             <h2 id="stories-title">The products that<br />made it into the world.</h2>
           </div>
           <p>
-            Five different surfaces—browser, desktop, mobile, and games—but the same loop: find the real constraint, build the critical path, and make the public story match the shipped product.
+            Across browser, desktop, mobile, and games, the same loop applies: find the real constraint, build the critical path, and make the public story match the shipped product.
           </p>
         </div>
 
@@ -264,10 +266,10 @@ function shortDate(value: string) {
           <div class="section-heading section-heading--split section-heading--light">
             <div>
               <p class="section-number">04 / On the bench</p>
-              <h2 id="bench-title">Five builds in<br />different kinds of motion.</h2>
+              <h2 id="bench-title">{activeProjects.length} builds in<br />different kinds of motion.</h2>
             </div>
             <p>
-              “Active” does not always mean public or fast. Some are in daily use, some are private foundations, and one is waiting for the feel to be right before the next decision.
+              “Active” does not always mean public or fast. Some are in daily use, some are private foundations, and each moves at the pace its next decision requires.
             </p>
           </div>
 
@@ -331,6 +333,7 @@ function shortDate(value: string) {
               id={`project-${project.id}`}
               data-project-card
               data-tier={project.tier}
+              data-disclosure={project.disclosure}
               style={`--project-accent: ${project.accent}`}
             >
               <div class="ledger-card__topline">
@@ -414,6 +417,7 @@ function shortDate(value: string) {
             </p>
             <div class="follow-links">
               <a href={siteConfig.social.x} target="_blank" rel="me noopener noreferrer"><span>X / @StoyanBuilds</span><i aria-hidden="true">↗</i></a>
+              <a class="follow-link--bluesky" href={siteConfig.social.bluesky} target="_blank" rel="me noopener noreferrer"><span>Bluesky / @skorudzhiev.bsky.social</span><i aria-hidden="true">↗</i></a>
               <a href={siteConfig.social.github} target="_blank" rel="me noopener noreferrer"><span>GitHub / skorudzhiev</span><i aria-hidden="true">↗</i></a>
             </div>
             <div class="public-projects">

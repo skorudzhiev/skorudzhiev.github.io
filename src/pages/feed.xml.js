@@ -12,7 +12,7 @@ export async function GET(context) {
       title: article.data.title,
       description: article.data.description,
       pubDate: article.data.publishedAt,
-      link: article.data.canonicalUrl,
+      link: article.data.path ? new URL(article.data.path, siteConfig.url).href : article.data.canonicalUrl,
       categories: article.data.topics,
     })),
   });

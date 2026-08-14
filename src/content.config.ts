@@ -28,6 +28,7 @@ const writing = defineCollection({
     description: z.string(),
     publishedAt: z.coerce.date(),
     topics: z.array(z.string()),
+    path: z.string().regex(/^\/.*\/$/).optional(),
     canonicalUrl: z.url(),
     mediumUrl: z.url().optional(),
     relatedWork: z.string().optional(),

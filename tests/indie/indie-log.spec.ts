@@ -14,6 +14,10 @@ test("renders the isolated, unlisted field journal", async ({ page }) => {
   await expect(page.locator(".site-header")).toHaveCount(0);
   await expect(page.locator(".site-footer")).toHaveCount(0);
   await expect(page.locator("[data-project-card]")).toHaveCount(15);
+  await expect(page.getByRole("link", { name: "Bluesky / @skorudzhiev.bsky.social" })).toHaveAttribute(
+    "href",
+    "https://bsky.app/profile/skorudzhiev.bsky.social",
+  );
   const projectIcons = page.locator("[data-project-icon]");
   await expect(projectIcons).toHaveCount(8);
   await expect
@@ -39,16 +43,29 @@ test("filters the full ledger without changing the page URL", async ({ page }) =
   const originalUrl = page.url();
   const cards = page.locator("[data-project-card]");
 
-  await page.getByRole("button", { name: /Shipped 5/ }).click();
-  await expect(cards.filter({ visible: true })).toHaveCount(5);
-  await expect(page.locator("#filter-status")).toHaveText("Showing 5 projects.");
+  await page.getByRole("button", { name: /Shipped 4/ }).click();
+  await expect(cards.filter({ visible: true })).toHaveCount(4);
+  await expect(page.locator("#filter-status")).toHaveText("Showing 4 projects.");
 
-  await page.getByRole("button", { name: /Active 8/ }).click();
-  await expect(cards.filter({ visible: true })).toHaveCount(8);
+  await page.getByRole("button", { name: /Active 9/ }).click();
+  await expect(cards.filter({ visible: true })).toHaveCount(9);
 
   await page.getByRole("button", { name: /Lab \/ archive 2/ }).click();
   await expect(cards.filter({ visible: true })).toHaveCount(2);
   expect(page.url()).toBe(originalUrl);
+});
+
+test("keeps platform previews and private-project facts inside their publication boundaries", async ({ page }) => {
+  const pangolines = page.locator("#project-pangolines");
+  await expect(pangolines).toHaveAttribute("data-tier", "active");
+  await expect(pangolines.locator(".ledger-tier")).toHaveText("Active builds");
+  await expect(pangolines.locator(".status-chip")).toContainText("Public build");
+  await expect(page.locator("#story-pangolines")).toHaveCount(0);
+  await expect(page.locator('.public-projects a[href*="pangolines.vercel.app"]')).toHaveCount(0);
+
+  const privateProjects = page.locator('[data-disclosure="private-product-facts"]');
+  await expect(privateProjects).toHaveCount(10);
+  await expect(privateProjects.locator("a.project-link")).toHaveCount(0);
 });
 
 test("opens project notes with the keyboard and exposes clear progress", async ({ page }) => {
