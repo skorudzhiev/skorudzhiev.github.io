@@ -72,11 +72,11 @@ export const indieProjects: IndieProject[] = [
     status: "public-preview",
     statusLabel: "Public preview",
     startedAt: "2026-02-26",
-    lastUpdatedAt: "2026-08-07",
+    lastUpdatedAt: "2026-08-09",
     summary:
       "A local-first calculation workspace that turns readable notes into live results, with a focused macOS companion for quick calculations.",
     currentState:
-      "The browser workspace, production documentation, financial starter library, and unsigned Apple Silicon companion are available as a coherent public preview.",
+      "The public workspace and unsigned Apple Silicon companion remain the production surface, while a separately gated development build now supports richer Canvas and Blueprint workflows without leaking experiments into the release.",
     progressStage: 5,
     progressLabel: "Shipped, learning, refining",
     lesson:
@@ -105,12 +105,17 @@ export const indieProjects: IndieProject[] = [
         label: "Public preview refined",
         description: "Packaging, documentation, scrolling, and editor behavior received a release-focused polish pass.",
       },
+      {
+        date: "2026-08-09",
+        label: "Development canvas contained",
+        description: "Canvas, Blueprint, and local MCP workflows gained a dedicated development boundary while the production feature catalogue stayed explicit.",
+      },
     ],
     metrics: [
       {
         label: "Started",
         value: "Feb 2026",
-        asOf: "2026-08-07",
+        asOf: "2026-08-09",
         sourceNote: "Verified repository history",
         approved: true,
         category: "progress",
@@ -118,7 +123,7 @@ export const indieProjects: IndieProject[] = [
       {
         label: "Available on",
         value: "Web + macOS alpha",
-        asOf: "2026-08-07",
+        asOf: "2026-08-09",
         sourceNote: "Verified production documentation",
         approved: true,
         category: "release",
@@ -437,18 +442,18 @@ export const indieProjects: IndieProject[] = [
     role: "Independent game",
     tier: "active",
     status: "active-build",
-    statusLabel: "Playable vertical slice",
+    statusLabel: "Playable private build",
     startedAt: "2026-08-08",
-    lastUpdatedAt: "2026-08-09",
+    lastUpdatedAt: "2026-08-13",
     summary:
-      "A local-first arcade game about helping Pip climb a cozy clockwork tower by turning running momentum into higher jumps.",
+      "A local-first arcade game about helping sixteen cozy climbers cross sixteen towers by turning running momentum into higher jumps.",
     currentState:
-      "One complete Endless mode includes a 100-floor tower chapter, keyboard/gamepad/touch controls, offline startup, accessibility settings, progression, and deterministic visual coverage.",
+      "The private build now spans sixteen 100-floor chapters, replayable journeys, two long-form challenge modes, sixteen climbers, cosmetics, prestige, offline play, and keyboard, gamepad, and touch controls.",
     progressStage: 4,
-    progressLabel: "Complete mode, tuning feel",
+    progressLabel: "Full campaign, tuning feel",
     lesson:
       "Movement feel improves when physical velocity, earned jump momentum, and midair control are modeled as related but distinct systems.",
-    nextObjective: "Validate the final movement tuning with hands-on play before treating the vertical slice as release-ready.",
+    nextObjective: "Validate the expanded campaign, progression, and movement tuning through complete hands-on journeys before release.",
     capabilities: ["Phaser", "Arcade physics", "Offline PWA", "Input systems"],
     milestones: [
       {
@@ -461,20 +466,25 @@ export const indieProjects: IndieProject[] = [
         label: "Authored climb",
         description: "Tower patterns, touch haptics, and momentum behavior moved the slice from system demo toward an intentional game.",
       },
+      {
+        date: "2026-08-13",
+        label: "Sixteen-tower journey",
+        description: "Campaign replay, climber customization, prestige, cosmetics, and immersive tower artwork turned the initial climb into a complete long-form progression loop.",
+      },
     ],
     metrics: [
       {
-        label: "Playable scope",
-        value: "1 endless mode",
-        asOf: "2026-08-09",
+        label: "Campaign scope",
+        value: "16 towers",
+        asOf: "2026-08-13",
         sourceNote: "Verified game documentation and tests",
         approved: true,
         category: "release",
       },
       {
-        label: "Tower chapter",
-        value: "100 floors",
-        asOf: "2026-08-09",
+        label: "Playable climbers",
+        value: "16 characters",
+        asOf: "2026-08-13",
         sourceNote: "Verified gameplay specification",
         approved: true,
         category: "progress",
@@ -487,6 +497,165 @@ export const indieProjects: IndieProject[] = [
     image: "/assets/images/indie/cozy-tower-climber.png",
     imageAlt: "Pip at the beginning of a cozy clockwork tower climb",
     imagePosition: "center 20%",
+  },
+  {
+    id: "dropstead",
+    title: "Dropstead",
+    role: "Independent game",
+    tier: "active",
+    status: "public-preview",
+    statusLabel: "Community preview",
+    startedAt: "2026-08-09",
+    lastUpdatedAt: "2026-08-10",
+    summary:
+      "A portrait-first falling-piece crafting puzzle where completed jobs become miniature scenes and every shipped mode works without an account.",
+    currentState:
+      "The Community Preview includes an 18-job campaign, daily and endless modes, deterministic challenge codes, local saves, offline PWA support, accessibility controls, and tactile material themes.",
+    progressStage: 4,
+    progressLabel: "Community preview complete",
+    lesson:
+      "A familiar puzzle grammar becomes its own product when progression, material feedback, scene-building, and mobile ergonomics all reinforce the same theme.",
+    nextObjective: "Use complete campaign playthroughs to tune pacing, difficulty, and the boundary between shipped preview features and future release plans.",
+    capabilities: ["Puzzle game", "Offline PWA", "Deterministic play", "Local saves"],
+    milestones: [
+      {
+        date: "2026-08-09",
+        label: "Community Preview opens",
+        description: "The accountless campaign, authored jobs, challenge modes, local progression, and offline release boundary landed together.",
+      },
+      {
+        date: "2026-08-10",
+        label: "Campaign becomes a place",
+        description: "Completion flow, evolving scenes, material skins, mobile reliability, and tactile feedback gave each job a clearer sense of arrival.",
+      },
+    ],
+    metrics: [
+      {
+        label: "Authored jobs",
+        value: "18",
+        asOf: "2026-08-10",
+        sourceNote: "Verified private product documentation",
+        approved: true,
+        category: "progress",
+      },
+      {
+        label: "Campaign steps",
+        value: "6",
+        asOf: "2026-08-10",
+        sourceNote: "Verified gameplay documentation",
+        approved: true,
+        category: "release",
+      },
+    ],
+    links: [],
+    featured: false,
+    accent: "#b06f4f",
+  },
+  {
+    id: "lumen-reef",
+    title: "Lumen Reef",
+    role: "Independent game",
+    tier: "active",
+    status: "public-preview",
+    statusLabel: "Release 0.1.0",
+    startedAt: "2026-08-11",
+    lastUpdatedAt: "2026-08-11",
+    summary:
+      "A free, accountless 3D strategy game about routing energy through a living spatial ecosystem and keeping it coherent under pressure.",
+    currentState:
+      "Release 0.1.0 contains six campaign regions, deterministic seeded expeditions, three difficulty profiles, local saves, procedural audio, and complete offline play after the first download.",
+    progressStage: 4,
+    progressLabel: "First full release, observing play",
+    lesson:
+      "A dense strategy system becomes learnable when the network view, close-up dioramas, guided controls, and deterministic simulation all explain the same ecosystem.",
+    nextObjective: "Play through the full campaign across desktop and touch layouts, then refine the moments where spatial state or network pressure is hardest to read.",
+    capabilities: ["Three.js", "Strategy game", "Seeded expeditions", "Offline play"],
+    milestones: [
+      {
+        date: "2026-08-11",
+        label: "The reef becomes playable",
+        description: "Six regions, ten node archetypes, authored events, mutations, expeditions, persistence, accessibility, and offline support shipped as release 0.1.0.",
+      },
+    ],
+    metrics: [
+      {
+        label: "Campaign regions",
+        value: "6",
+        asOf: "2026-08-11",
+        sourceNote: "Verified private product documentation",
+        approved: true,
+        category: "release",
+      },
+      {
+        label: "Authored events",
+        value: "24",
+        asOf: "2026-08-11",
+        sourceNote: "Verified release documentation",
+        approved: true,
+        category: "progress",
+      },
+    ],
+    links: [],
+    featured: false,
+    accent: "#327d83",
+  },
+  {
+    id: "velumis",
+    title: "Velumis",
+    role: "Independent game",
+    tier: "active",
+    status: "active-build",
+    statusLabel: "Playable private build",
+    startedAt: "2026-08-10",
+    lastUpdatedAt: "2026-08-13",
+    summary:
+      "An original meditative physics odyssey where every movement ejects part of your mass and restraint matters as much as direction.",
+    currentState:
+      "The playable build spans a 60-arena campaign across eight realms, three deterministic difficulty modes, rivals, replays, offline progression, earned utilities, web and Android delivery, and extensive accessibility controls.",
+    progressStage: 4,
+    progressLabel: "Full campaign, balancing and hardening",
+    lesson:
+      "A simple physical rule can sustain a long campaign when realms, rivals, abilities, progression, and presentation expand the decisions without changing the deterministic core.",
+    nextObjective: "Balance the full difficulty and store progression, validate Android thermals on physical hardware, and continue full-campaign playtesting without changing replay or save behavior.",
+    capabilities: ["Phaser", "Physics game", "Android + PWA", "Deterministic replays"],
+    milestones: [
+      {
+        date: "2026-08-10",
+        label: "First playable realm",
+        description: "The mass-conserving movement system became an original playable campaign foundation.",
+      },
+      {
+        date: "2026-08-11",
+        label: "Eight realms unfold",
+        description: "The campaign expanded across distinct worlds, forms, abilities, responsive layouts, and an original visual and audio identity.",
+      },
+      {
+        date: "2026-08-13",
+        label: "Difficulty and earned progression",
+        description: "Three challenge modes, story-gated utilities, Lumens, deterministic rivals, replay-safe loadouts, and bounded Android rendering completed the main progression loop.",
+      },
+    ],
+    metrics: [
+      {
+        label: "Campaign arenas",
+        value: "60",
+        asOf: "2026-08-13",
+        sourceNote: "Verified private product documentation",
+        approved: true,
+        category: "progress",
+      },
+      {
+        label: "Realms",
+        value: "8",
+        asOf: "2026-08-13",
+        sourceNote: "Verified gameplay documentation",
+        approved: true,
+        category: "release",
+      },
+    ],
+    links: [],
+    featured: false,
+    accent: "#7358a8",
   },
   {
     id: "thin-shell",
@@ -588,31 +757,41 @@ export const indieProjects: IndieProject[] = [
     role: "Private operations tool",
     tier: "active",
     status: "active-build",
-    statusLabel: "Safe demo + live reads",
+    statusLabel: "Private operations system",
     startedAt: "2026-08-07",
-    lastUpdatedAt: "2026-08-07",
+    lastUpdatedAt: "2026-08-13",
     summary:
       "A secure bridge and campaign console for drafting, reviewing, and operating a self-hosted social workflow without silently publishing.",
     currentState:
-      "A complete local demo covers campaigns, calendar, integrations, activity, theme, drafting, and human-visible approval summaries. Live mode reads data and creates safe drafts only.",
-    progressStage: 3,
-    progressLabel: "Operational surface proven",
+      "The private system now mirrors self-hosted Postiz data, manages project context and a Marketing Brain, stages editable post and profile previews, supports X, Bluesky, and Threads, and keeps live provider writes behind approval and confirmation gates.",
+    progressStage: 4,
+    progressLabel: "Connected workflow, guarded writes",
     lesson:
       "Automation feels safer when the unavailable actions are visible, approval context is explicit, and a demo never pretends to contact a live service.",
-    nextObjective: "Prove durable storage and the guarded write lifecycle before enabling scheduling or publishing controls.",
-    capabilities: ["Operations console", "MCP", "Approval workflow", "Safe demo"],
+    nextObjective: "Exercise the connected draft, approval, confirmation, and recovery paths against the private deployment before expanding provider coverage.",
+    capabilities: ["Operations console", "MCP", "Marketing Brain", "Guarded writes"],
     milestones: [
       {
         date: "2026-08-07",
         label: "Safety before writes",
         description: "The bridge, campaign console, demo mode, approval summary, and production operations guide shipped as one bounded foundation.",
       },
+      {
+        date: "2026-08-12",
+        label: "Postiz becomes visible",
+        description: "Read-only synchronization, local preview profiles, editable drafts, and explicit Apply behavior connected the console to the self-hosted source of truth.",
+      },
+      {
+        date: "2026-08-13",
+        label: "Profiles and publishing stay guarded",
+        description: "Grounded profile suggestions, standalone drafts, Threads previews, restart tooling, and confirmation-protected live writes extended the workflow without hiding its boundaries.",
+      },
     ],
     metrics: [
       {
-        label: "Write boundary",
-        value: "Drafts only",
-        asOf: "2026-08-07",
+        label: "Preview coverage",
+        value: "X + Bluesky + Threads",
+        asOf: "2026-08-13",
         sourceNote: "Verified private operations documentation",
         approved: true,
         category: "release",
@@ -708,7 +887,7 @@ export const indieProjects: IndieProject[] = [
   },
 ];
 
-export const indieSnapshotDate = "2026-08-09";
+export const indieSnapshotDate = "2026-08-14";
 
 function validateIndieProjects(projects: IndieProject[]) {
   const ids = new Set<string>();
