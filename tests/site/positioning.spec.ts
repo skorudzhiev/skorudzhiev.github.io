@@ -67,5 +67,37 @@ test("publishes the first-party field note with a clear evidence boundary", asyn
   await expect(page.getByRole("heading", { name: "The marketable unit is an outcome" })).toBeVisible();
   await expect(page.getByText("Continuum: stage the change, let the product approve it")).toBeVisible();
   await expect(page.getByText("Postiz Chat Bridge: context, operations, and guarded external actions")).toBeVisible();
+
+  const articleNavigator = page.getByLabel("Article navigation");
+  await expect(articleNavigator).toBeVisible();
+  expect(await articleNavigator.evaluate((element) => getComputedStyle(element).position)).toBe("fixed");
+  await articleNavigator.locator("summary").click();
+  await articleNavigator.getByRole("link", { name: /Two products, two different boundaries/ }).click();
+  await expect(page).toHaveURL(/#two-products-two-different-boundaries$/);
+  await expect(articleNavigator.locator('[aria-current="location"]')).toContainText(
+    "Two products, two different boundaries",
+  );
+  await expectNoHorizontalOverflow(page);
+});
+
+test("persists the two-state theme across the personal site and Indie Log", async ({ page }) => {
+  await page.emulateMedia({ colorScheme: "light" });
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+  await page.evaluate(() => localStorage.removeItem("stoyan-theme"));
+  await page.reload({ waitUntil: "domcontentloaded" });
+
+  const root = page.locator("html");
+  await expect(root).toHaveAttribute("data-theme", "light");
+  await page.getByRole("button", { name: "Switch to dark theme" }).click();
+  await expect(root).toHaveAttribute("data-theme", "dark");
+  await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute("content", "#151715");
+
+  await page.goto("/indie/", { waitUntil: "domcontentloaded" });
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await expect(page.getByRole("button", { name: "Switch to light theme" })).toBeVisible();
+
+  await page.getByRole("button", { name: "Switch to light theme" }).click();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+  await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute("content", "#eee7d8");
   await expectNoHorizontalOverflow(page);
 });

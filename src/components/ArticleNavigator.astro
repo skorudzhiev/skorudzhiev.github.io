@@ -1,0 +1,265 @@
+---
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  headings: Heading[];
+}
+
+const headings = Astro.props.headings.filter((heading) => heading.depth === 2);
+---
+
+{headings.length > 1 && (
+  <aside class="article-navigator" data-article-navigator aria-label="Article navigation">
+    <details>
+      <summary>
+        <span class="article-navigator__summary">
+          <small>On this page</small>
+          <strong data-current-heading>{headings[0].text}</strong>
+        </span>
+        <span class="article-navigator__chevron" aria-hidden="true">⌄</span>
+      </summary>
+      <nav aria-label="Article headings">
+        <ol>
+          {headings.map((heading, index) => (
+            <li>
+              <a href={`#${heading.slug}`} data-heading-link={heading.slug} aria-current={index === 0 ? "location" : undefined}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                {heading.text}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+    </details>
+    <div class="article-navigator__progress" role="progressbar" aria-label="Article reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <i></i>
+    </div>
+  </aside>
+)}
+
+<script>
+  const navigator = document.querySelector<HTMLElement>("[data-article-navigator]");
+  const article = document.querySelector<HTMLElement>("[data-article-content]");
+
+  if (navigator && article) {
+    const details = navigator.querySelector<HTMLDetailsElement>("details");
+    const currentLabel = navigator.querySelector<HTMLElement>("[data-current-heading]");
+    const progress = navigator.querySelector<HTMLElement>("[role='progressbar']");
+    const links = Array.from(navigator.querySelectorAll<HTMLAnchorElement>("[data-heading-link]"));
+    const headings = links
+      .map((link) => ({ link, heading: document.getElementById(link.dataset.headingLink ?? "") }))
+      .filter((entry): entry is { link: HTMLAnchorElement; heading: HTMLElement } => Boolean(entry.heading));
+
+    let frame = 0;
+
+    const update = () => {
+      frame = 0;
+      const readingLine = Math.min(window.innerHeight * 0.32, 220);
+      let active = headings[0];
+
+      headings.forEach((entry) => {
+        if (entry.heading.getBoundingClientRect().top <= readingLine) active = entry;
+      });
+
+      links.forEach((link) => {
+        if (link === active?.link) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
+
+      if (active && currentLabel) currentLabel.textContent = active.heading.textContent?.trim() ?? "On this page";
+
+      const articleRect = article.getBoundingClientRect();
+      const total = Math.max(article.offsetHeight - window.innerHeight * 0.5, 1);
+      const travelled = Math.min(Math.max(-articleRect.top + window.innerHeight * 0.2, 0), total);
+      const percentage = Math.round((travelled / total) * 100);
+      navigator.style.setProperty("--reading-progress", `${percentage}%`);
+      progress?.setAttribute("aria-valuenow", String(percentage));
+    };
+
+    const requestUpdate = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate, { passive: true });
+    update();
+
+    links.forEach((link) => link.addEventListener("click", () => {
+      if (details && window.matchMedia("(max-width: 1199px)").matches) details.open = false;
+    }));
+
+    document.addEventListener("click", (event) => {
+      if (details?.open && !navigator.contains(event.target as Node)) details.open = false;
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && details?.open) {
+        details.open = false;
+        details.querySelector("summary")?.focus();
+      }
+    });
+  }
+</script>
+
+<style>
+  .article-navigator {
+    --reading-progress: 0%;
+    position: fixed;
+    right: max(14px, env(safe-area-inset-right));
+    bottom: max(14px, env(safe-area-inset-bottom));
+    z-index: 70;
+    width: min(310px, calc(100vw - 28px));
+    color: var(--ink);
+    filter: drop-shadow(0 16px 30px rgba(20, 20, 18, 0.18));
+  }
+
+  .article-navigator details {
+    position: relative;
+  }
+
+  .article-navigator summary {
+    min-height: 54px;
+    padding: 0.65rem 0.75rem 0.65rem 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    overflow: hidden;
+    background: color-mix(in srgb, var(--paper-deep) 92%, transparent);
+    border: 1px solid var(--line);
+    border-radius: 16px 16px 0 0;
+    cursor: pointer;
+    list-style: none;
+    backdrop-filter: blur(18px);
+  }
+
+  .article-navigator summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .article-navigator__summary {
+    min-width: 0;
+    display: grid;
+  }
+
+  .article-navigator__summary small {
+    color: var(--signal-dark);
+    font-size: 0.58rem;
+    font-weight: 820;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+  }
+
+  .article-navigator__summary strong {
+    overflow: hidden;
+    font-size: 0.75rem;
+    font-weight: 720;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .article-navigator__chevron {
+    flex: none;
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    background: var(--ink-surface);
+    color: var(--cream);
+    border-radius: 50%;
+    transition: transform 160ms ease;
+  }
+
+  .article-navigator details[open] .article-navigator__chevron {
+    transform: rotate(180deg);
+  }
+
+  .article-navigator nav {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 8px);
+    width: 100%;
+    padding: 0.6rem;
+    background: color-mix(in srgb, var(--paper) 96%, transparent);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    backdrop-filter: blur(20px);
+  }
+
+  .article-navigator ol {
+    max-height: min(58vh, 430px);
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    list-style: none;
+  }
+
+  .article-navigator a {
+    padding: 0.64rem 0.7rem;
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 0.45rem;
+    color: var(--muted);
+    border-radius: 10px;
+    font-size: 0.73rem;
+    font-weight: 650;
+    line-height: 1.35;
+    text-decoration: none;
+  }
+
+  .article-navigator a span {
+    color: var(--signal-dark);
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.58rem;
+  }
+
+  .article-navigator a:hover,
+  .article-navigator a[aria-current="location"] {
+    color: var(--ink);
+    background: color-mix(in srgb, var(--signal) 9%, var(--paper-deep));
+  }
+
+  .article-navigator a[aria-current="location"] {
+    box-shadow: inset 3px 0 0 var(--signal);
+  }
+
+  .article-navigator__progress {
+    height: 3px;
+    overflow: hidden;
+    background: var(--line);
+    border-radius: 0 0 999px 999px;
+  }
+
+  .article-navigator__progress i {
+    width: var(--reading-progress);
+    height: 100%;
+    display: block;
+    background: var(--signal);
+    transition: width 120ms linear;
+  }
+
+  @media (min-width: 1200px) {
+    .article-navigator {
+      top: 112px;
+      right: 22px;
+      bottom: auto;
+      width: 238px;
+    }
+
+    .article-navigator nav {
+      top: calc(100% + 8px);
+      bottom: auto;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .article-navigator__chevron,
+    .article-navigator__progress i {
+      transition: none;
+    }
+  }
+</style>

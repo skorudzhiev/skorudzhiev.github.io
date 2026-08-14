@@ -1,7 +1,10 @@
 :root {
   --paper: #f2efe7;
   --paper-deep: #e8e2d6;
+  --paper-bright: #fffdf7;
   --ink: #171713;
+  --ink-soft: #34332e;
+  --ink-surface: #171713;
   --muted: #6d6a62;
   --line: rgba(23, 23, 19, 0.16);
   --signal: #d9563b;
@@ -32,6 +35,22 @@ html {
   background: var(--paper);
 }
 
+html[data-theme="dark"] {
+  --paper: #151715;
+  --paper-deep: #20231f;
+  --paper-bright: #272a26;
+  --ink: #f2eee5;
+  --ink-soft: #d7d2c8;
+  --ink-surface: #101210;
+  --muted: #aaa79d;
+  --line: rgba(242, 238, 229, 0.17);
+  --signal: #ef765b;
+  --signal-dark: #f08d74;
+  --night: #0f110f;
+  --night-soft: #1c1f1c;
+  --shadow: 0 28px 80px rgba(0, 0, 0, 0.34);
+}
+
 body {
   margin: 0;
   min-width: 320px;
@@ -41,6 +60,12 @@ body {
   color: var(--ink);
   font-size: 16px;
   line-height: 1.6;
+}
+
+html[data-theme="dark"] body {
+  background:
+    radial-gradient(circle at 8% 2%, rgba(103, 112, 98, 0.14), transparent 30rem),
+    var(--paper);
 }
 
 ::selection {
@@ -115,6 +140,12 @@ a {
   gap: 2rem;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .wordmark {
   display: inline-flex;
   align-items: center;
@@ -143,7 +174,7 @@ a {
 }
 
 .site-navigation a {
-  color: #34332e;
+  color: var(--ink-soft);
   font-size: 0.88rem;
   font-weight: 620;
   text-decoration: none;
@@ -156,7 +187,7 @@ a {
 .site-navigation .nav-cta {
   padding: 0.68rem 1rem;
   color: var(--cream);
-  background: var(--ink);
+  background: var(--ink-surface);
   border-radius: 999px;
   transition: transform 160ms ease, background 160ms ease;
 }
@@ -295,7 +326,7 @@ h3 {
 
 .button--primary {
   color: var(--cream);
-  background: var(--ink);
+  background: var(--ink-surface);
 }
 
 .button--primary:hover {
@@ -310,7 +341,7 @@ h3 {
 
 .button--secondary:hover {
   color: var(--cream);
-  background: var(--ink);
+  background: var(--ink-surface);
   transform: translateY(-2px);
 }
 
@@ -2391,6 +2422,72 @@ h3 {
   font-style: italic;
 }
 
+html[data-theme="dark"] .site-header {
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+}
+
+html[data-theme="dark"] .wordmark-portrait {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+html[data-theme="dark"] .hero-lede,
+html[data-theme="dark"] .capability-list,
+html[data-theme="dark"] .writing-card > p,
+html[data-theme="dark"] .context-systems-heading > p,
+html[data-theme="dark"] .context-system-evidence p,
+html[data-theme="dark"] .context-systems-boundary,
+html[data-theme="dark"] .prose,
+html[data-theme="dark"] .article-topics span {
+  color: var(--muted);
+}
+
+html[data-theme="dark"] .project-card,
+html[data-theme="dark"] .surface-card,
+html[data-theme="dark"] .pipeline-card,
+html[data-theme="dark"] .advisory-card,
+html[data-theme="dark"] .project-form {
+  background: color-mix(in srgb, var(--paper-bright) 84%, var(--paper));
+}
+
+html[data-theme="dark"] .writing-card {
+  background: #292820;
+}
+
+html[data-theme="dark"] .writing-card:nth-child(even) {
+  background: #222a24;
+}
+
+html[data-theme="dark"] .tag-row span,
+html[data-theme="dark"] .article-body .prose code {
+  color: var(--ink-soft);
+  background: var(--paper-bright);
+}
+
+html[data-theme="dark"] .teaser-note {
+  color: var(--ink-soft);
+  background: #2b2921;
+}
+
+html[data-theme="dark"] .context-systems-section {
+  background: #1b211d;
+}
+
+html[data-theme="dark"] .context-system-evidence article {
+  background: rgba(255, 255, 255, 0.045);
+}
+
+html[data-theme="dark"] .field input,
+html[data-theme="dark"] .field select,
+html[data-theme="dark"] .field textarea {
+  color: var(--ink);
+  background: var(--paper-bright);
+  border-color: var(--line);
+}
+
+html[data-theme="dark"] .form-status--success {
+  color: #8bc89a;
+}
+
 @media (max-width: 900px) {
   .hero-grid,
   .continuum-feature,
@@ -2528,6 +2625,10 @@ h3 {
     min-height: 70px;
   }
 
+  .header-actions {
+    gap: 0.6rem;
+  }
+
   .menu-button {
     display: inline-flex;
   }
@@ -2546,6 +2647,10 @@ h3 {
     border: 1px solid var(--line);
     border-radius: 18px;
     box-shadow: var(--shadow);
+  }
+
+  html[data-theme="dark"] .site-navigation {
+    background: var(--paper-bright);
   }
 
   .site-navigation.is-open {
@@ -2706,6 +2811,12 @@ h3 {
   .footer-meta {
     align-items: flex-start;
     text-align: left;
+  }
+}
+
+@media (max-width: 360px) {
+  .wordmark > span {
+    display: none;
   }
 }
 

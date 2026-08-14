@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from "../site-config";
+import ThemeToggle from "./ThemeToggle.astro";
 ---
 
 <header class="site-header">
@@ -15,16 +16,19 @@ import { siteConfig } from "../site-config";
       />
       <span>{siteConfig.name}</span>
     </a>
-    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation">
-      Menu
-    </button>
-    <nav id="site-navigation" class="site-navigation" aria-label="Primary navigation">
-      <a href="/work/">Work</a>
-      <a href="/services/">Services</a>
-      <a href="/writing/">Writing</a>
-      <a href="/about/">About</a>
-      <a class="nav-cta" href="/start/">Discuss a product <span aria-hidden="true">↗</span></a>
-    </nav>
+    <div class="header-actions">
+      <nav id="site-navigation" class="site-navigation" aria-label="Primary navigation">
+        <a href="/work/">Work</a>
+        <a href="/services/">Services</a>
+        <a href="/writing/">Writing</a>
+        <a href="/about/">About</a>
+        <a class="nav-cta" href="/start/">Discuss a product <span aria-hidden="true">↗</span></a>
+      </nav>
+      <ThemeToggle />
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation">
+        Menu
+      </button>
+    </div>
   </div>
 </header>
 

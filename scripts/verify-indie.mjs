@@ -20,6 +20,8 @@ expect(!indieHtml.includes("twelve products"), "The social metadata contains a s
 expect(indieHtml.includes("indie-og-v2.png"), "The current Indie Log social preview image is missing.");
 expect(!indieHtml.includes('class="site-header"'), "The personal-site header leaked into the Indie Log.");
 expect(!indieHtml.includes('class="site-footer"'), "The personal-site footer leaked into the Indie Log.");
+expect(indieHtml.includes('class="theme-toggle"'), "The Indie Log masthead is missing the light/dark theme toggle.");
+expect(indieHtml.includes('class="indie-index"'), "The Indie Log is missing its persistent section index.");
 expect(
   indieHtml.includes('href="https://bsky.app/profile/skorudzhiev.bsky.social"'),
   "The Indie Log follow section is missing the Bluesky profile link.",

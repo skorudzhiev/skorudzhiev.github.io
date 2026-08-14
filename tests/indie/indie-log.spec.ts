@@ -39,9 +39,20 @@ test("renders the isolated, unlisted field journal", async ({ page }) => {
 
   const stickyPosition = await page.locator(".indie-index").evaluate((element) => getComputedStyle(element).position);
   expect(stickyPosition).toBe("sticky");
+  await expect(page.locator('.index-links a[href="#overview"]')).toHaveAttribute("aria-current", "location");
 
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
   expect(overflow).toBeLessThanOrEqual(1);
+});
+
+test("keeps the section index available and marks the current section", async ({ page }) => {
+  const index = page.locator(".indie-index");
+  await expect(index).toBeInViewport();
+
+  await page.locator("#ledger").scrollIntoViewIfNeeded();
+  await expect(page.locator('.index-links a[href="#ledger"]')).toHaveAttribute("aria-current", "location");
+  const indexTop = await index.evaluate((element) => Math.round(element.getBoundingClientRect().top));
+  expect(indexTop).toBe(0);
 });
 
 test("filters the full ledger without changing the page URL", async ({ page }) => {

@@ -5,6 +5,7 @@
   --paper-bright: #fffdf7;
   --ink: #1e1d19;
   --ink-soft: #35332d;
+  --ink-surface: #1e1d19;
   --pencil: #6b675d;
   --faint: rgba(30, 29, 25, 0.14);
   --red: #b94b36;
@@ -33,6 +34,23 @@ html {
   background: var(--journal);
 }
 
+html[data-theme="dark"] {
+  --journal: #171918;
+  --journal-deep: #22251f;
+  --paper: #20231f;
+  --paper-bright: #292c27;
+  --ink: #f2ede3;
+  --ink-soft: #d9d3c7;
+  --ink-surface: #111310;
+  --pencil: #aaa69b;
+  --faint: rgba(242, 237, 227, 0.15);
+  --red: #e7785f;
+  --red-dark: #f19a82;
+  --blue: #79a4ad;
+  --night: #10120f;
+  --night-soft: #1b1e1a;
+}
+
 body {
   margin: 0;
   min-width: 320px;
@@ -53,6 +71,13 @@ body::before {
     linear-gradient(rgba(74, 67, 53, 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(74, 67, 53, 0.02) 1px, transparent 1px);
   background-size: 28px 28px;
+}
+
+html[data-theme="dark"] body::before {
+  opacity: 0.2;
+  background-image:
+    linear-gradient(rgba(230, 220, 200, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(230, 220, 200, 0.025) 1px, transparent 1px);
 }
 
 ::selection {
@@ -85,7 +110,7 @@ button {
   z-index: 200;
   padding: 0.7rem 1rem;
   color: var(--cream);
-  background: var(--ink);
+  background: var(--ink-surface);
   border-radius: 2px;
   transform: translateY(-180%);
 }
@@ -115,6 +140,12 @@ button {
   gap: 2rem;
 }
 
+.masthead-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .log-mark {
   display: inline-flex;
   align-items: center;
@@ -128,7 +159,7 @@ button {
   display: grid;
   place-items: center;
   color: var(--cream);
-  background: var(--ink);
+  background: var(--ink-surface);
   border-radius: 50%;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 0.9rem;
@@ -241,7 +272,7 @@ button {
   min-height: 51px;
   padding: 0.75rem 1.1rem 0.75rem 1.25rem;
   color: var(--cream);
-  background: var(--ink);
+  background: var(--ink-surface);
   text-decoration: none;
   font-size: 0.82rem;
   font-weight: 750;
@@ -404,6 +435,12 @@ button {
   background: var(--cream);
 }
 
+.index-links a[aria-current="location"] {
+  color: var(--ink-surface);
+  background: var(--cream);
+  box-shadow: inset 0 0 0 1px rgba(255, 250, 240, 0.2);
+}
+
 .snapshot-section,
 .stories-section,
 .ledger-section {
@@ -493,7 +530,7 @@ button {
 
 .snapshot-card--total {
   color: var(--cream);
-  background: var(--ink);
+  background: var(--ink-surface);
 }
 
 .snapshot-card--total > span,
@@ -666,7 +703,7 @@ button {
   width: 45px;
   height: 45px;
   color: var(--cream);
-  background: var(--ink);
+  background: var(--ink-surface);
   border-radius: 50%;
   font-family: Georgia, serif;
   font-size: 0.8rem;
@@ -1149,8 +1186,8 @@ button {
 
 .filter-group button[aria-pressed="true"] {
   color: var(--cream);
-  background: var(--ink);
-  border-color: var(--ink);
+  background: var(--ink-surface);
+  border-color: var(--ink-surface);
   box-shadow: 0 5px 14px rgba(30, 29, 25, 0.16);
 }
 
@@ -1559,7 +1596,7 @@ button {
 .follow-section {
   padding-block: clamp(5.5rem, 9vw, 9rem);
   color: var(--cream);
-  background: var(--ink);
+  background: var(--ink-surface);
 }
 
 .follow-grid {
@@ -1656,6 +1693,116 @@ button {
   text-transform: uppercase;
 }
 
+html[data-theme="dark"] .indie-masthead,
+html[data-theme="dark"] .snapshot-grid,
+html[data-theme="dark"] .snapshot-card,
+html[data-theme="dark"] .timeline-section,
+html[data-theme="dark"] .year-timeline,
+html[data-theme="dark"] .year-row,
+html[data-theme="dark"] .year-marker,
+html[data-theme="dark"] .story-progress,
+html[data-theme="dark"] .story-metrics,
+html[data-theme="dark"] .story-metrics div,
+html[data-theme="dark"] .story-footer,
+html[data-theme="dark"] .ledger-card__footer {
+  border-color: var(--faint);
+}
+
+html[data-theme="dark"] .hero-note {
+  background:
+    linear-gradient(rgba(37, 40, 35, 0.9), rgba(37, 40, 35, 0.9)),
+    repeating-linear-gradient(0deg, transparent 0 30px, rgba(130, 152, 145, 0.14) 30px 31px);
+  border-color: var(--faint);
+  box-shadow: 12px 14px 0 rgba(0, 0, 0, 0.22);
+}
+
+html[data-theme="dark"] .hero-note::before {
+  background: rgba(154, 132, 90, 0.58);
+}
+
+html[data-theme="dark"] .hero-note > p:not(.hand-note) {
+  color: var(--pencil);
+}
+
+html[data-theme="dark"] .hero-note dl div {
+  border-color: var(--faint);
+}
+
+html[data-theme="dark"] .snapshot-grid,
+html[data-theme="dark"] .timeline-section {
+  background: var(--paper);
+}
+
+html[data-theme="dark"] .snapshot-grid {
+  box-shadow: 9px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+html[data-theme="dark"] .year-projects a,
+html[data-theme="dark"] .story-progress,
+html[data-theme="dark"] .ledger-toolbar,
+html[data-theme="dark"] .ledger-status,
+html[data-theme="dark"] .ledger-metrics div,
+html[data-theme="dark"] .ledger-details {
+  background: color-mix(in srgb, var(--paper-bright) 86%, var(--paper));
+  border-color: var(--faint);
+}
+
+html[data-theme="dark"] .tag-row span,
+html[data-theme="dark"] .filter-group button,
+html[data-theme="dark"] .ledger-capabilities span {
+  background: var(--paper-bright);
+  border-color: var(--faint);
+}
+
+html[data-theme="dark"] .filter-group button[aria-pressed="true"] {
+  color: var(--cream);
+  background: var(--ink-surface);
+  border-color: var(--ink-surface);
+}
+
+html[data-theme="dark"] .ledger-card {
+  background:
+    linear-gradient(145deg, rgba(41, 44, 39, 0.97), rgba(30, 33, 29, 0.94)),
+    color-mix(in srgb, var(--project-accent) 8%, transparent);
+  border-color: color-mix(in srgb, var(--project-accent) 28%, var(--faint));
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.22),
+    0 3px 0 color-mix(in srgb, var(--project-accent) 18%, transparent);
+}
+
+html[data-theme="dark"] .project-icon {
+  background:
+    radial-gradient(circle at 28% 20%, rgba(255, 255, 255, 0.1), transparent 42%),
+    color-mix(in srgb, var(--project-accent) 11%, var(--paper-bright));
+  border-color: color-mix(in srgb, var(--project-accent) 25%, var(--faint));
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+html[data-theme="dark"] .project-icon--monogram {
+  background:
+    radial-gradient(circle at 28% 20%, rgba(255, 255, 255, 0.2), transparent 38%),
+    var(--project-accent);
+}
+
+html[data-theme="dark"] .ledger-card summary,
+html[data-theme="dark"] .ledger-note {
+  background: color-mix(in srgb, var(--project-accent) 9%, var(--paper-bright));
+  border-color: color-mix(in srgb, var(--project-accent) 24%, var(--faint));
+}
+
+html[data-theme="dark"] .ledger-note--next {
+  background: var(--paper-bright);
+}
+
+html[data-theme="dark"] .method-note {
+  background: #713226;
+  box-shadow: 10px 12px 0 rgba(0, 0, 0, 0.24);
+}
+
+html[data-theme="dark"] .method-note p {
+  color: #efd8d0;
+}
+
 @media (max-width: 1040px) {
   .snapshot-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1742,7 +1889,7 @@ button {
   }
 
   .direct-link-note {
-    text-align: right;
+    display: none;
   }
 
   .direct-link-note__long {
@@ -1773,6 +1920,10 @@ button {
   .indie-index__inner {
     min-height: 56px;
     gap: 0.5rem;
+  }
+
+  .masthead-actions {
+    gap: 0.55rem;
   }
 
   .index-label {

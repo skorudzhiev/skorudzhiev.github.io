@@ -1,5 +1,6 @@
 ---
 import IndieLayout from "../../layouts/IndieLayout.astro";
+import ThemeToggle from "../../components/ThemeToggle.astro";
 import {
   indieProjects,
   indieSnapshotDate,
@@ -56,13 +57,30 @@ function shortDate(value: string) {
           <span class="log-mark__glyph" aria-hidden="true">S/</span>
           <span><strong>Stoyan's Indie Log</strong><small>Field notes · 2024—now</small></span>
         </a>
-        <p class="direct-link-note">
-          <i aria-hidden="true"></i>
-          <span class="direct-link-note__long">Direct-link edition · intentionally unlisted</span>
-          <span class="direct-link-note__short">Unlisted · public</span>
-        </p>
+        <div class="masthead-actions">
+          <p class="direct-link-note">
+            <i aria-hidden="true"></i>
+            <span class="direct-link-note__long">Direct-link edition · intentionally unlisted</span>
+            <span class="direct-link-note__short">Unlisted · public</span>
+          </p>
+          <ThemeToggle />
+        </div>
       </div>
     </header>
+
+    <nav class="indie-index" aria-label="Page sections">
+      <div class="indie-shell indie-index__inner">
+        <span class="index-label">On this page</span>
+        <div class="index-links">
+          <a href="#overview">Overview</a>
+          <a href="#timeline">Timeline</a>
+          <a href="#stories">Stories</a>
+          <a href="#bench">On the bench</a>
+          <a href="#ledger">Full ledger</a>
+          <a href="#follow">Follow</a>
+        </div>
+      </div>
+    </nav>
 
     <main id="indie-main">
       <section class="indie-hero indie-shell" aria-labelledby="indie-title">
@@ -92,20 +110,6 @@ function shortDate(value: string) {
           <span class="note-stamp" aria-hidden="true">UNLISTED<br />NOT PRIVATE</span>
         </aside>
       </section>
-
-      <nav class="indie-index" aria-label="Page sections">
-        <div class="indie-shell indie-index__inner">
-          <span class="index-label">On this page</span>
-          <div class="index-links">
-            <a href="#overview">Overview</a>
-            <a href="#timeline">Timeline</a>
-            <a href="#stories">Stories</a>
-            <a href="#bench">On the bench</a>
-            <a href="#ledger">Full ledger</a>
-            <a href="#follow">Follow</a>
-          </div>
-        </div>
-      </nav>
 
       <section class="snapshot-section indie-shell" id="overview" aria-labelledby="overview-title">
         <div class="section-heading section-heading--split">
@@ -460,5 +464,35 @@ function shortDate(value: string) {
     buttons.forEach((button) => {
       button.addEventListener("click", () => applyFilter(button.dataset.filter ?? "all"));
     });
+
+    const sectionLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>(".index-links a"));
+    const sections = sectionLinks
+      .map((link) => ({ link, section: document.querySelector<HTMLElement>(link.hash) }))
+      .filter((entry): entry is { link: HTMLAnchorElement; section: HTMLElement } => Boolean(entry.section));
+    let navigationFrame = 0;
+
+    function updateSectionNavigation() {
+      navigationFrame = 0;
+      const readingLine = 130;
+      let active = sections[0];
+
+      sections.forEach((entry) => {
+        if (entry.section.getBoundingClientRect().top <= readingLine) active = entry;
+      });
+
+      sectionLinks.forEach((link) => {
+        if (link === active?.link) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
+
+    }
+
+    function requestNavigationUpdate() {
+      if (!navigationFrame) navigationFrame = window.requestAnimationFrame(updateSectionNavigation);
+    }
+
+    window.addEventListener("scroll", requestNavigationUpdate, { passive: true });
+    window.addEventListener("resize", requestNavigationUpdate, { passive: true });
+    updateSectionNavigation();
   </script>
 </IndieLayout>

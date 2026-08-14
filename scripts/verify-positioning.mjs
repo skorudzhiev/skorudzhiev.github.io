@@ -74,6 +74,14 @@ expect(
   "The MCP article is missing the commercial-claim boundary.",
 );
 expect(
+  articleHtml.includes('class="article-navigator"'),
+  "The MCP article is missing its persistent heading navigator.",
+);
+expect(
+  homeHtml.includes('class="theme-toggle"'),
+  "The personal-site header is missing the light/dark theme toggle.",
+);
+expect(
   articleHtml.includes('rel="canonical" href="https://skorudzhiev.github.io/writing/mcp-project-brains/"'),
   "The MCP article canonical URL is incorrect.",
 );
