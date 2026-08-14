@@ -8,6 +8,7 @@ interface Props {
 
 const { article, featured = false } = Astro.props;
 const date = article.data.publishedAt.toLocaleDateString("en", { month: "short", year: "numeric" });
+const href = article.data.path ?? article.data.canonicalUrl;
 ---
 
 <article class:list={["writing-card", featured && "writing-card--featured"]}>
@@ -17,7 +18,7 @@ const date = article.data.publishedAt.toLocaleDateString("en", { month: "short",
   </div>
   <h3>{article.data.title}</h3>
   <p>{article.data.description}</p>
-  <a class="card-link" href={article.data.canonicalUrl} target={article.data.external ? "_blank" : undefined} rel={article.data.external ? "noopener" : undefined}>
-    Read the article <span aria-hidden="true">↗</span>
+  <a class="card-link" href={href} target={article.data.external ? "_blank" : undefined} rel={article.data.external ? "noopener" : undefined}>
+    Read the article <span aria-hidden="true">{article.data.external ? "↗" : "→"}</span>
   </a>
 </article>

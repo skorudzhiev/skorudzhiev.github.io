@@ -10,7 +10,9 @@
     "test:indie": "node scripts/verify-indie.mjs",
     "test:indie:browser": "playwright test --config=playwright.indie.config.ts",
     "test:indie:visual:update": "UPDATE_INDIE_BASELINES=1 playwright test --config=playwright.indie.config.ts --grep visual-baseline",
-    "verify": "npm run build && npm run test:indie && npm run test:indie:browser"
+    "test:positioning": "node scripts/verify-positioning.mjs",
+    "test:site:browser": "playwright test --config=playwright.site.config.ts",
+    "verify": "npm run build && npm run test:positioning && npm run test:site:browser && npm run test:indie && npm run test:indie:browser"
   },
   "dependencies": {
     "@astrojs/rss": "latest",

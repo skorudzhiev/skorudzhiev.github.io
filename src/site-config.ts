@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Stoyan Korudzhiev",
   title: "Software engineer & product builder",
   description:
-    "Software engineer and product builder working across product strategy, architecture, mobile, web, desktop, AI-assisted workflows, design systems, and launch execution.",
+    "Software engineer and product builder working across product strategy, architecture, mobile, web, desktop, AI systems, MCP integrations, design systems, and launch execution.",
   url: "https://skorudzhiev.github.io",
   email: "skorudzhiev@gmail.com",
   availability: "conversations" as const,

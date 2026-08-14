@@ -1,0 +1,57 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+interface Props {
+  article: CollectionEntry<"writing">;
+}
+
+export async function getStaticPaths() {
+  const articles = await getCollection("writing", ({ data }) => !data.external && Boolean(data.path));
+  return articles.map((article) => ({
+    params: { slug: article.id },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content } = await render(article);
+const publishedAt = article.data.publishedAt.toLocaleDateString("en", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+});
+---
+
+<BaseLayout
+  title={article.data.title}
+  description={article.data.description}
+  canonicalPath={article.data.path}
+>
+  <header class="article-hero">
+    <div class="reading-shell">
+      <a class="article-back-link" href="/writing/"><span aria-hidden="true">←</span> Writing</a>
+      <p class="eyebrow">Field note · {publishedAt}</p>
+      <h1>{article.data.title}</h1>
+      <p class="article-dek">{article.data.description}</p>
+      <div class="article-topics" aria-label="Article topics">
+        {article.data.topics.map((topic) => <span>{topic}</span>)}
+      </div>
+    </div>
+  </header>
+
+  <article class="prose-shell article-body">
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+
+  <section class="article-closing">
+    <div class="reading-shell">
+      <p class="eyebrow">Working on a context-aware product?</p>
+      <h2>Start with the boundary, not the tool list.</h2>
+      <p>I’m interested in product work where AI needs durable context, useful access to real systems, and a review model people can understand.</p>
+      <a class="button" href="/start/">Discuss the product <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+</BaseLayout>
