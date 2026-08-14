@@ -20,8 +20,8 @@ expect(!indieHtml.includes('class="site-header"'), "The personal-site header lea
 expect(!indieHtml.includes('class="site-footer"'), "The personal-site footer leaked into the Indie Log.");
 expect(indieHtml.includes('data-filter="shipped"'), "The project stage filters are missing.");
 expect(
-  (indieHtml.match(/<article class="ledger-card"[^>]*data-project-card/g) ?? []).length === 12,
-  "The project ledger must contain exactly 12 entries.",
+  (indieHtml.match(/<article class="ledger-card"[^>]*data-project-card/g) ?? []).length === 15,
+  "The project ledger must contain exactly 15 entries.",
 );
 expect(
   (indieHtml.match(/data-project-icon/g) ?? []).length === 8,

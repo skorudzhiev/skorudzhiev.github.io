@@ -10,10 +10,10 @@ test("renders the isolated, unlisted field journal", async ({ page }) => {
     "content",
     "noindex, nofollow, noarchive, nosnippet",
   );
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("Twelve projects");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("Fifteen projects");
   await expect(page.locator(".site-header")).toHaveCount(0);
   await expect(page.locator(".site-footer")).toHaveCount(0);
-  await expect(page.locator("[data-project-card]")).toHaveCount(12);
+  await expect(page.locator("[data-project-card]")).toHaveCount(15);
   const projectIcons = page.locator("[data-project-icon]");
   await expect(projectIcons).toHaveCount(8);
   await expect
@@ -43,8 +43,8 @@ test("filters the full ledger without changing the page URL", async ({ page }) =
   await expect(cards.filter({ visible: true })).toHaveCount(5);
   await expect(page.locator("#filter-status")).toHaveText("Showing 5 projects.");
 
-  await page.getByRole("button", { name: /Active 5/ }).click();
-  await expect(cards.filter({ visible: true })).toHaveCount(5);
+  await page.getByRole("button", { name: /Active 8/ }).click();
+  await expect(cards.filter({ visible: true })).toHaveCount(8);
 
   await page.getByRole("button", { name: /Lab \/ archive 2/ }).click();
   await expect(cards.filter({ visible: true })).toHaveCount(2);
