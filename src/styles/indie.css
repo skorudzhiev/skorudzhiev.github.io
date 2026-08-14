@@ -1601,14 +1601,6 @@ button {
   color: #ee8c70;
 }
 
-.follow-links .follow-link--bluesky {
-  color: #79b8ff;
-}
-
-.follow-links .follow-link--bluesky:hover {
-  color: #a9d1ff;
-}
-
 .follow-links i,
 .public-projects i {
   font-style: normal;

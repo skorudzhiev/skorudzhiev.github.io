@@ -31,11 +31,15 @@ expect(
 );
 expect(
   homeHtml.includes('href="https://bsky.app/profile/skorudzhiev.bsky.social"'),
-  "The public-site footer is missing the Bluesky profile badge.",
+  "The public-site footer is missing the Bluesky profile link.",
 );
 expect(
-  homeHtml.includes("@skorudzhiev.bsky.social"),
-  "The Bluesky badge is missing its visible profile handle.",
+  homeHtml.includes(">Bluesky ↗</a>"),
+  "The Bluesky profile is missing its compact footer label.",
+);
+expect(
+  !homeHtml.includes("bluesky-badge"),
+  "The Bluesky profile must use the same footer-link markup as the other social profiles.",
 );
 expect(
   servicesHtml.includes('id="context-systems"'),
