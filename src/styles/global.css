@@ -2372,6 +2372,69 @@ h3 {
   text-underline-offset: 0.2em;
 }
 
+.footer-links .bluesky-badge {
+  width: min(100%, 16.5rem);
+  margin-top: 0.35rem;
+  padding: 0.65rem 0.7rem;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.65rem;
+  color: #075cad;
+  background: color-mix(in srgb, #1185fe 10%, var(--paper));
+  border: 1px solid color-mix(in srgb, #1185fe 38%, var(--line));
+  border-radius: 0.75rem;
+  text-decoration: none;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease;
+}
+
+.footer-links .bluesky-badge:hover {
+  transform: translateY(-1px);
+  background: color-mix(in srgb, #1185fe 15%, var(--paper));
+  border-color: color-mix(in srgb, #1185fe 60%, var(--line));
+}
+
+.footer-links .bluesky-badge:focus-visible {
+  outline: 2px solid #1185fe;
+  outline-offset: 3px;
+}
+
+.bluesky-badge svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  fill: currentColor;
+}
+
+.footer-grid .bluesky-badge__copy {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.08rem;
+  color: inherit;
+  font-size: inherit;
+  line-height: 1.15;
+}
+
+.bluesky-badge__copy strong {
+  font-size: 0.78rem;
+}
+
+.bluesky-badge__copy small {
+  overflow: hidden;
+  color: color-mix(in srgb, #075cad 78%, var(--muted));
+  font-size: 0.68rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.footer-grid .bluesky-badge__arrow {
+  color: inherit;
+  font-size: 0.8rem;
+}
+
 .footer-meta {
   align-items: flex-end;
   text-align: right;

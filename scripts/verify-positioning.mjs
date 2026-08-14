@@ -30,6 +30,14 @@ expect(
   "The homepage writing section is missing the first-party MCP article.",
 );
 expect(
+  homeHtml.includes('href="https://bsky.app/profile/skorudzhiev.bsky.social"'),
+  "The public-site footer is missing the Bluesky profile badge.",
+);
+expect(
+  homeHtml.includes("@skorudzhiev.bsky.social"),
+  "The Bluesky badge is missing its visible profile handle.",
+);
+expect(
   servicesHtml.includes('id="context-systems"'),
   "The services page is missing the context-aware product systems section.",
 );

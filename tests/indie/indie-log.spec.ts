@@ -14,6 +14,10 @@ test("renders the isolated, unlisted field journal", async ({ page }) => {
   await expect(page.locator(".site-header")).toHaveCount(0);
   await expect(page.locator(".site-footer")).toHaveCount(0);
   await expect(page.locator("[data-project-card]")).toHaveCount(15);
+  await expect(page.getByRole("link", { name: "Bluesky / @skorudzhiev.bsky.social" })).toHaveAttribute(
+    "href",
+    "https://bsky.app/profile/skorudzhiev.bsky.social",
+  );
   const projectIcons = page.locator("[data-project-icon]");
   await expect(projectIcons).toHaveCount(8);
   await expect

@@ -18,6 +18,10 @@ test("presents MCP as part of the broader product practice", async ({ page }) =>
     "href",
     "/writing/mcp-project-brains/",
   );
+  await expect(page.getByRole("link", { name: /Bluesky @skorudzhiev\.bsky\.social/ })).toHaveAttribute(
+    "href",
+    "https://bsky.app/profile/skorudzhiev.bsky.social",
+  );
   await expectNoHorizontalOverflow(page);
 });
 

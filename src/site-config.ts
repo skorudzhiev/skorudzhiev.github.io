@@ -12,5 +12,6 @@ export const siteConfig = {
     github: "https://github.com/skorudzhiev",
     linkedin: "https://www.linkedin.com/in/skorudzhiev",
     x: "https://x.com/StoyanBuilds",
+    bluesky: "https://bsky.app/profile/skorudzhiev.bsky.social",
   },
 };
