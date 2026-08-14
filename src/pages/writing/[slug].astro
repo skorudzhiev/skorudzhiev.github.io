@@ -1,6 +1,7 @@
 ---
 import { getCollection, render, type CollectionEntry } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArticleNavigator from "../../components/ArticleNavigator.astro";
 
 interface Props {
   article: CollectionEntry<"writing">;
@@ -15,7 +16,7 @@ export async function getStaticPaths() {
 }
 
 const { article } = Astro.props;
-const { Content } = await render(article);
+const { Content, headings } = await render(article);
 const publishedAt = article.data.publishedAt.toLocaleDateString("en", {
   day: "numeric",
   month: "long",
@@ -32,7 +33,7 @@ const publishedAt = article.data.publishedAt.toLocaleDateString("en", {
     <div class="reading-shell">
       <a class="article-back-link" href="/writing/"><span aria-hidden="true">←</span> Writing</a>
       <p class="eyebrow">Field note · {publishedAt}</p>
-      <h1>{article.data.title}</h1>
+      <h1 id="article-title">{article.data.title}</h1>
       <p class="article-dek">{article.data.description}</p>
       <div class="article-topics" aria-label="Article topics">
         {article.data.topics.map((topic) => <span>{topic}</span>)}
@@ -40,7 +41,9 @@ const publishedAt = article.data.publishedAt.toLocaleDateString("en", {
     </div>
   </header>
 
-  <article class="prose-shell article-body">
+  <ArticleNavigator headings={headings} />
+
+  <article class="prose-shell article-body" data-article-content>
     <div class="prose">
       <Content />
     </div>

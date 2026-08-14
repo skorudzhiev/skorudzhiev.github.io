@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import ThemeHead from "../components/ThemeHead.astro";
 import { siteConfig } from "../site-config";
 import "../styles/global.css";
 
@@ -33,11 +34,11 @@ const personSchema = {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="theme-color" content="#f2efe7" />
+    <ThemeHead lightColor="#f2efe7" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={canonical} />

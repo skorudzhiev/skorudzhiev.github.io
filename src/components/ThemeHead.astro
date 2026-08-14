@@ -1,0 +1,30 @@
+---
+interface Props {
+  lightColor: string;
+  darkColor?: string;
+}
+
+const { lightColor, darkColor = "#151715" } = Astro.props;
+const themeScript = `(() => {
+  const storageKey = "stoyan-theme";
+  const root = document.documentElement;
+  let savedTheme = null;
+
+  try {
+    savedTheme = localStorage.getItem(storageKey);
+  } catch {}
+
+  const theme = savedTheme === "light" || savedTheme === "dark"
+    ? savedTheme
+    : window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+
+  root.dataset.theme = theme;
+  root.style.colorScheme = theme;
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  themeColor?.setAttribute("content", theme === "dark" ? ${JSON.stringify(darkColor)} : ${JSON.stringify(lightColor)});
+})();`;
+---
+
+<meta name="theme-color" content={lightColor} data-light-color={lightColor} data-dark-color={darkColor} />
+<meta name="color-scheme" content="light dark" />
+<script is:inline set:html={themeScript} />
