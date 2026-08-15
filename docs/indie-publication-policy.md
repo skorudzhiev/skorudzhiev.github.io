@@ -91,6 +91,6 @@ Stale statistics remain historical snapshots with their date. They should not be
 
 ## Current decision record
 
-- Pangolines is an active public build because its only product URL is `pangolines.vercel.app`. It is not counted or featured as shipped.
+- Ricoscale is an active public build because its only product URL is `pangolines.vercel.app`. It is not counted or featured as shipped.
 - Private-product records remain in the ledger because their approved product facts show the breadth and lessons of the work. Their private links and operational details remain out of the page.
 - The credibility-statistics section remains a plan until real values and exact wording are approved; no traction values were invented for this change.
