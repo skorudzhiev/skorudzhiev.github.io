@@ -41,19 +41,19 @@ expect(
 );
 expect(
   indieHtml.includes('id="project-pangolines" data-project-card data-tier="active"'),
-  "A Vercel-only Pangolines build must remain active rather than shipped.",
+  "A Vercel-only Ricoscale build must remain active rather than shipped.",
 );
 expect(
   !indieHtml.includes('id="story-pangolines"'),
-  "A Vercel-only Pangolines build must not be featured as a shipped story.",
+  "A Vercel-only Ricoscale build must not be featured as a shipped story.",
 );
 expect(
   (indieHtml.match(/data-disclosure="private-product-facts"/g) ?? []).length === 10,
   "The private-product disclosure boundary must cover exactly ten approved records.",
 );
 expect(
-  (indieHtml.match(/data-project-icon/g) ?? []).length === 8,
-  "The project ledger must render all eight available original project icons.",
+  (indieHtml.match(/data-project-icon/g) ?? []).length === 10,
+  "The project ledger must render all ten available original project icons.",
 );
 expect(!indieHtml.includes("OpenClaw-Jarvis"), "Backup repositories must not appear as products.");
 
