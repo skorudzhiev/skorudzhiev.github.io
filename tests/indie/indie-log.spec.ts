@@ -24,7 +24,7 @@ test("renders the isolated, unlisted field journal", async ({ page }) => {
   expect(followLinkColors).toHaveLength(3);
   expect(new Set(followLinkColors).size).toBe(1);
   const projectIcons = page.locator("[data-project-icon]");
-  await expect(projectIcons).toHaveCount(8);
+  await expect(projectIcons).toHaveCount(10);
   await expect
     .poll(() =>
       projectIcons.evaluateAll(
