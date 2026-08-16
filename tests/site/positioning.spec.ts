@@ -12,7 +12,7 @@ test("presents MCP as part of the broader product practice", async ({ page }) =>
 
   await expect(page.getByText("AI systems & MCP integrations", { exact: true })).toBeVisible();
   const articleCard = page.locator(".writing-card").filter({
-    hasText: "MCP Is the Interface. The Project Brain Is the System.",
+    hasText: "MCP and Project Brains",
   });
   await expect(articleCard.getByRole("link", { name: "Read the article" })).toHaveAttribute(
     "href",
@@ -55,13 +55,13 @@ test("shows the bounded service claim and two implementation examples", async ({
 test("publishes the first-party field note with a clear evidence boundary", async ({ page }) => {
   await page.goto("/writing/mcp-project-brains/", { waitUntil: "domcontentloaded" });
 
-  await expect(page).toHaveTitle(/MCP Is the Interface\. The Project Brain Is the System\./);
+  await expect(page).toHaveTitle(/MCP and Project Brains/);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
     "href",
     "https://skorudzhiev.github.io/writing/mcp-project-brains/",
   );
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-    "MCP Is the Interface. The Project Brain Is the System.",
+    "MCP and Project Brains",
   );
   await expect(page.getByRole("heading", { name: "Two products, two different boundaries" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "The marketable unit is an outcome" })).toBeVisible();

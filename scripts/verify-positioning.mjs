@@ -62,7 +62,7 @@ expect(
   "The internal MCP article must not open as an external destination.",
 );
 expect(
-  articleHtml.includes("MCP Is the Interface. The Project Brain Is the System."),
+  articleHtml.includes("MCP and Project Brains"),
   "The MCP article title is missing.",
 );
 expect(
