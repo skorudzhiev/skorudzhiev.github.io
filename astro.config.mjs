@@ -7,7 +7,7 @@ export default defineConfig({
   trailingSlash: "always",
   integrations: [
     sitemap({
-      filter: (page) => new URL(page).pathname !== "/indie/",
+      filter: (page) => !["/indie/", "/blog/", "/projects/", "/404/"].includes(new URL(page).pathname),
     }),
   ],
 });
