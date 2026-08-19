@@ -26,6 +26,7 @@ const writing = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    preview: z.string(),
     publishedAt: z.coerce.date(),
     topics: z.array(z.string()),
     path: z.string().regex(/^\/.*\/$/).optional(),

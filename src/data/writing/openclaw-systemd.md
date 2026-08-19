@@ -1,6 +1,7 @@
 ---
 title: Prevent Your OpenClaw Gateway From Randomly Stopping
 description: A self-healing systemd setup built from a real operational failure.
+preview: A practical watchdog that detects failures and safely restarts an OpenClaw gateway.
 publishedAt: 2026-02-24
 topics:
   - Reliability

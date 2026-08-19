@@ -1,6 +1,7 @@
 ---
 title: MCP and Project Brains
 description: What two product implementations taught me about durable context, bounded tools, human approval, and the work required to turn MCP into a useful product capability.
+preview: Two MCP implementations show why context, boundaries, and approval matter.
 publishedAt: 2026-08-14
 topics:
   - MCP

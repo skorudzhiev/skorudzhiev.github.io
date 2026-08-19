@@ -1,6 +1,7 @@
 ---
 title: Google Keep is great, but its labels are broken
 description: The product problem behind SubKeep and the focused extension built to solve it.
+preview: See how SubKeep adds nested labels and a native-feeling sidebar to Keep.
 publishedAt: 2025-08-30
 topics:
   - Product thinking

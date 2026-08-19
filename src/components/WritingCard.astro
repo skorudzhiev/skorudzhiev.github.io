@@ -17,7 +17,7 @@ const href = article.data.path ?? article.data.canonicalUrl;
     <span>{article.data.topics[0]}</span>
   </div>
   <h3>{article.data.title}</h3>
-  <p>{article.data.description}</p>
+  <p class="writing-preview">{article.data.preview}</p>
   <a class="card-link" href={href} target={article.data.external ? "_blank" : undefined} rel={article.data.external ? "noopener" : undefined}>
     Read the article <span aria-hidden="true">{article.data.external ? "↗" : "→"}</span>
   </a>
