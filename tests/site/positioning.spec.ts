@@ -37,6 +37,20 @@ test("presents MCP as part of the broader product practice", async ({ page }) =>
   await expectNoHorizontalOverflow(page);
 });
 
+test("gives every writing card a short article preview", async ({ page }) => {
+  await page.goto("/writing/", { waitUntil: "domcontentloaded" });
+
+  const cards = page.locator(".writing-card");
+  await expect(cards).toHaveCount(7);
+  await expect(cards.locator(".writing-preview")).toHaveCount(7);
+
+  const previews = await cards.locator(".writing-preview").allTextContents();
+  expect(previews.every((preview) => preview.trim().length > 0)).toBe(true);
+  expect(previews.every((preview) => preview.trim().length <= 90)).toBe(true);
+  expect(previews.every((preview) => preview.trim().endsWith("."))).toBe(true);
+  await expectNoHorizontalOverflow(page);
+});
+
 test("shows the bounded service claim and two implementation examples", async ({ page }) => {
   await page.goto("/services/", { waitUntil: "domcontentloaded" });
 

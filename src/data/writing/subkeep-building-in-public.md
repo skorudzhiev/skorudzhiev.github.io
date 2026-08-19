@@ -1,6 +1,7 @@
 ---
 title: Building SubKeep in Public
 description: Behind the scenes, real numbers, and the quiet reality of organic growth.
+preview: The real numbers, feedback loops, and trade-offs behind SubKeep’s organic growth.
 publishedAt: 2026-01-12
 topics:
   - Product building

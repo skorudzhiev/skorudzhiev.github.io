@@ -1,6 +1,7 @@
 ---
 title: Your Design System Is Already a Marketing Engine
 description: How design tokens, real product UI, AI assistance, SVG, Sharp, and FFmpeg became a repeatable pipeline for professional branded marketing assets.
+preview: See how product UI becomes a repeatable pipeline for polished marketing assets.
 publishedAt: 2026-07-22
 topics:
   - Design systems
