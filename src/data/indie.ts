@@ -28,11 +28,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "public-preview",
     statusLabel: "Public preview",
     startedAt: "2026-02-26",
-    lastUpdatedAt: "2026-08-09",
+    lastUpdatedAt: "2026-08-18",
     summary:
       "A local-first calculation workspace that turns readable notes into live results, with a focused macOS companion for quick calculations.",
     currentState:
-      "The public workspace and unsigned Apple Silicon companion remain the production surface, while a separately gated development build now supports richer Canvas and Blueprint workflows without leaking experiments into the release.",
+      "The public workspace and unsigned Apple Silicon companion remain the production surface, while a separately gated development build now supports richer Canvas, Blueprint, and document-composition workflows without leaking experiments into the release.",
     progressStage: 5,
     progressLabel: "Shipped, learning, refining",
     lesson:
@@ -66,12 +66,17 @@ const indieProjectRecords: IndieProject[] = [
         label: "Development canvas contained",
         description: "Canvas, Blueprint, and local MCP workflows gained a dedicated development boundary while the production feature catalogue stayed explicit.",
       },
+      {
+        date: "2026-08-18",
+        label: "Visual workflows become composable",
+        description: "Editable paths, native canvas pieces, layout proposals, and document-composition tools expanded the gated visual workspace and its real campaign-capture workflow.",
+      },
     ],
     metrics: [
       {
         label: "Started",
         value: "Feb 2026",
-        asOf: "2026-08-09",
+        asOf: "2026-08-18",
         sourceNote: "Verified repository history",
         approved: true,
         category: "progress",
@@ -79,7 +84,7 @@ const indieProjectRecords: IndieProject[] = [
       {
         label: "Available on",
         value: "Web + macOS alpha",
-        asOf: "2026-08-09",
+        asOf: "2026-08-18",
         sourceNote: "Verified production documentation",
         approved: true,
         category: "release",
@@ -359,11 +364,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "private-beta",
     statusLabel: "Private foundation",
     startedAt: "2026-07-31",
-    lastUpdatedAt: "2026-08-01",
+    lastUpdatedAt: "2026-08-15",
     summary:
       "A bilingual home-inventory PWA designed to keep English and Bulgarian item names searchable together while protecting records and photos.",
     currentState:
-      "The product foundation includes authentication, TOTP, database-level authorization, photo handling, local development flows, and explicit security documentation.",
+      "The private foundation now combines authentication and database-level authorization with location photos, availability-aware browsing, and recoverable inventory views when optional migrations are not yet present.",
     progressStage: 3,
     progressLabel: "Core system proven",
     lesson:
@@ -381,12 +386,17 @@ const indieProjectRecords: IndieProject[] = [
         label: "Secure foundation",
         description: "Authentication, authorization, inventory, photos, documentation, and local setup landed together.",
       },
+      {
+        date: "2026-08-15",
+        label: "Browsing reflects the real inventory",
+        description: "Location imagery, availability filters, and migration-tolerant views made the private capture-and-find loop more resilient.",
+      },
     ],
     metrics: [
       {
         label: "Current stage",
         value: "Private foundation",
-        asOf: "2026-08-01",
+        asOf: "2026-08-15",
         sourceNote: "Verified private product documentation",
         approved: true,
         category: "progress",
@@ -406,11 +416,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "active-build",
     statusLabel: "Playable private build",
     startedAt: "2026-08-08",
-    lastUpdatedAt: "2026-08-13",
+    lastUpdatedAt: "2026-08-20",
     summary:
       "A local-first arcade game about helping sixteen cozy climbers cross sixteen towers by turning running momentum into higher jumps.",
     currentState:
-      "The private build now spans sixteen 100-floor chapters, replayable journeys, two long-form challenge modes, sixteen climbers, cosmetics, prestige, offline play, and keyboard, gamepad, and touch controls.",
+      "The private build now spans sixteen 100-floor chapters with replayable journeys, layered 2.5D character rigs, campaign trail maps, per-tower appearance customization, offline play, and keyboard, gamepad, and touch controls.",
     progressStage: 4,
     progressLabel: "Full campaign, tuning feel",
     lesson:
@@ -433,12 +443,17 @@ const indieProjectRecords: IndieProject[] = [
         label: "Sixteen-tower journey",
         description: "Campaign replay, climber customization, prestige, cosmetics, and immersive tower artwork turned the initial climb into a complete long-form progression loop.",
       },
+      {
+        date: "2026-08-20",
+        label: "The journey gains a visible identity",
+        description: "Trail maps, customizable tower appearances, and layered character rigs made campaign progress and the sixteen climbers more expressive without changing the deterministic climb.",
+      },
     ],
     metrics: [
       {
         label: "Campaign scope",
         value: "16 towers",
-        asOf: "2026-08-13",
+        asOf: "2026-08-20",
         sourceNote: "Verified game documentation and tests",
         approved: true,
         category: "release",
@@ -446,7 +461,7 @@ const indieProjectRecords: IndieProject[] = [
       {
         label: "Playable climbers",
         value: "16 characters",
-        asOf: "2026-08-13",
+        asOf: "2026-08-20",
         sourceNote: "Verified gameplay specification",
         approved: true,
         category: "progress",
@@ -469,11 +484,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "public-preview",
     statusLabel: "Community preview",
     startedAt: "2026-08-09",
-    lastUpdatedAt: "2026-08-10",
+    lastUpdatedAt: "2026-08-19",
     summary:
       "A portrait-first falling-piece crafting puzzle where completed jobs become miniature scenes and every shipped mode works without an account.",
     currentState:
-      "The Community Preview includes an 18-job campaign, daily and endless modes, deterministic challenge codes, local saves, offline PWA support, accessibility controls, and tactile material themes.",
+      "The Community Preview includes an 18-job campaign, daily and endless modes, deterministic challenge codes, local saves, offline PWA support, accessibility controls, tactile material themes, and a smoother dragged-piece descent with a short recovery window.",
     progressStage: 4,
     progressLabel: "Community preview complete",
     lesson:
@@ -491,12 +506,17 @@ const indieProjectRecords: IndieProject[] = [
         label: "Campaign becomes a place",
         description: "Completion flow, evolving scenes, material skins, mobile reliability, and tactile feedback gave each job a clearer sense of arrival.",
       },
+      {
+        date: "2026-08-19",
+        label: "Dragged drops become recoverable",
+        description: "A slower render-only descent added a brief cancellation window for accidental drops while preserving deterministic board state and replay behavior.",
+      },
     ],
     metrics: [
       {
         label: "Authored jobs",
         value: "18",
-        asOf: "2026-08-10",
+        asOf: "2026-08-19",
         sourceNote: "Verified private product documentation",
         approved: true,
         category: "progress",
@@ -504,7 +524,7 @@ const indieProjectRecords: IndieProject[] = [
       {
         label: "Campaign steps",
         value: "6",
-        asOf: "2026-08-10",
+        asOf: "2026-08-19",
         sourceNote: "Verified gameplay documentation",
         approved: true,
         category: "release",
@@ -729,11 +749,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "active-build",
     statusLabel: "Private operations system",
     startedAt: "2026-08-07",
-    lastUpdatedAt: "2026-08-13",
+    lastUpdatedAt: "2026-08-17",
     summary:
       "A secure bridge and campaign console for drafting, reviewing, and operating a self-hosted social workflow without silently publishing.",
     currentState:
-      "The private system now mirrors self-hosted Postiz data, manages project context and a Marketing Brain, stages editable post and profile previews, supports X, Bluesky, and Threads, and keeps live provider writes behind approval and confirmation gates.",
+      "The private system now combines campaign timelines, local calendar statuses, connected-draft recovery, and exact Postiz scheduling with approval, delivery confirmation, and reconciliation around every provider write.",
     progressStage: 4,
     progressLabel: "Connected workflow, guarded writes",
     lesson:
@@ -756,12 +776,17 @@ const indieProjectRecords: IndieProject[] = [
         label: "Profiles and publishing stay guarded",
         description: "Grounded profile suggestions, standalone drafts, Threads previews, restart tooling, and confirmation-protected live writes extended the workflow without hiding its boundaries.",
       },
+      {
+        date: "2026-08-17",
+        label: "Campaign delivery becomes traceable",
+        description: "Timeline controls, local status updates, batch approvals, immutable delivery confirmation, exact scheduling, and connected-draft recovery closed the loop from plan to provider state.",
+      },
     ],
     metrics: [
       {
         label: "Preview coverage",
         value: "X + Bluesky + Threads",
-        asOf: "2026-08-13",
+        asOf: "2026-08-17",
         sourceNote: "Verified private operations documentation",
         approved: true,
         category: "release",
@@ -859,7 +884,7 @@ const indieProjectRecords: IndieProject[] = [
   },
 ];
 
-export const indieSnapshotDate = "2026-08-14";
+export const indieSnapshotDate = "2026-08-21";
 
 function validateIndieProjectRecords(projects: IndieProject[]) {
   const ids = new Set<string>();
