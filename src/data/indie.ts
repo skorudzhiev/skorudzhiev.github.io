@@ -28,11 +28,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "public-preview",
     statusLabel: "Public preview",
     startedAt: "2026-02-26",
-    lastUpdatedAt: "2026-08-18",
+    lastUpdatedAt: "2026-08-26",
     summary:
-      "A local-first calculation workspace that turns readable notes into live results, with a focused macOS companion for quick calculations.",
+      "A local-first calculation workspace that turns readable notes into live results, with focused macOS, Windows, and Linux companions for quick calculations.",
     currentState:
-      "The public workspace and unsigned Apple Silicon companion remain the production surface, while a separately gated development build now supports richer Canvas, Blueprint, and document-composition workflows without leaking experiments into the release.",
+      "The public workspace now pairs with downloadable macOS, Windows, and Linux companions, while a separately gated development build contains experimental visual workflows and the landing page tests founding-access demand through free regional reservations rather than live sales.",
     progressStage: 5,
     progressLabel: "Shipped, learning, refining",
     lesson:
@@ -71,21 +71,31 @@ const indieProjectRecords: IndieProject[] = [
         label: "Visual workflows become composable",
         description: "Editable paths, native canvas pieces, layout proposals, and document-composition tools expanded the gated visual workspace and its real campaign-capture workflow.",
       },
+      {
+        date: "2026-08-23",
+        label: "Desktop delivery reaches three platforms",
+        description: "Verified macOS, Windows, and Linux packages expanded the companion beyond its original Apple Silicon alpha.",
+      },
+      {
+        date: "2026-08-26",
+        label: "Founding demand test becomes explicit",
+        description: "Regional reservation pricing, test-only license commerce, and canonical public documentation established a measured path toward a paid desktop release.",
+      },
     ],
     metrics: [
       {
         label: "Started",
         value: "Feb 2026",
-        asOf: "2026-08-18",
+        asOf: "2026-08-26",
         sourceNote: "Verified repository history",
         approved: true,
         category: "progress",
       },
       {
         label: "Available on",
-        value: "Web + macOS alpha",
-        asOf: "2026-08-18",
-        sourceNote: "Verified production documentation",
+        value: "Web + 3 desktop platforms",
+        asOf: "2026-08-26",
+        sourceNote: "Verified release documentation and platform smoke tests",
         approved: true,
         category: "release",
       },
@@ -108,11 +118,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "live",
     statusLabel: "Live product",
     startedAt: "2025-08-04",
-    lastUpdatedAt: "2026-08-01",
+    lastUpdatedAt: "2026-08-27",
     summary:
       "A Chrome extension that gives Google Keep stronger folder organization, focused note workflows, and local-first preferences.",
     currentState:
-      "Published with a complete landing site, deterministic Google Keep fixtures, release documentation, and a per-note Zen Mode that preserves note content.",
+      "The published extension remains fully usable while a reversible Founding Preview adds license activation for a defined Pro feature set; every feature stays unlocked until store review, live-payment validation, and a separately approved enforcement release are complete.",
     progressStage: 5,
     progressLabel: "Shipped, listening, improving",
     lesson:
@@ -136,12 +146,17 @@ const indieProjectRecords: IndieProject[] = [
         label: "Zen Mode",
         description: "A focused per-note reading and writing surface shipped with static-content preservation.",
       },
+      {
+        date: "2026-08-27",
+        label: "Founding Preview stays reversible",
+        description: "A minimized-permission store package and test-mode software-license flow prepared the next release without taking existing features away from unlicensed users.",
+      },
     ],
     metrics: [
       {
         label: "Started",
         value: "Aug 2025",
-        asOf: "2026-08-01",
+        asOf: "2026-08-27",
         sourceNote: "Verified repository history",
         approved: true,
         category: "progress",
@@ -149,7 +164,7 @@ const indieProjectRecords: IndieProject[] = [
       {
         label: "Release state",
         value: "Published extension",
-        asOf: "2026-08-01",
+        asOf: "2026-08-27",
         sourceNote: "Verified product documentation",
         approved: true,
         category: "release",
@@ -172,18 +187,18 @@ const indieProjectRecords: IndieProject[] = [
     status: "live",
     statusLabel: "Live product",
     startedAt: "2025-09-01",
-    lastUpdatedAt: "2026-02-18",
+    lastUpdatedAt: "2026-08-28",
     summary:
       "A local-first desktop application for exploring contribution patterns, repository activity, and the rhythm behind a body of Git work.",
     currentState:
-      "The Tauri and Rust desktop product includes local repository analysis, optional GitHub data, secure token storage, and a supporting entitlement service.",
+      "The Tauri and Rust desktop product now spans macOS, Windows, and Linux and adds a local-first Agent Cockpit for observing MCP missions, reviewing guarded actions, mapping worktree collisions, and exporting metadata-only handoffs without launching agents or storing source content.",
     progressStage: 5,
     progressLabel: "Released, operating, learning",
     lesson:
       "Analytics become more useful when they help someone understand a working rhythm instead of simply producing a larger score.",
     nextObjective:
       "Keep the local experience fast and legible while validating which deeper insights are worth maintaining.",
-    capabilities: ["Desktop", "Tauri + Rust", "Git analytics", "Local-first"],
+    capabilities: ["Desktop", "Tauri + Rust", "Git analytics", "Agent governance"],
     milestones: [
       {
         date: "2025-09-01",
@@ -200,21 +215,31 @@ const indieProjectRecords: IndieProject[] = [
         label: "Version 1.4.2",
         description: "Repository scope, hook stability, development entitlements, and release handling were tightened.",
       },
+      {
+        date: "2026-08-27",
+        label: "Desktop support reaches Linux",
+        description: "AppImage and Debian packages joined hardened macOS and Windows delivery with checksums and platform-specific download paths.",
+      },
+      {
+        date: "2026-08-28",
+        label: "Agent Cockpit joins the product",
+        description: "Governed missions, approval records, worktree-aware change maps, metadata-only replays, and handoff exports connected GitGlow to existing MCP clients.",
+      },
     ],
     metrics: [
       {
         label: "Started",
         value: "2025",
-        asOf: "2026-02-18",
+        asOf: "2026-08-28",
         sourceNote: "Verified repository and public work history",
         approved: true,
         category: "progress",
       },
       {
-        label: "Desktop release",
-        value: "v1.4.2",
-        asOf: "2026-02-18",
-        sourceNote: "Verified release history",
+        label: "Desktop platforms",
+        value: "macOS + Windows + Linux",
+        asOf: "2026-08-28",
+        sourceNote: "Verified product and release documentation",
         approved: true,
         category: "release",
       },
@@ -416,11 +441,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "active-build",
     statusLabel: "Playable private build",
     startedAt: "2026-08-08",
-    lastUpdatedAt: "2026-08-20",
+    lastUpdatedAt: "2026-08-22",
     summary:
       "A local-first arcade game about helping sixteen cozy climbers cross sixteen towers by turning running momentum into higher jumps.",
     currentState:
-      "The private build now spans sixteen 100-floor chapters with replayable journeys, layered 2.5D character rigs, campaign trail maps, per-tower appearance customization, offline play, and keyboard, gamepad, and touch controls.",
+      "The private build now spans sixteen 100-floor chapters with replayable journeys, campaign trail maps, and sixteen distinct species-aware 2.5D character rigs whose richer anatomy, clothing, and palettes preserve existing saves, replays, and gameplay behavior.",
     progressStage: 4,
     progressLabel: "Full campaign, tuning feel",
     lesson:
@@ -448,12 +473,17 @@ const indieProjectRecords: IndieProject[] = [
         label: "The journey gains a visible identity",
         description: "Trail maps, customizable tower appearances, and layered character rigs made campaign progress and the sixteen climbers more expressive without changing the deterministic climb.",
       },
+      {
+        date: "2026-08-22",
+        label: "Sixteen climbers become distinct",
+        description: "Species-specific silhouettes, materials, clothing, portraits, and natural palettes replaced the earlier shared mascot treatment without breaking progression compatibility.",
+      },
     ],
     metrics: [
       {
         label: "Campaign scope",
         value: "16 towers",
-        asOf: "2026-08-20",
+        asOf: "2026-08-22",
         sourceNote: "Verified game documentation and tests",
         approved: true,
         category: "release",
@@ -461,7 +491,7 @@ const indieProjectRecords: IndieProject[] = [
       {
         label: "Playable climbers",
         value: "16 characters",
-        asOf: "2026-08-20",
+        asOf: "2026-08-22",
         sourceNote: "Verified gameplay specification",
         approved: true,
         category: "progress",
@@ -593,11 +623,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "active-build",
     statusLabel: "Playable private build",
     startedAt: "2026-08-10",
-    lastUpdatedAt: "2026-08-13",
+    lastUpdatedAt: "2026-08-22",
     summary:
       "An original meditative physics odyssey where every movement ejects part of your mass and restraint matters as much as direction.",
     currentState:
-      "The playable build spans a 60-arena campaign across eight realms, three deterministic difficulty modes, rivals, replays, offline progression, earned utilities, web and Android delivery, and extensive accessibility controls.",
+      "The playable build spans a 60-arena campaign across eight realms with deterministic rivals and replays, now reinforced by realm-specific spatial soundscapes, scalable vistas, clearer controls, and polished scenery across compact and ultrawide layouts.",
     progressStage: 4,
     progressLabel: "Full campaign, balancing and hardening",
     lesson:
@@ -620,12 +650,17 @@ const indieProjectRecords: IndieProject[] = [
         label: "Difficulty and earned progression",
         description: "Three challenge modes, story-gated utilities, Lumens, deterministic rivals, replay-safe loadouts, and bounded Android rendering completed the main progression loop.",
       },
+      {
+        date: "2026-08-22",
+        label: "The realms gain depth",
+        description: "Procedural spatial soundscapes, scalable vistas, and cleaner scenery seams made each realm more immersive without changing the deterministic campaign core.",
+      },
     ],
     metrics: [
       {
         label: "Campaign arenas",
         value: "60",
-        asOf: "2026-08-13",
+        asOf: "2026-08-22",
         sourceNote: "Verified private product documentation",
         approved: true,
         category: "progress",
@@ -633,7 +668,7 @@ const indieProjectRecords: IndieProject[] = [
       {
         label: "Realms",
         value: "8",
-        asOf: "2026-08-13",
+        asOf: "2026-08-22",
         sourceNote: "Verified gameplay documentation",
         approved: true,
         category: "release",
@@ -749,11 +784,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "active-build",
     statusLabel: "Private operations system",
     startedAt: "2026-08-07",
-    lastUpdatedAt: "2026-08-17",
+    lastUpdatedAt: "2026-08-26",
     summary:
       "A secure bridge and campaign console for drafting, reviewing, and operating a self-hosted social workflow without silently publishing.",
     currentState:
-      "The private system now combines campaign timelines, local calendar statuses, connected-draft recovery, and exact Postiz scheduling with approval, delivery confirmation, and reconciliation around every provider write.",
+      "The private system now combines campaign timelines, connected-draft recovery, and exact Postiz scheduling with approval and reconciliation, while exposing overdue delivery failures, recovering draft identity, supporting guarded X and Bluesky Builder Notes, and preserving secret-bearing deployment overrides during restarts.",
     progressStage: 4,
     progressLabel: "Connected workflow, guarded writes",
     lesson:
@@ -781,12 +816,17 @@ const indieProjectRecords: IndieProject[] = [
         label: "Campaign delivery becomes traceable",
         description: "Timeline controls, local status updates, batch approvals, immutable delivery confirmation, exact scheduling, and connected-draft recovery closed the loop from plan to provider state.",
       },
+      {
+        date: "2026-08-26",
+        label: "Provider recovery becomes operational",
+        description: "Overdue delivery visibility, Bluesky draft recovery, connected X campaigns, and safer deployment restarts strengthened the path from approved draft to confirmed provider state.",
+      },
     ],
     metrics: [
       {
         label: "Preview coverage",
         value: "X + Bluesky + Threads",
-        asOf: "2026-08-17",
+        asOf: "2026-08-26",
         sourceNote: "Verified private operations documentation",
         approved: true,
         category: "release",
@@ -884,7 +924,7 @@ const indieProjectRecords: IndieProject[] = [
   },
 ];
 
-export const indieSnapshotDate = "2026-08-21";
+export const indieSnapshotDate = "2026-08-28";
 
 function validateIndieProjectRecords(projects: IndieProject[]) {
   const ids = new Set<string>();
