@@ -118,11 +118,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "live",
     statusLabel: "Live product",
     startedAt: "2025-08-04",
-    lastUpdatedAt: "2026-08-27",
+    lastUpdatedAt: "2026-08-31",
     summary:
       "A Chrome extension that gives Google Keep stronger folder organization, focused note workflows, and local-first preferences.",
     currentState:
-      "The published extension remains fully usable while a reversible Founding Preview adds license activation for a defined Pro feature set; every feature stays unlocked until store review, live-payment validation, and a separately approved enforcement release are complete.",
+      "The published extension remains fully usable while a reversible Founding Preview moves its gated checkout, subscription, billing, and activation path to Stripe; every feature stays unlocked while production checkout, store publication, and enforcement remain separately controlled.",
     progressStage: 5,
     progressLabel: "Shipped, listening, improving",
     lesson:
@@ -150,6 +150,11 @@ const indieProjectRecords: IndieProject[] = [
         date: "2026-08-27",
         label: "Founding Preview stays reversible",
         description: "A minimized-permission store package and test-mode software-license flow prepared the next release without taking existing features away from unlicensed users.",
+      },
+      {
+        date: "2026-08-31",
+        label: "Founding Preview moves to Stripe",
+        description: "A sandbox-validated subscription, billing, and signed activation flow replaced the earlier processor while production checkout and enforcement stayed closed.",
       },
     ],
     metrics: [
@@ -187,18 +192,18 @@ const indieProjectRecords: IndieProject[] = [
     status: "live",
     statusLabel: "Live product",
     startedAt: "2025-09-01",
-    lastUpdatedAt: "2026-08-28",
+    lastUpdatedAt: "2026-09-03",
     summary:
       "A local-first desktop application for exploring contribution patterns, repository activity, and the rhythm behind a body of Git work.",
     currentState:
-      "The Tauri and Rust desktop product now spans macOS, Windows, and Linux and adds a local-first Agent Cockpit for observing MCP missions, reviewing guarded actions, mapping worktree collisions, and exporting metadata-only handoffs without launching agents or storing source content.",
+      "The Tauri and Rust desktop product now spans macOS, Windows, and Linux, with an agent-powered Indie Log, a guarded Release Workspace, and an Agent Observatory that turns live provider and Git signals into privacy-bounded local Replays.",
     progressStage: 5,
     progressLabel: "Released, operating, learning",
     lesson:
       "Analytics become more useful when they help someone understand a working rhythm instead of simply producing a larger score.",
     nextObjective:
       "Keep the local experience fast and legible while validating which deeper insights are worth maintaining.",
-    capabilities: ["Desktop", "Tauri + Rust", "Git analytics", "Agent governance"],
+    capabilities: ["Desktop", "Tauri + Rust", "Git analytics", "Local agent workflows"],
     milestones: [
       {
         date: "2025-09-01",
@@ -225,12 +230,17 @@ const indieProjectRecords: IndieProject[] = [
         label: "Agent Cockpit joins the product",
         description: "Governed missions, approval records, worktree-aware change maps, metadata-only replays, and handoff exports connected GitGlow to existing MCP clients.",
       },
+      {
+        date: "2026-09-03",
+        label: "Local workflows become observable",
+        description: "Agent-assisted journal reports, a guarded release path, and an encrypted local flight recorder made repository work easier to review without turning private source into durable telemetry.",
+      },
     ],
     metrics: [
       {
         label: "Started",
         value: "2025",
-        asOf: "2026-08-28",
+        asOf: "2026-09-03",
         sourceNote: "Verified repository and public work history",
         approved: true,
         category: "progress",
@@ -238,7 +248,7 @@ const indieProjectRecords: IndieProject[] = [
       {
         label: "Desktop platforms",
         value: "macOS + Windows + Linux",
-        asOf: "2026-08-28",
+        asOf: "2026-09-03",
         sourceNote: "Verified product and release documentation",
         approved: true,
         category: "release",
@@ -389,11 +399,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "private-beta",
     statusLabel: "Private foundation",
     startedAt: "2026-07-31",
-    lastUpdatedAt: "2026-08-15",
+    lastUpdatedAt: "2026-08-31",
     summary:
       "A bilingual home-inventory PWA designed to keep English and Bulgarian item names searchable together while protecting records and photos.",
     currentState:
-      "The private foundation now combines authentication and database-level authorization with location photos, availability-aware browsing, and recoverable inventory views when optional migrations are not yet present.",
+      "The private foundation now runs on a tailnet-only Mac deployment with its own data stack, password recovery, owner-bootstrap retirement, and documented backup and restore operations around the bilingual inventory workflow.",
     progressStage: 3,
     progressLabel: "Core system proven",
     lesson:
@@ -416,12 +426,17 @@ const indieProjectRecords: IndieProject[] = [
         label: "Browsing reflects the real inventory",
         description: "Location imagery, availability filters, and migration-tolerant views made the private capture-and-find loop more resilient.",
       },
+      {
+        date: "2026-08-31",
+        label: "Private deployment becomes recoverable",
+        description: "Tailnet-only hosting, account recovery, and tested backup and restore operations moved the household inventory onto a controlled local production stack.",
+      },
     ],
     metrics: [
       {
         label: "Current stage",
         value: "Private foundation",
-        asOf: "2026-08-15",
+        asOf: "2026-08-31",
         sourceNote: "Verified private product documentation",
         approved: true,
         category: "progress",
@@ -784,16 +799,16 @@ const indieProjectRecords: IndieProject[] = [
     status: "active-build",
     statusLabel: "Private operations system",
     startedAt: "2026-08-07",
-    lastUpdatedAt: "2026-08-26",
+    lastUpdatedAt: "2026-09-04",
     summary:
       "A secure bridge and campaign console for drafting, reviewing, and operating a self-hosted social workflow without silently publishing.",
     currentState:
-      "The private system now combines campaign timelines, connected-draft recovery, and exact Postiz scheduling with approval and reconciliation, while exposing overdue delivery failures, recovering draft identity, supporting guarded X and Bluesky Builder Notes, and preserving secret-bearing deployment overrides during restarts.",
+      "The private system now combines a campaign review workbench with explicit activity provenance, real thread previews, connected-draft recovery, and an approval flow that reveals the exact Postiz schedule before a separate provider-write confirmation.",
     progressStage: 4,
     progressLabel: "Connected workflow, guarded writes",
     lesson:
       "Automation feels safer when the unavailable actions are visible, approval context is explicit, and a demo never pretends to contact a live service.",
-    nextObjective: "Exercise the connected draft, approval, confirmation, and recovery paths against the private deployment before expanding provider coverage.",
+    nextObjective: "Keep exercising campaign approval, exact schedule confirmation, threaded delivery, and recovery against the private deployment before expanding provider coverage.",
     capabilities: ["Operations console", "MCP", "Marketing Brain", "Guarded writes"],
     milestones: [
       {
@@ -821,12 +836,17 @@ const indieProjectRecords: IndieProject[] = [
         label: "Provider recovery becomes operational",
         description: "Overdue delivery visibility, Bluesky draft recovery, connected X campaigns, and safer deployment restarts strengthened the path from approved draft to confirmed provider state.",
       },
+      {
+        date: "2026-09-04",
+        label: "Campaign review reaches the provider boundary",
+        description: "A full review workbench, provenance-aware activity, real thread previews, and exact schedule review clarified every step before the final Postiz confirmation.",
+      },
     ],
     metrics: [
       {
         label: "Preview coverage",
         value: "X + Bluesky + Threads",
-        asOf: "2026-08-26",
+        asOf: "2026-09-04",
         sourceNote: "Verified private operations documentation",
         approved: true,
         category: "release",
@@ -924,7 +944,7 @@ const indieProjectRecords: IndieProject[] = [
   },
 ];
 
-export const indieSnapshotDate = "2026-08-28";
+export const indieSnapshotDate = "2026-09-04";
 
 function validateIndieProjectRecords(projects: IndieProject[]) {
   const ids = new Set<string>();
