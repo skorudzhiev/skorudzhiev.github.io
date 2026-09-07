@@ -11,6 +11,7 @@ interface Props {
   image?: string;
   hideChrome?: boolean;
   canonicalPath?: string;
+  canonicalUrl?: string;
 }
 
 const {
@@ -19,9 +20,11 @@ const {
   image = "/og.png",
   hideChrome = false,
   canonicalPath = Astro.url.pathname,
+  canonicalUrl,
 } = Astro.props;
 const pageTitle = title ? `${title} — ${siteConfig.name}` : `${siteConfig.name} — ${siteConfig.title}`;
-const canonical = new URL(canonicalPath, siteConfig.url);
+const pageUrl = new URL(canonicalPath, siteConfig.url);
+const canonical = canonicalUrl ? new URL(canonicalUrl) : pageUrl;
 const socialImage = new URL(image, siteConfig.url);
 const personSchema = {
   "@context": "https://schema.org",
@@ -47,7 +50,7 @@ const personSchema = {
     <meta property="og:type" content="website" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonical} />
+    <meta property="og:url" content={pageUrl} />
     <meta property="og:image" content={socialImage} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
