@@ -12,11 +12,11 @@ test("presents MCP as part of the broader product practice", async ({ page }) =>
 
   await expect(page.getByText("AI systems & MCP integrations", { exact: true })).toBeVisible();
   const articleCard = page.locator(".writing-card").filter({
-    hasText: "MCP and Project Brains",
+    hasText: "A better reading order is a better job for AI",
   });
   await expect(articleCard.getByRole("link", { name: "Read the article" })).toHaveAttribute(
     "href",
-    "/writing/mcp-project-brains/",
+    "/writing/a-better-reading-order-is-a-better-job-for-ai/",
   );
   await expect(page.getByRole("link", { name: "Bluesky ↗", exact: true })).toHaveAttribute(
     "href",
@@ -41,8 +41,8 @@ test("gives every writing card a short article preview", async ({ page }) => {
   await page.goto("/writing/", { waitUntil: "domcontentloaded" });
 
   const cards = page.locator(".writing-card");
-  await expect(cards).toHaveCount(7);
-  await expect(cards.locator(".writing-preview")).toHaveCount(7);
+  await expect(cards).toHaveCount(10);
+  await expect(cards.locator(".writing-preview")).toHaveCount(10);
 
   const previews = await cards.locator(".writing-preview").allTextContents();
   expect(previews.every((preview) => preview.trim().length > 0)).toBe(true);

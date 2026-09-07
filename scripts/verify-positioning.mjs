@@ -26,8 +26,8 @@ expect(
   "The homepage capability band is missing the MCP integration positioning.",
 );
 expect(
-  homeHtml.includes('href="/writing/mcp-project-brains/"'),
-  "The homepage writing section is missing the first-party MCP article.",
+  homeHtml.includes('href="/writing/a-better-reading-order-is-a-better-job-for-ai/"'),
+  "The homepage writing section is missing the latest featured article.",
 );
 expect(
   homeHtml.includes('href="https://bsky.app/profile/skorudzhiev.bsky.social"'),

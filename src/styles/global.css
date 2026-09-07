@@ -1900,7 +1900,41 @@ h3 {
   padding-top: clamp(3.5rem, 6vw, 6rem);
 }
 
-.article-body .prose > p:first-child {
+.article-source {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.article-source a {
+  text-underline-offset: 0.2em;
+}
+
+.article-return {
+  padding-block: 2rem 4rem;
+}
+
+.article-body .prose figure {
+  margin: 2.5rem 0;
+}
+
+.article-body .prose figure:first-child {
+  margin-top: 0;
+}
+
+.article-body .prose figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.article-body .prose figcaption {
+  margin-top: 0.85rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.article-body .prose > p:first-of-type {
   margin-top: 0;
   color: var(--ink);
   font-size: clamp(1.25rem, 2vw, 1.6rem);

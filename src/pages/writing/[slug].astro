@@ -28,6 +28,7 @@ const publishedAt = article.data.publishedAt.toLocaleDateString("en", {
   title={article.data.title}
   description={article.data.description}
   canonicalPath={article.data.path}
+  canonicalUrl={article.data.canonicalUrl}
 >
   <header class="article-hero">
     <div class="reading-shell">
@@ -35,6 +36,9 @@ const publishedAt = article.data.publishedAt.toLocaleDateString("en", {
       <p class="eyebrow">Field note · {publishedAt}</p>
       <h1 id="article-title">{article.data.title}</h1>
       <p class="article-dek">{article.data.description}</p>
+      {article.data.mediumUrl && (
+        <p class="article-source"><a href={article.data.mediumUrl}>Originally published on Medium</a></p>
+      )}
       <div class="article-topics" aria-label="Article topics">
         {article.data.topics.map((topic) => <span>{topic}</span>)}
       </div>
@@ -49,12 +53,18 @@ const publishedAt = article.data.publishedAt.toLocaleDateString("en", {
     </div>
   </article>
 
-  <section class="article-closing">
-    <div class="reading-shell">
-      <p class="eyebrow">Working on a context-aware product?</p>
-      <h2>Start with the boundary, not the tool list.</h2>
-      <p>I’m interested in product work where AI needs durable context, useful access to real systems, and a review model people can understand.</p>
-      <a class="button" href="/start/">Discuss the product <span aria-hidden="true">↗</span></a>
-    </div>
-  </section>
+  {article.data.mediumUrl ? (
+    <nav class="article-return reading-shell" aria-label="More writing">
+      <a class="article-back-link" href="/writing/"><span aria-hidden="true">←</span> Back to writing</a>
+    </nav>
+  ) : (
+    <section class="article-closing">
+      <div class="reading-shell">
+        <p class="eyebrow">Working on a context-aware product?</p>
+        <h2>Start with the boundary, not the tool list.</h2>
+        <p>I’m interested in product work where AI needs durable context, useful access to real systems, and a review model people can understand.</p>
+        <a class="button" href="/start/">Discuss the product <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  )}
 </BaseLayout>
