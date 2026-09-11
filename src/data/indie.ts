@@ -28,17 +28,17 @@ const indieProjectRecords: IndieProject[] = [
     status: "public-preview",
     statusLabel: "Public preview",
     startedAt: "2026-02-26",
-    lastUpdatedAt: "2026-08-26",
+    lastUpdatedAt: "2026-09-09",
     summary:
       "A local-first calculation workspace that turns readable notes into live results, with focused macOS, Windows, and Linux companions for quick calculations.",
     currentState:
-      "The public workspace now pairs with downloadable macOS, Windows, and Linux companions, while a separately gated development build contains experimental visual workflows and the landing page tests founding-access demand through free regional reservations rather than live sales.",
+      "The public workspace now pairs with downloadable macOS, Windows, and Linux companions. Version 1.1.0 adds a Free and Pro desktop path with a 14-day trial, while experimental visual workflows remain in a separately gated development build.",
     progressStage: 5,
     progressLabel: "Shipped, learning, refining",
     lesson:
       "A product becomes easier to trust when its calculations, feature catalogue, documentation, and public claims all draw from the same product record.",
     nextObjective:
-      "Keep tightening the public learning loop around the calculations people actually use and the macOS companion workflow.",
+      "Keep tightening the public learning loop around the calculations people actually use, the new desktop access path, and the macOS companion workflow.",
     capabilities: ["Web", "macOS", "Local-first", "Product system"],
     milestones: [
       {
@@ -81,6 +81,11 @@ const indieProjectRecords: IndieProject[] = [
         label: "Founding demand test becomes explicit",
         description: "Regional reservation pricing, test-only license commerce, and canonical public documentation established a measured path toward a paid desktop release.",
       },
+      {
+        date: "2026-09-09",
+        label: "Version 1.1.0 opens the desktop access path",
+        description: "Free and Pro plans, a 14-day trial, payment recovery, and updated download guidance made the paid desktop path explicit while preserving access to existing work.",
+      },
     ],
     metrics: [
       {
@@ -118,11 +123,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "live",
     statusLabel: "Live product",
     startedAt: "2025-08-04",
-    lastUpdatedAt: "2026-08-31",
+    lastUpdatedAt: "2026-09-10",
     summary:
       "A Chrome extension that gives Google Keep stronger folder organization, focused note workflows, and local-first preferences.",
     currentState:
-      "The published extension remains fully usable while a reversible Founding Preview moves its gated checkout, subscription, billing, and activation path to Stripe; every feature stays unlocked while production checkout, store publication, and enforcement remain separately controlled.",
+      "The published extension remains fully usable while a reversible Founding Preview has advanced through isolated account, checkout, billing, recovery, and refund validation. Every feature stays unlocked while production checkout, store publication, and enforcement remain separately controlled.",
     progressStage: 5,
     progressLabel: "Shipped, listening, improving",
     lesson:
@@ -155,6 +160,11 @@ const indieProjectRecords: IndieProject[] = [
         date: "2026-08-31",
         label: "Founding Preview moves to Stripe",
         description: "A sandbox-validated subscription, billing, and signed activation flow replaced the earlier processor while production checkout and enforcement stayed closed.",
+      },
+      {
+        date: "2026-09-10",
+        label: "Commercial release line is rehearsed",
+        description: "The isolated 0.0.7.0 release line exercised account, payment, recovery, and refund paths without changing what the published extension unlocks for existing users.",
       },
     ],
     metrics: [
@@ -399,11 +409,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "private-beta",
     statusLabel: "Private foundation",
     startedAt: "2026-07-31",
-    lastUpdatedAt: "2026-08-31",
+    lastUpdatedAt: "2026-09-07",
     summary:
       "A bilingual home-inventory PWA designed to keep English and Bulgarian item names searchable together while protecting records and photos.",
     currentState:
-      "The private foundation now runs on a tailnet-only Mac deployment with its own data stack, password recovery, owner-bootstrap retirement, and documented backup and restore operations around the bilingual inventory workflow.",
+      "The private foundation now runs on a controlled household deployment with recovery and backup operations around the bilingual inventory workflow; inventory views also retain selected controls through live updates and give clearer loading and action feedback.",
     progressStage: 3,
     progressLabel: "Core system proven",
     lesson:
@@ -430,6 +440,11 @@ const indieProjectRecords: IndieProject[] = [
         date: "2026-08-31",
         label: "Private deployment becomes recoverable",
         description: "Tailnet-only hosting, account recovery, and tested backup and restore operations moved the household inventory onto a controlled local production stack.",
+      },
+      {
+        date: "2026-09-07",
+        label: "Inventory browsing becomes steadier",
+        description: "Live filters now preserve selected controls, with clearer loading and action feedback during everyday inventory work.",
       },
     ],
     metrics: [
@@ -799,11 +814,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "active-build",
     statusLabel: "Private operations system",
     startedAt: "2026-08-07",
-    lastUpdatedAt: "2026-09-04",
+    lastUpdatedAt: "2026-09-08",
     summary:
       "A secure bridge and campaign console for drafting, reviewing, and operating a self-hosted social workflow without silently publishing.",
     currentState:
-      "The private system now combines a campaign review workbench with explicit activity provenance, real thread previews, connected-draft recovery, and an approval flow that reveals the exact Postiz schedule before a separate provider-write confirmation.",
+      "The private system now combines a campaign review workbench with explicit activity provenance, real thread previews, connected-draft recovery, and an approval flow that reveals the exact schedule before a separate provider-write confirmation. Delivery state and recovery now remain legible after partial retries.",
     progressStage: 4,
     progressLabel: "Connected workflow, guarded writes",
     lesson:
@@ -840,6 +855,11 @@ const indieProjectRecords: IndieProject[] = [
         date: "2026-09-04",
         label: "Campaign review reaches the provider boundary",
         description: "A full review workbench, provenance-aware activity, real thread previews, and exact schedule review clarified every step before the final Postiz confirmation.",
+      },
+      {
+        date: "2026-09-08",
+        label: "Partial delivery recovery stays visible",
+        description: "Campaign status and recovery now remain clear when a delivery needs a retry, preserving the distinction between a planned action and confirmed provider state.",
       },
     ],
     metrics: [
