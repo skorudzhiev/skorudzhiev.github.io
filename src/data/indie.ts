@@ -28,11 +28,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "public-preview",
     statusLabel: "Public preview",
     startedAt: "2026-02-26",
-    lastUpdatedAt: "2026-09-09",
+    lastUpdatedAt: "2026-09-16",
     summary:
       "A local-first calculation workspace that turns readable notes into live results, with focused macOS, Windows, and Linux companions for quick calculations.",
     currentState:
-      "The public workspace now pairs with downloadable macOS, Windows, and Linux companions. Version 1.1.0 adds a Free and Pro desktop path with a 14-day trial, while experimental visual workflows remain in a separately gated development build.",
+      "The public workspace now pairs with downloadable macOS, Windows, and Linux companions. Version 1.1.0 adds a Free and Pro desktop path with a 14-day trial; the Free companion now preserves quick-calculation drafts and is tuned for the native macOS lifecycle, while experimental visual workflows remain in a separately gated development build.",
     progressStage: 5,
     progressLabel: "Shipped, learning, refining",
     lesson:
@@ -86,6 +86,11 @@ const indieProjectRecords: IndieProject[] = [
         label: "Version 1.1.0 opens the desktop access path",
         description: "Free and Pro plans, a 14-day trial, payment recovery, and updated download guidance made the paid desktop path explicit while preserving access to existing work.",
       },
+      {
+        date: "2026-09-16",
+        label: "Free companion gets a native finishing pass",
+        description: "Quick Calculation became part of the Free desktop path, with preserved scratchpad handoff, a macOS lifecycle fix, and a restored branded tray icon.",
+      },
     ],
     metrics: [
       {
@@ -123,11 +128,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "live",
     statusLabel: "Live product",
     startedAt: "2025-08-04",
-    lastUpdatedAt: "2026-09-10",
+    lastUpdatedAt: "2026-09-13",
     summary:
       "A Chrome extension that gives Google Keep stronger folder organization, focused note workflows, and local-first preferences.",
     currentState:
-      "The published extension remains fully usable while a reversible Founding Preview has advanced through isolated account, checkout, billing, recovery, and refund validation. Every feature stays unlocked while production checkout, store publication, and enforcement remain separately controlled.",
+      "The published extension remains fully usable while an unpublished 0.0.7.2 Store draft prepares the Free/Pro transition: updating profiles receive a server-signed five-day notice period and fresh installs begin on Free. Account, checkout, billing, recovery, and refund paths remain separately controlled; publication and production enforcement have not been opened.",
     progressStage: 5,
     progressLabel: "Shipped, listening, improving",
     lesson:
@@ -166,6 +171,11 @@ const indieProjectRecords: IndieProject[] = [
         label: "Commercial release line is rehearsed",
         description: "The isolated 0.0.7.0 release line exercised account, payment, recovery, and refund paths without changing what the published extension unlocks for existing users.",
       },
+      {
+        date: "2026-09-13",
+        label: "Transition draft remains unpublished",
+        description: "The 0.0.7.2 Store draft records a server-signed five-day update transition and in-Keep reminders, with the existing published extension left unchanged pending the final launch gate.",
+      },
     ],
     metrics: [
       {
@@ -202,11 +212,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "live",
     statusLabel: "Live product",
     startedAt: "2025-09-01",
-    lastUpdatedAt: "2026-09-03",
+    lastUpdatedAt: "2026-09-13",
     summary:
       "A local-first desktop application for exploring contribution patterns, repository activity, and the rhythm behind a body of Git work.",
     currentState:
-      "The Tauri and Rust desktop product now spans macOS, Windows, and Linux, with an agent-powered Indie Log, a guarded Release Workspace, and an Agent Observatory that turns live provider and Git signals into privacy-bounded local Replays.",
+      "The Tauri and Rust desktop product now spans macOS, Windows, and Linux. Version 2.0 adds a daily repository workbench with guarded history recovery while retaining the Indie Log, Release Workspace, and Agent Observatory's privacy-bounded local Replays.",
     progressStage: 5,
     progressLabel: "Released, operating, learning",
     lesson:
@@ -245,12 +255,17 @@ const indieProjectRecords: IndieProject[] = [
         label: "Local workflows become observable",
         description: "Agent-assisted journal reports, a guarded release path, and an encrypted local flight recorder made repository work easier to review without turning private source into durable telemetry.",
       },
+      {
+        date: "2026-09-13",
+        label: "Version 2.0 ships the repository workbench",
+        description: "The daily workbench added structured diffs, staging, commit drafts, branches, conflict recovery, history tools, and clearer Free/Pro boundaries while preserving the existing product surfaces.",
+      },
     ],
     metrics: [
       {
         label: "Started",
         value: "2025",
-        asOf: "2026-09-03",
+        asOf: "2026-09-13",
         sourceNote: "Verified repository and public work history",
         approved: true,
         category: "progress",
@@ -258,7 +273,7 @@ const indieProjectRecords: IndieProject[] = [
       {
         label: "Desktop platforms",
         value: "macOS + Windows + Linux",
-        asOf: "2026-09-03",
+        asOf: "2026-09-13",
         sourceNote: "Verified product and release documentation",
         approved: true,
         category: "release",
@@ -814,16 +829,16 @@ const indieProjectRecords: IndieProject[] = [
     status: "active-build",
     statusLabel: "Private operations system",
     startedAt: "2026-08-07",
-    lastUpdatedAt: "2026-09-08",
+    lastUpdatedAt: "2026-09-14",
     summary:
       "A secure bridge and campaign console for drafting, reviewing, and operating a self-hosted social workflow without silently publishing.",
     currentState:
-      "The private system now combines a campaign review workbench with explicit activity provenance, real thread previews, connected-draft recovery, and an approval flow that reveals the exact schedule before a separate provider-write confirmation. Delivery state and recovery now remain legible after partial retries.",
+      "The private system now combines a campaign review workbench with explicit activity provenance, real thread previews, connected-draft recovery, and an approval flow that reveals the exact schedule before a separate provider-write confirmation. A new read-only distribution-research queue captures opportunities and product lessons without automatic outreach; delivery state and recovery remain legible after partial retries.",
     progressStage: 4,
     progressLabel: "Connected workflow, guarded writes",
     lesson:
       "Automation feels safer when the unavailable actions are visible, approval context is explicit, and a demo never pretends to contact a live service.",
-    nextObjective: "Keep exercising campaign approval, exact schedule confirmation, threaded delivery, and recovery against the private deployment before expanding provider coverage.",
+    nextObjective: "Keep exercising campaign approval, exact schedule confirmation, threaded delivery, recovery, and the deliberately manual research queue against the private deployment before expanding provider coverage.",
     capabilities: ["Operations console", "MCP", "Marketing Brain", "Guarded writes"],
     milestones: [
       {
@@ -860,6 +875,11 @@ const indieProjectRecords: IndieProject[] = [
         date: "2026-09-08",
         label: "Partial delivery recovery stays visible",
         description: "Campaign status and recovery now remain clear when a delivery needs a retry, preserving the distinction between a planned action and confirmed provider state.",
+      },
+      {
+        date: "2026-09-14",
+        label: "Research stays separate from outreach",
+        description: "A project-scoped opportunity queue and Reddit research lane added qualified, read-only discovery with manual capture and approval-gated API access; neither lane publishes or contacts people automatically.",
       },
     ],
     metrics: [
@@ -964,7 +984,7 @@ const indieProjectRecords: IndieProject[] = [
   },
 ];
 
-export const indieSnapshotDate = "2026-09-04";
+export const indieSnapshotDate = "2026-09-18";
 
 function validateIndieProjectRecords(projects: IndieProject[]) {
   const ids = new Set<string>();
