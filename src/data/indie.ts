@@ -28,11 +28,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "public-preview",
     statusLabel: "Public preview",
     startedAt: "2026-02-26",
-    lastUpdatedAt: "2026-09-16",
+    lastUpdatedAt: "2026-09-22",
     summary:
       "A local-first calculation workspace that turns readable notes into live results, with focused macOS, Windows, and Linux companions for quick calculations.",
     currentState:
-      "The public workspace now pairs with downloadable macOS, Windows, and Linux companions. Version 1.1.0 adds a Free and Pro desktop path with a 14-day trial; the Free companion now preserves quick-calculation drafts and is tuned for the native macOS lifecycle, while experimental visual workflows remain in a separately gated development build.",
+      "The public workspace now pairs with downloadable macOS, Windows, and Linux companions. Version 1.1.4 keeps the Free and Pro desktop path with its 14-day trial, while making visual workflows more practical: Canvas settings remain available in fullscreen and Blueprint creation starts from a clear, staged preview before an explicit apply choice.",
     progressStage: 5,
     progressLabel: "Shipped, learning, refining",
     lesson:
@@ -90,6 +90,11 @@ const indieProjectRecords: IndieProject[] = [
         date: "2026-09-16",
         label: "Free companion gets a native finishing pass",
         description: "Quick Calculation became part of the Free desktop path, with preserved scratchpad handoff, a macOS lifecycle fix, and a restored branded tray icon.",
+      },
+      {
+        date: "2026-09-22",
+        label: "Version 1.1.4 refines visual workflows",
+        description: "Fullscreen Canvas settings and staged Blueprint creation made visual workspace changes easier to review before applying them.",
       },
     ],
     metrics: [
@@ -212,11 +217,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "live",
     statusLabel: "Live product",
     startedAt: "2025-09-01",
-    lastUpdatedAt: "2026-09-13",
+    lastUpdatedAt: "2026-09-20",
     summary:
       "A local-first desktop application for exploring contribution patterns, repository activity, and the rhythm behind a body of Git work.",
     currentState:
-      "The Tauri and Rust desktop product now spans macOS, Windows, and Linux. Version 2.0 adds a daily repository workbench with guarded history recovery while retaining the Indie Log, Release Workspace, and Agent Observatory's privacy-bounded local Replays.",
+      "The Tauri and Rust desktop product now spans macOS, Windows, and Linux. Version 2.0.3 extends the daily repository workbench with persistent terminal tabs and review confidence that goes stale when a diff changes, while retaining guarded history recovery, the Indie Log, Release Workspace, and Agent Observatory's privacy-bounded local Replays.",
     progressStage: 5,
     progressLabel: "Released, operating, learning",
     lesson:
@@ -259,6 +264,11 @@ const indieProjectRecords: IndieProject[] = [
         date: "2026-09-13",
         label: "Version 2.0 ships the repository workbench",
         description: "The daily workbench added structured diffs, staging, commit drafts, branches, conflict recovery, history tools, and clearer Free/Pro boundaries while preserving the existing product surfaces.",
+      },
+      {
+        date: "2026-09-20",
+        label: "Version 2.0.3 makes review work more concrete",
+        description: "Persistent terminal tabs and diff-bound review confidence brought everyday command and verification work into the repository workbench without obscuring stale results.",
       },
     ],
     metrics: [
@@ -424,11 +434,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "private-beta",
     statusLabel: "Private foundation",
     startedAt: "2026-07-31",
-    lastUpdatedAt: "2026-09-07",
+    lastUpdatedAt: "2026-09-19",
     summary:
       "A bilingual home-inventory PWA designed to keep English and Bulgarian item names searchable together while protecting records and photos.",
     currentState:
-      "The private foundation now runs on a controlled household deployment with recovery and backup operations around the bilingual inventory workflow; inventory views also retain selected controls through live updates and give clearer loading and action feedback.",
+      "The private foundation now runs on a controlled household deployment with recovery and backup operations around the bilingual inventory workflow. A focused location browser makes the physical hierarchy easier to inspect and manage while preserving mobile browsing context and clear action feedback.",
     progressStage: 3,
     progressLabel: "Core system proven",
     lesson:
@@ -460,6 +470,11 @@ const indieProjectRecords: IndieProject[] = [
         date: "2026-09-07",
         label: "Inventory browsing becomes steadier",
         description: "Live filters now preserve selected controls, with clearer loading and action feedback during everyday inventory work.",
+      },
+      {
+        date: "2026-09-19",
+        label: "Location browsing gets a focused workspace",
+        description: "A searchable location tree and selected-space detail view made it easier to inspect, organize, and return to the household hierarchy across desktop and mobile.",
       },
     ],
     metrics: [
@@ -984,7 +999,7 @@ const indieProjectRecords: IndieProject[] = [
   },
 ];
 
-export const indieSnapshotDate = "2026-09-18";
+export const indieSnapshotDate = "2026-09-25";
 
 function validateIndieProjectRecords(projects: IndieProject[]) {
   const ids = new Set<string>();
