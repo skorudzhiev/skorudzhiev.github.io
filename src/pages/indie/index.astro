@@ -73,8 +73,8 @@ function shortDate(value: string) {
         <span class="index-label">On this page</span>
         <div class="index-links">
           <a href="#overview">Overview</a>
-          <a href="#timeline">Timeline</a>
           <a href="#stories">Stories</a>
+          <a href="#timeline">Timeline</a>
           <a href="#bench">On the bench</a>
           <a href="#ledger">Full ledger</a>
           <a href="#follow">Follow</a>
@@ -153,44 +153,10 @@ function shortDate(value: string) {
         </div>
       </section>
 
-      <section class="timeline-section" id="timeline" aria-labelledby="timeline-title">
-        <div class="indie-shell">
-          <div class="section-heading section-heading--split">
-            <div>
-              <p class="section-number">02 / Timeline</p>
-              <h2 id="timeline-title">A recent chapter,<br />year by year.</h2>
-            </div>
-            <p>
-              Not every start became a company. Each one sharpened a different part of the practice: native software, product boundaries, interaction, operations, or distribution.
-            </p>
-          </div>
-
-          <ol class="year-timeline">
-            {timeline.map(({ year, projects }) => (
-              <li class="year-row">
-                <div class="year-marker"><span>{year}</span><i aria-hidden="true"></i></div>
-                <div class="year-content">
-                  <p>{year === 2024 ? "A foundation and a first broader product collaboration." : year === 2025 ? "A year of browser products, games, desktop tools, and deliberately short experiments." : "From individual apps into complete product and operating systems."}</p>
-                  <div class="year-projects">
-                    {projects.map((project) => (
-                      <a href={`#project-${project.id}`}>
-                        <span style={`--dot: ${project.accent}`} aria-hidden="true"></span>
-                        {project.title}
-                        <small>{project.statusLabel}</small>
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
       <section class="stories-section indie-shell" id="stories" aria-labelledby="stories-title">
         <div class="section-heading section-heading--split">
           <div>
-            <p class="section-number">03 / Shipped stories</p>
+            <p class="section-number">02 / Shipped stories</p>
             <h2 id="stories-title">The products that<br />made it into the world.</h2>
           </div>
           <p>
@@ -262,6 +228,40 @@ function shortDate(value: string) {
               </div>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section class="timeline-section" id="timeline" aria-labelledby="timeline-title">
+        <div class="indie-shell">
+          <div class="section-heading section-heading--split">
+            <div>
+              <p class="section-number">03 / Timeline</p>
+              <h2 id="timeline-title">A recent chapter,<br />year by year.</h2>
+            </div>
+            <p>
+              Not every start became a company. Each one sharpened a different part of the practice: native software, product boundaries, interaction, operations, or distribution.
+            </p>
+          </div>
+
+          <ol class="year-timeline">
+            {timeline.map(({ year, projects }) => (
+              <li class="year-row">
+                <div class="year-marker"><span>{year}</span><i aria-hidden="true"></i></div>
+                <div class="year-content">
+                  <p>{year === 2024 ? "A foundation and a first broader product collaboration." : year === 2025 ? "A year of browser products, games, desktop tools, and deliberately short experiments." : "From individual apps into complete product and operating systems."}</p>
+                  <div class="year-projects">
+                    {projects.map((project) => (
+                      <a href={`#project-${project.id}`}>
+                        <span style={`--dot: ${project.accent}`} aria-hidden="true"></span>
+                        {project.title}
+                        <small>{project.statusLabel}</small>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
@@ -371,6 +371,14 @@ function shortDate(value: string) {
                 ))}
               </dl>
 
+              {project.links.length > 0 && (
+                <div class="ledger-card__links" aria-label={`${project.title} public links`}>
+                  {project.links.map((link) => (
+                    <a class="project-link" href={link.href} target="_blank" rel="noopener noreferrer">{link.label} <span aria-hidden="true">↗</span></a>
+                  ))}
+                </div>
+              )}
+
               <details>
                 <summary><span>Explore project notes</span><i aria-hidden="true">↘</i></summary>
                 <div class="ledger-details">
@@ -387,9 +395,6 @@ function shortDate(value: string) {
                   )}
                   <div class="ledger-card__footer">
                     <div class="tag-row">{project.capabilities.map((capability) => <span>{capability}</span>)}</div>
-                    {project.links.map((link) => (
-                      <a class="project-link" href={link.href} target="_blank" rel="noopener noreferrer">{link.label} <span aria-hidden="true">↗</span></a>
-                    ))}
                   </div>
                 </div>
               </details>
