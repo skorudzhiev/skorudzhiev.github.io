@@ -79,6 +79,12 @@ test("keeps platform previews and private-project facts inside their publication
   await expect(page.locator("#story-pangolines")).toHaveCount(0);
   await expect(page.locator('.public-projects a[href*="pangolines.vercel.app"]')).toHaveCount(0);
 
+  const gitglowLink = page.locator("#project-gitglow > .ledger-card__links a");
+  await expect(gitglowLink).toBeVisible();
+  await expect(gitglowLink).toHaveAttribute("href", "https://gitglow.dev/");
+  await expect(page.locator("#project-gitglow details")).not.toHaveAttribute("open", "");
+  await expect(pangolines.locator(".ledger-card__links a")).toHaveAttribute("href", "https://pangolines.vercel.app/");
+
   const privateProjects = page.locator('[data-disclosure="private-product-facts"]');
   await expect(privateProjects).toHaveCount(10);
   await expect(privateProjects.locator("a.project-link")).toHaveCount(0);
