@@ -28,11 +28,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "public-preview",
     statusLabel: "Public preview",
     startedAt: "2026-02-26",
-    lastUpdatedAt: "2026-09-22",
+    lastUpdatedAt: "2026-09-30",
     summary:
       "A local-first calculation workspace that turns readable notes into live results, with focused macOS, Windows, and Linux companions for quick calculations.",
     currentState:
-      "The public workspace now pairs with downloadable macOS, Windows, and Linux companions. Version 1.1.4 keeps the Free and Pro desktop path with its 14-day trial, while making visual workflows more practical: Canvas settings remain available in fullscreen and Blueprint creation starts from a clear, staged preview before an explicit apply choice.",
+      "The public workspace pairs with downloadable macOS, Windows, and Linux companions. Version 1.1.4 retains the Free and Pro desktop path with its 14-day trial and staged visual workflows. The public learning path now connects problem-led guides, editable calculation examples, a rebuilt product tour, and captioned companion demos, with clearer Free/Pro choices and readable guides without JavaScript.",
     progressStage: 5,
     progressLabel: "Shipped, learning, refining",
     lesson:
@@ -96,6 +96,11 @@ const indieProjectRecords: IndieProject[] = [
         label: "Version 1.1.4 refines visual workflows",
         description: "Fullscreen Canvas settings and staged Blueprint creation made visual workspace changes easier to review before applying them.",
       },
+      {
+        date: "2026-09-30",
+        label: "Guides and tour explain the product through real problems",
+        description: "Problem-led guides, a responsive guide library, captioned demos, and an interactive budget illustration connect everyday questions to editable calculations and explicit desktop access choices.",
+      },
     ],
     metrics: [
       {
@@ -133,17 +138,17 @@ const indieProjectRecords: IndieProject[] = [
     status: "live",
     statusLabel: "Live product",
     startedAt: "2025-08-04",
-    lastUpdatedAt: "2026-09-13",
+    lastUpdatedAt: "2026-10-01",
     summary:
       "A Chrome extension that gives Google Keep stronger folder organization, focused note workflows, and local-first preferences.",
     currentState:
-      "The published extension remains fully usable while an unpublished 0.0.7.2 Store draft prepares the Free/Pro transition: updating profiles receive a server-signed five-day notice period and fresh installs begin on Free. Account, checkout, billing, recovery, and refund paths remain separately controlled; publication and production enforcement have not been opened.",
+      "The October 1 release record confirms published version 0.0.7.2 and a submitted 0.0.7.3 maintenance update pending Chrome Web Store review. The update reduces repeated background account checks and improves offline retries while preserving labels, settings, permissions, Free/Pro rules, and existing transition deadlines. Manual account refresh remains immediate; approval and public rollout of 0.0.7.3 are not yet confirmed.",
     progressStage: 5,
     progressLabel: "Shipped, listening, improving",
     lesson:
       "Browser-extension quality depends as much on defensive DOM behavior and clear permission boundaries as it does on the visible feature.",
     nextObjective:
-      "Use feedback and retention signals to decide which organization workflows deserve the next release.",
+      "Confirm Store approval and rollout of 0.0.7.3, then measure background-request reductions and verify update behavior on the published package.",
     capabilities: ["Chrome extension", "Svelte", "Local-first", "Fixture E2E"],
     milestones: [
       {
@@ -181,6 +186,11 @@ const indieProjectRecords: IndieProject[] = [
         label: "Transition draft remains unpublished",
         description: "The 0.0.7.2 Store draft records a server-signed five-day update transition and in-Keep reminders, with the existing published extension left unchanged pending the final launch gate.",
       },
+      {
+        date: "2026-10-01",
+        label: "Maintenance update submitted for review",
+        description: "With 0.0.7.2 recorded as published, the tested 0.0.7.3 package was submitted for Store review to reduce background account requests without restarting the transition or changing access rules.",
+      },
     ],
     metrics: [
       {
@@ -217,11 +227,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "live",
     statusLabel: "Live product",
     startedAt: "2025-09-01",
-    lastUpdatedAt: "2026-09-20",
+    lastUpdatedAt: "2026-10-01",
     summary:
       "A local-first desktop application for exploring contribution patterns, repository activity, and the rhythm behind a body of Git work.",
     currentState:
-      "The Tauri and Rust desktop product now spans macOS, Windows, and Linux. Version 2.0.3 extends the daily repository workbench with persistent terminal tabs and review confidence that goes stale when a diff changes, while retaining guarded history recovery, the Indie Log, Release Workspace, and Agent Observatory's privacy-bounded local Replays.",
+      "The Tauri and Rust desktop product spans macOS, Windows, and Linux. Version 2.0.5 builds on the redesigned workspace, unified commit inspection, and four appearance themes with selected diffs that refresh after Git changes and Agent Runs grouped by current, attention, and previous work. Persistent terminals and review freshness remain central; the public macOS package has passed hands-on acceptance, while Windows and Linux have package checks only for this release.",
     progressStage: 5,
     progressLabel: "Released, operating, learning",
     lesson:
@@ -269,6 +279,16 @@ const indieProjectRecords: IndieProject[] = [
         date: "2026-09-20",
         label: "Version 2.0.3 makes review work more concrete",
         description: "Persistent terminal tabs and diff-bound review confidence brought everyday command and verification work into the repository workbench without obscuring stale results.",
+      },
+      {
+        date: "2026-09-29",
+        label: "Version 2.0.4 unifies the workspace",
+        description: "A redesigned repository workspace, shared commit inspection, clearer navigation, and four coordinated themes made daily Git work more cohesive.",
+      },
+      {
+        date: "2026-10-01",
+        label: "Version 2.0.5 keeps review state current",
+        description: "The published release refreshes selected diffs after Git changes, separates agent runs by attention and recency, and reduces repeated public download requests; exact public macOS acceptance is recorded separately from Windows and Linux package checks.",
       },
     ],
     metrics: [
@@ -844,16 +864,16 @@ const indieProjectRecords: IndieProject[] = [
     status: "active-build",
     statusLabel: "Private operations system",
     startedAt: "2026-08-07",
-    lastUpdatedAt: "2026-09-14",
+    lastUpdatedAt: "2026-09-27",
     summary:
       "A secure bridge and campaign console for drafting, reviewing, and operating a self-hosted social workflow without silently publishing.",
     currentState:
-      "The private system now combines a campaign review workbench with explicit activity provenance, real thread previews, connected-draft recovery, and an approval flow that reveals the exact schedule before a separate provider-write confirmation. A new read-only distribution-research queue captures opportunities and product lessons without automatic outreach; delivery state and recovery remain legible after partial retries.",
+      "The private campaign workbench now adds budgeted X discovery, cached candidate review, and editable reply campaigns to its read-only research queue. Research keeps estimated spend visible, reuses fetched candidates, and requires conversation review before drafting. Replies and due times remain local for manual posting; research cannot publish, schedule, or contact people, and provider delivery still requires its separate approval flow.",
     progressStage: 4,
     progressLabel: "Connected workflow, guarded writes",
     lesson:
       "Automation feels safer when the unavailable actions are visible, approval context is explicit, and a demo never pretends to contact a live service.",
-    nextObjective: "Keep exercising campaign approval, exact schedule confirmation, threaded delivery, recovery, and the deliberately manual research queue against the private deployment before expanding provider coverage.",
+    nextObjective: "Exercise cached candidate review, budgeted discovery, and manual reply completion alongside campaign delivery and recovery before expanding provider coverage.",
     capabilities: ["Operations console", "MCP", "Marketing Brain", "Guarded writes"],
     milestones: [
       {
@@ -895,6 +915,11 @@ const indieProjectRecords: IndieProject[] = [
         date: "2026-09-14",
         label: "Research stays separate from outreach",
         description: "A project-scoped opportunity queue and Reddit research lane added qualified, read-only discovery with manual capture and approval-gated API access; neither lane publishes or contacts people automatically.",
+      },
+      {
+        date: "2026-09-27",
+        label: "Research gains a budget and a focused review loop",
+        description: "Cached candidate reassessment, bounded X searches, saved scan plans, and local reply campaigns connect discovery to manual completion while keeping thread review and provider writes explicit.",
       },
     ],
     metrics: [
@@ -999,7 +1024,7 @@ const indieProjectRecords: IndieProject[] = [
   },
 ];
 
-export const indieSnapshotDate = "2026-09-25";
+export const indieSnapshotDate = "2026-10-02";
 
 function validateIndieProjectRecords(projects: IndieProject[]) {
   const ids = new Set<string>();
