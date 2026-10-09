@@ -28,11 +28,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "public-preview",
     statusLabel: "Public preview",
     startedAt: "2026-02-26",
-    lastUpdatedAt: "2026-09-30",
+    lastUpdatedAt: "2026-10-03",
     summary:
       "A local-first calculation workspace that turns readable notes into live results, with focused macOS, Windows, and Linux companions for quick calculations.",
     currentState:
-      "The public workspace pairs with downloadable macOS, Windows, and Linux companions. Version 1.1.4 retains the Free and Pro desktop path with its 14-day trial and staged visual workflows. The public learning path now connects problem-led guides, editable calculation examples, a rebuilt product tour, and captioned companion demos, with clearer Free/Pro choices and readable guides without JavaScript.",
+      "The public workspace pairs with downloadable macOS, Windows, and Linux companions. Version 1.1.4 retains the Free and Pro desktop path with its 14-day trial and staged visual workflows. Problem-led guides, editable examples, the product tour, and captioned demos now sit alongside a sourced Soulver comparison with a live hourly-rate model, clearer macOS support guidance, and more readable comparison and guide layouts in both themes.",
     progressStage: 5,
     progressLabel: "Shipped, learning, refining",
     lesson:
@@ -101,6 +101,11 @@ const indieProjectRecords: IndieProject[] = [
         label: "Guides and tour explain the product through real problems",
         description: "Problem-led guides, a responsive guide library, captioned demos, and an interactive budget illustration connect everyday questions to editable calculations and explicit desktop access choices.",
       },
+      {
+        date: "2026-10-03",
+        label: "Product comparisons become practical",
+        description: "A sourced Soulver comparison pairs documented platform and feature differences with an editable hourly-rate example; clearer macOS guidance and refined guide layouts make the learning path easier to read.",
+      },
     ],
     metrics: [
       {
@@ -138,17 +143,17 @@ const indieProjectRecords: IndieProject[] = [
     status: "live",
     statusLabel: "Live product",
     startedAt: "2025-08-04",
-    lastUpdatedAt: "2026-10-01",
+    lastUpdatedAt: "2026-10-09",
     summary:
       "A Chrome extension that gives Google Keep stronger folder organization, focused note workflows, and local-first preferences.",
     currentState:
-      "The October 1 release record confirms published version 0.0.7.2 and a submitted 0.0.7.3 maintenance update pending Chrome Web Store review. The update reduces repeated background account checks and improves offline retries while preserving labels, settings, permissions, Free/Pro rules, and existing transition deadlines. Manual account refresh remains immediate; approval and public rollout of 0.0.7.3 are not yet confirmed.",
+      "The published extension is being refined through the 0.0.8 release line. Merged work adds an existing-label picker, sidebar groups, guided first setup, move previews with Undo, and more reliable navigation across localized Keep interfaces. Optional usage sharing and voluntary uninstall feedback prepare retention measurement. The 0.0.8.1 candidate improves long-text wrapping, dark dialogs, group icons, and quiet successful navigation; Store publication of these changes and any retention improvement remain unconfirmed.",
     progressStage: 5,
     progressLabel: "Shipped, listening, improving",
     lesson:
       "Browser-extension quality depends as much on defensive DOM behavior and clear permission boundaries as it does on the visible feature.",
     nextObjective:
-      "Confirm Store approval and rollout of 0.0.7.3, then measure background-request reductions and verify update behavior on the published package.",
+      "Validate the exact 0.0.8.1 package and Store rollout, then measure first successful organization and returning use from mature, opted-in cohorts.",
     capabilities: ["Chrome extension", "Svelte", "Local-first", "Fixture E2E"],
     milestones: [
       {
@@ -191,6 +196,21 @@ const indieProjectRecords: IndieProject[] = [
         label: "Maintenance update submitted for review",
         description: "With 0.0.7.2 recorded as published, the tested 0.0.7.3 package was submitted for Store review to reduce background account requests without restarting the transition or changing access rules.",
       },
+      {
+        date: "2026-10-07",
+        label: "Native label navigation becomes more reliable",
+        description: "Confirmed label navigation and structural detection across localized Keep interfaces address failed label opening without changing SubKeep's interface language.",
+      },
+      {
+        date: "2026-10-08",
+        label: "First organization gains a guided path",
+        description: "An existing-label picker, groups, setup guidance, guarded moves with Undo, and explicit opt-in measurement make the first useful organization easier to complete; merged implementation does not establish a retention lift.",
+      },
+      {
+        date: "2026-10-09",
+        label: "The next candidate improves sidebar readability",
+        description: "Version 0.0.8.1 preparation adds clearer group guidance, stable text wrapping, readable dark dialogs, persistent group icons, and quiet successful label navigation, with Store publication still unconfirmed.",
+      },
     ],
     metrics: [
       {
@@ -227,17 +247,17 @@ const indieProjectRecords: IndieProject[] = [
     status: "live",
     statusLabel: "Live product",
     startedAt: "2025-09-01",
-    lastUpdatedAt: "2026-10-01",
+    lastUpdatedAt: "2026-10-03",
     summary:
       "A local-first desktop application for exploring contribution patterns, repository activity, and the rhythm behind a body of Git work.",
     currentState:
-      "The Tauri and Rust desktop product spans macOS, Windows, and Linux. Version 2.0.5 builds on the redesigned workspace, unified commit inspection, and four appearance themes with selected diffs that refresh after Git changes and Agent Runs grouped by current, attention, and previous work. Persistent terminals and review freshness remain central; the public macOS package has passed hands-on acceptance, while Windows and Linux have package checks only for this release.",
+      "The Tauri and Rust desktop product spans macOS, Windows, and Linux. Version 2.0.5 keeps selected diffs and agent-run attention current in the redesigned workspace. The public learning path now adds beginner lessons, practical Git exercises, and guides for reviewing Claude Code, Codex, and ChatGPT changes before committing. The published exercises were checked in fresh repositories on macOS; hands-on desktop release acceptance remains macOS-only, with package checks for Windows and Linux.",
     progressStage: 5,
     progressLabel: "Released, operating, learning",
     lesson:
       "Analytics become more useful when they help someone understand a working rhythm instead of simply producing a larger score.",
     nextObjective:
-      "Keep the local experience fast and legible while validating which deeper insights are worth maintaining.",
+      "Observe which learning and review workflows readers use while keeping the local repository workbench fast and legible.",
     capabilities: ["Desktop", "Tauri + Rust", "Git analytics", "Local agent workflows"],
     milestones: [
       {
@@ -289,6 +309,11 @@ const indieProjectRecords: IndieProject[] = [
         date: "2026-10-01",
         label: "Version 2.0.5 keeps review state current",
         description: "The published release refreshes selected diffs after Git changes, separates agent runs by attention and recency, and reduces repeated public download requests; exact public macOS acceptance is recorded separately from Windows and Linux package checks.",
+      },
+      {
+        date: "2026-10-03",
+        label: "Learning connects Git basics to real review work",
+        description: "Beginner lessons and practical sandbox exercises cover commits, branches, remotes, recovery, conflicts, staging, and worktrees, alongside guides for reviewing Claude Code, Codex, and ChatGPT changes.",
       },
     ],
     metrics: [
@@ -864,16 +889,16 @@ const indieProjectRecords: IndieProject[] = [
     status: "active-build",
     statusLabel: "Private operations system",
     startedAt: "2026-08-07",
-    lastUpdatedAt: "2026-09-27",
+    lastUpdatedAt: "2026-10-03",
     summary:
       "A secure bridge and campaign console for drafting, reviewing, and operating a self-hosted social workflow without silently publishing.",
     currentState:
-      "The private campaign workbench now adds budgeted X discovery, cached candidate review, and editable reply campaigns to its read-only research queue. Research keeps estimated spend visible, reuses fetched candidates, and requires conversation review before drafting. Replies and due times remain local for manual posting; research cannot publish, schedule, or contact people, and provider delivery still requires its separate approval flow.",
+      "The private campaign workbench combines budgeted X discovery, cached candidate review, and local reply campaigns with project-specific product-account routing. Delivery checks the assigned account and stops when it is missing, mismatched, or ambiguous. Research still requires conversation review before drafting; replies and due times remain local for manual posting, and provider delivery retains its separate approval flow.",
     progressStage: 4,
     progressLabel: "Connected workflow, guarded writes",
     lesson:
       "Automation feels safer when the unavailable actions are visible, approval context is explicit, and a demo never pretends to contact a live service.",
-    nextObjective: "Exercise cached candidate review, budgeted discovery, and manual reply completion alongside campaign delivery and recovery before expanding provider coverage.",
+    nextObjective: "Verify product-account routing and recovery alongside budgeted discovery and manual reply completion before expanding provider coverage.",
     capabilities: ["Operations console", "MCP", "Marketing Brain", "Guarded writes"],
     milestones: [
       {
@@ -920,6 +945,11 @@ const indieProjectRecords: IndieProject[] = [
         date: "2026-09-27",
         label: "Research gains a budget and a focused review loop",
         description: "Cached candidate reassessment, bounded X searches, saved scan plans, and local reply campaigns connect discovery to manual completion while keeping thread review and provider writes explicit.",
+      },
+      {
+        date: "2026-10-03",
+        label: "Product campaigns stay with their assigned accounts",
+        description: "Project-specific X routing and account checks keep product campaigns attached to their intended channels, blocking missing or mismatched destinations while preserving explicit delivery approval.",
       },
     ],
     metrics: [
@@ -1024,7 +1054,7 @@ const indieProjectRecords: IndieProject[] = [
   },
 ];
 
-export const indieSnapshotDate = "2026-10-02";
+export const indieSnapshotDate = "2026-10-09";
 
 function validateIndieProjectRecords(projects: IndieProject[]) {
   const ids = new Set<string>();
