@@ -28,17 +28,17 @@ const indieProjectRecords: IndieProject[] = [
     status: "public-preview",
     statusLabel: "Public preview",
     startedAt: "2026-02-26",
-    lastUpdatedAt: "2026-10-03",
+    lastUpdatedAt: "2026-10-15",
     summary:
       "A local-first calculation workspace that turns readable notes into live results, with focused macOS, Windows, and Linux companions for quick calculations.",
     currentState:
-      "The public workspace pairs with downloadable macOS, Windows, and Linux companions. Version 1.1.4 retains the Free and Pro desktop path with its 14-day trial and staged visual workflows. Problem-led guides, editable examples, the product tour, and captioned demos now sit alongside a sourced Soulver comparison with a live hourly-rate model, clearer macOS support guidance, and more readable comparison and guide layouts in both themes.",
+      "The public workspace pairs with downloadable macOS, Windows, and Linux companions. Version 1.2.0 adds contextual formula suggestions, described inputs, guided placeholders, and live previews in the editor and Quick Calculation. Native editor galleries, problem-led guides, the sourced Soulver comparison, and a new Companion-led commercial explain the workflow. Developer documentation, agent downloads, and a free local file reviewer are available; hosted API access remains closed pending infrastructure and payment acceptance. Native release acceptance is recorded for macOS, with package checks for Windows and Linux.",
     progressStage: 5,
     progressLabel: "Shipped, learning, refining",
     lesson:
       "A product becomes easier to trust when its calculations, feature catalogue, documentation, and public claims all draw from the same product record.",
     nextObjective:
-      "Keep tightening the public learning loop around the calculations people actually use, the new desktop access path, and the macOS companion workflow.",
+      "Learn which formula suggestions and Companion workflows help people complete real calculations, while keeping hosted API access closed until its release gates pass.",
     capabilities: ["Web", "macOS", "Local-first", "Product system"],
     milestones: [
       {
@@ -106,6 +106,21 @@ const indieProjectRecords: IndieProject[] = [
         label: "Product comparisons become practical",
         description: "A sourced Soulver comparison pairs documented platform and feature differences with an editable hourly-rate example; clearer macOS guidance and refined guide layouts make the learning path easier to read.",
       },
+      {
+        date: "2026-10-10",
+        label: "Developer tools arrive with a closed hosted-access gate",
+        description: "Public developer documentation, downloadable agent tools, financial-model examples, and a free local file reviewer establish a separate API path without opening hosted trials or paid access.",
+      },
+      {
+        date: "2026-10-13",
+        label: "Version 1.2.0 makes formulas easier to discover",
+        description: "Published desktop downloads add contextual formula suggestions, guided inputs, and evaluator previews, supported by native editor screenshots and updated guides.",
+      },
+      {
+        date: "2026-10-15",
+        label: "The Companion leads the product story",
+        description: "A new captioned landing-page commercial connects the desktop Companion to the full calculation workspace.",
+      },
     ],
     metrics: [
       {
@@ -143,11 +158,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "live",
     statusLabel: "Live product",
     startedAt: "2025-08-04",
-    lastUpdatedAt: "2026-10-09",
+    lastUpdatedAt: "2026-10-15",
     summary:
       "A Chrome extension that gives Google Keep stronger folder organization, focused note workflows, and local-first preferences.",
     currentState:
-      "The published extension is being refined through the 0.0.8 release line. Merged work adds an existing-label picker, sidebar groups, guided first setup, move previews with Undo, and more reliable navigation across localized Keep interfaces. Optional usage sharing and voluntary uninstall feedback prepare retention measurement. The 0.0.8.1 candidate improves long-text wrapping, dark dialogs, group icons, and quiet successful navigation; Store publication of these changes and any retention improvement remain unconfirmed.",
+      "The published extension is being refined through the 0.0.8 release line. Merged work adds an existing-label picker, sidebar groups, guided setup, move previews with Undo, and more reliable navigation across localized Keep interfaces. The 0.0.8.1 candidate improves wrapping, dark dialogs, and group icons; Store publication of these changes and any retention improvement remain unconfirmed. A new captioned landing-page film and transcript demonstrate label organization and Zen Mode, with the Pro feature boundary visible. Optional usage sharing and uninstall feedback prepare retention measurement.",
     progressStage: 5,
     progressLabel: "Shipped, listening, improving",
     lesson:
@@ -211,6 +226,11 @@ const indieProjectRecords: IndieProject[] = [
         label: "The next candidate improves sidebar readability",
         description: "Version 0.0.8.1 preparation adds clearer group guidance, stable text wrapping, readable dark dialogs, persistent group icons, and quiet successful label navigation, with Store publication still unconfirmed.",
       },
+      {
+        date: "2026-10-15",
+        label: "A short film explains the organization loop",
+        description: "An on-demand landing-page film shows label organization and Zen Mode with English captions, a keyboard-accessible transcript, and a visible Pro feature boundary.",
+      },
     ],
     metrics: [
       {
@@ -247,17 +267,17 @@ const indieProjectRecords: IndieProject[] = [
     status: "live",
     statusLabel: "Live product",
     startedAt: "2025-09-01",
-    lastUpdatedAt: "2026-10-03",
+    lastUpdatedAt: "2026-10-15",
     summary:
       "A local-first desktop application for exploring contribution patterns, repository activity, and the rhythm behind a body of Git work.",
     currentState:
-      "The Tauri and Rust desktop product spans macOS, Windows, and Linux. Version 2.0.5 keeps selected diffs and agent-run attention current in the redesigned workspace. The public learning path now adds beginner lessons, practical Git exercises, and guides for reviewing Claude Code, Codex, and ChatGPT changes before committing. The published exercises were checked in fresh repositories on macOS; hands-on desktop release acceptance remains macOS-only, with package checks for Windows and Linux.",
+      "The Tauri and Rust desktop product spans macOS, Windows, and Linux. Version 2.0.5 keeps selected diffs and agent-run attention current in the redesigned workspace. Beginner lessons, practical Git exercises, AI-change review guides, and a sourced GitHub Desktop comparison connect learning to everyday review. The homepage now includes an official Product Hunt badge and a film with real staging, checks, terminal, and agent-monitoring footage. Hands-on desktop release acceptance remains macOS-only, with package checks for Windows and Linux.",
     progressStage: 5,
     progressLabel: "Released, operating, learning",
     lesson:
       "Analytics become more useful when they help someone understand a working rhythm instead of simply producing a larger score.",
     nextObjective:
-      "Observe which learning and review workflows readers use while keeping the local repository workbench fast and legible.",
+      "Observe how readers move from the learning guides, comparison, and product film into real repository review, while keeping the local workbench fast and legible.",
     capabilities: ["Desktop", "Tauri + Rust", "Git analytics", "Local agent workflows"],
     milestones: [
       {
@@ -314,6 +334,16 @@ const indieProjectRecords: IndieProject[] = [
         date: "2026-10-03",
         label: "Learning connects Git basics to real review work",
         description: "Beginner lessons and practical sandbox exercises cover commits, branches, remotes, recovery, conflicts, staging, and worktrees, alongside guides for reviewing Claude Code, Codex, and ChatGPT changes.",
+      },
+      {
+        date: "2026-10-12",
+        label: "A sourced comparison supports everyday Git decisions",
+        description: "The GitHub Desktop comparison links documented capabilities to a practical review exercise, while an official Product Hunt badge connects the homepage to the product listing.",
+      },
+      {
+        date: "2026-10-15",
+        label: "Real review work becomes a product film",
+        description: "The homepage adds an on-demand film showing precise staging, checks, terminal work, and authentic agent monitoring, with a privacy-enhanced player that loads after Play.",
       },
     ],
     metrics: [
@@ -1054,7 +1084,7 @@ const indieProjectRecords: IndieProject[] = [
   },
 ];
 
-export const indieSnapshotDate = "2026-10-09";
+export const indieSnapshotDate = "2026-10-16";
 
 function validateIndieProjectRecords(projects: IndieProject[]) {
   const ids = new Set<string>();
