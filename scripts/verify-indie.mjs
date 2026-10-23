@@ -52,8 +52,8 @@ expect(
   "The private-product disclosure boundary must cover exactly ten approved records.",
 );
 expect(
-  (indieHtml.match(/data-project-icon/g) ?? []).length === 10,
-  "The project ledger must render all ten available original project icons.",
+  (indieHtml.match(/data-project-icon/g) ?? []).length === 11,
+  "The project ledger must render all eleven available original project icons.",
 );
 expect(!indieHtml.includes("OpenClaw-Jarvis"), "Backup repositories must not appear as products.");
 

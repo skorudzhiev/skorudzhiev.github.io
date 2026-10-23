@@ -54,6 +54,7 @@ export interface IndieProject {
   featured: boolean;
   accent: string;
   icon?: string;
+  iconDark?: string;
   image?: string;
   imageAlt?: string;
   imagePosition?: string;

@@ -347,7 +347,10 @@ function shortDate(value: string) {
               <div class="ledger-card__heading">
                 <div class:list={["project-icon", !project.icon && "project-icon--monogram"]} aria-hidden="true">
                   {project.icon ? (
-                    <img src={project.icon} alt="" data-project-icon />
+                    <>
+                    <img src={project.icon} alt="" data-project-icon class:list={[project.iconDark && "project-icon__light"]} />
+                    {project.iconDark && <img src={project.iconDark} alt="" class="project-icon__dark" />}
+                    </>
                   ) : (
                     <span>{project.title.split(/\s+/).map((word) => word[0]).slice(0, 2).join("")}</span>
                   )}
