@@ -28,17 +28,17 @@ const indieProjectRecords: IndieProject[] = [
     status: "public-preview",
     statusLabel: "Public preview",
     startedAt: "2026-02-26",
-    lastUpdatedAt: "2026-10-15",
+    lastUpdatedAt: "2026-10-20",
     summary:
       "A local-first calculation workspace that turns readable notes into live results, with focused macOS, Windows, and Linux companions for quick calculations.",
     currentState:
-      "The public workspace pairs with downloadable macOS, Windows, and Linux companions. Version 1.2.0 adds contextual formula suggestions, described inputs, guided placeholders, and live previews in the editor and Quick Calculation. Native editor galleries, problem-led guides, the sourced Soulver comparison, and a new Companion-led commercial explain the workflow. Developer documentation, agent downloads, and a free local file reviewer are available; hosted API access remains closed pending infrastructure and payment acceptance. Native release acceptance is recorded for macOS, with package checks for Windows and Linux.",
+      "Published version 1.3.0 connects Quick Calculation, the full editor, and Canvas calculators to the same documents, with conflict recovery and live variable cards. Results reveal their source, while compatible calculations carry currency units without implying exchange conversion. Formula suggestions, guides, and the Companion film explain the workflow. Developer tools and a free local file reviewer remain available; hosted API access stays closed pending its release gates. The macOS release has native acceptance; Windows and Linux packages are verified, with their application runtimes untested.",
     progressStage: 5,
     progressLabel: "Shipped, learning, refining",
     lesson:
       "A product becomes easier to trust when its calculations, feature catalogue, documentation, and public claims all draw from the same product record.",
     nextObjective:
-      "Learn which formula suggestions and Companion workflows help people complete real calculations, while keeping hosted API access closed until its release gates pass.",
+      "Learn how connected documents and Canvas calculators hold up in everyday work, complete Windows and Linux runtime acceptance, and keep hosted API access closed until its release gates pass.",
     capabilities: ["Web", "macOS", "Local-first", "Product system"],
     milestones: [
       {
@@ -120,6 +120,11 @@ const indieProjectRecords: IndieProject[] = [
         date: "2026-10-15",
         label: "The Companion leads the product story",
         description: "A new captioned landing-page commercial connects the desktop Companion to the full calculation workspace.",
+      },
+      {
+        date: "2026-10-20",
+        label: "Version 1.3.0 connects calculations across surfaces",
+        description: "Published downloads add shared document editing across Quick Calculation, the editor, and Canvas, with live variable cards, conflict recovery, source inspection, and currency-aware results. Native macOS acceptance is recorded; Windows and Linux runtime checks remain outstanding.",
       },
     ],
     metrics: [
@@ -509,11 +514,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "private-beta",
     statusLabel: "Private foundation",
     startedAt: "2026-07-31",
-    lastUpdatedAt: "2026-09-19",
+    lastUpdatedAt: "2026-10-22",
     summary:
       "A bilingual home-inventory PWA designed to keep English and Bulgarian item names searchable together while protecting records and photos.",
     currentState:
-      "The private foundation now runs on a controlled household deployment with recovery and backup operations around the bilingual inventory workflow. A focused location browser makes the physical hierarchy easier to inspect and manage while preserving mobile browsing context and clear action feedback.",
+      "The rebuilt private interface brings bilingual inventory search into a command palette, keeps item capture and editing close to the browsing context, and makes nested places easier to explore. Repair, missing-item, sale, donation, and disposal decisions have direct actions with Undo. Translation corrections can become verified dictionary entries, and quick changes preserve later edits when a conflict occurs. The product remains a private household inventory build.",
     progressStage: 3,
     progressLabel: "Core system proven",
     lesson:
@@ -550,6 +555,11 @@ const indieProjectRecords: IndieProject[] = [
         date: "2026-09-19",
         label: "Location browsing gets a focused workspace",
         description: "A searchable location tree and selected-space detail view made it easier to inspect, organize, and return to the household hierarchy across desktop and mobile.",
+      },
+      {
+        date: "2026-10-22",
+        label: "The second interface connects everyday inventory decisions",
+        description: "A rebuilt desktop and mobile interface adds a bilingual command palette, contextual item drawers, nested-place browsing, decision actions with Undo, and verified translation corrections while preserving private access.",
       },
     ],
     metrics: [
@@ -912,23 +922,23 @@ const indieProjectRecords: IndieProject[] = [
   },
   {
     id: "postiz-chat-bridge",
-    title: "Postiz Chat Bridge",
+    title: "Hypeford",
     role: "Private operations tool",
     disclosure: "private-product-facts",
     tier: "active",
     status: "active-build",
     statusLabel: "Private operations system",
     startedAt: "2026-08-07",
-    lastUpdatedAt: "2026-10-03",
+    lastUpdatedAt: "2026-10-23",
     summary:
-      "A secure bridge and campaign console for drafting, reviewing, and operating a self-hosted social workflow without silently publishing.",
+      "A private campaign workspace for drafting, reviewing, and coordinating social content, newsletters, and community follow-ups with explicit approval before delivery.",
     currentState:
-      "The private campaign workbench combines budgeted X discovery, cached candidate review, and local reply campaigns with project-specific product-account routing. Delivery checks the assigned account and stops when it is missing, mismatched, or ambiguous. Research still requires conversation review before drafting; replies and due times remain local for manual posting, and provider delivery retains its separate approval flow.",
+      "Renamed from Postiz Chat Bridge, Hypeford now brings a rebuilt campaign desk, saved profile previews, a multi-project Today view, and device-local calendar times together. Drafting can begin before accounts are connected, while delivery still checks the assigned account and exact approval. Social Scanner and Agent Flows have durable execution workflows with launch checks outstanding. Newsletter editing and journeys persist but delivery is simulation-only; Community Desk saves manual engagement, approvals, and follow-ups while live social adapters remain pending. The rename preserves existing data and browser sessions.",
     progressStage: 4,
     progressLabel: "Connected workflow, guarded writes",
     lesson:
       "Automation feels safer when the unavailable actions are visible, approval context is explicit, and a demo never pretends to contact a live service.",
-    nextObjective: "Verify product-account routing and recovery alongside budgeted discovery and manual reply completion before expanding provider coverage.",
+    nextObjective: "Complete launch acceptance for account and agent workflows, then validate newsletter delivery and Community Desk adapters before enabling live actions.",
     capabilities: ["Operations console", "MCP", "Marketing Brain", "Guarded writes"],
     milestones: [
       {
@@ -980,6 +990,21 @@ const indieProjectRecords: IndieProject[] = [
         date: "2026-10-03",
         label: "Product campaigns stay with their assigned accounts",
         description: "Project-specific X routing and account checks keep product campaigns attached to their intended channels, blocking missing or mismatched destinations while preserving explicit delivery approval.",
+      },
+      {
+        date: "2026-10-21",
+        label: "The campaign desk gains durable workflow modules",
+        description: "A rebuilt workspace supports disconnected drafting, account settings, Social Scanner, Agent Flows, and persistent newsletter editing and journeys. Newsletter execution remains a local simulation rather than delivered mail.",
+      },
+      {
+        date: "2026-10-22",
+        label: "Community work becomes a reviewable local workflow",
+        description: "Community Desk persists manual conversations, reply drafts, exact approvals, simulations, and follow-ups with live adapters still pending. Multi-project Today selection and device-local calendar times improve daily planning.",
+      },
+      {
+        date: "2026-10-23",
+        label: "Postiz Chat Bridge becomes Hypeford",
+        description: "The existing product adopts the Hypeford name while preserving its data and browser sessions; saved profile previews also become visible on campaign timelines.",
       },
     ],
     metrics: [
@@ -1084,7 +1109,7 @@ const indieProjectRecords: IndieProject[] = [
   },
 ];
 
-export const indieSnapshotDate = "2026-10-16";
+export const indieSnapshotDate = "2026-10-23";
 
 function validateIndieProjectRecords(projects: IndieProject[]) {
   const ids = new Set<string>();
