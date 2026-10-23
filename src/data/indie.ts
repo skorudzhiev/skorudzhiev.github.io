@@ -1020,6 +1020,7 @@ const indieProjectRecords: IndieProject[] = [
     links: [],
     featured: false,
     accent: "#4e6a63",
+    icon: "/assets/images/indie/icons/hypeford.svg",
   },
   {
     id: "tendli",
