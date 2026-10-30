@@ -28,11 +28,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "public-preview",
     statusLabel: "Public preview",
     startedAt: "2026-02-26",
-    lastUpdatedAt: "2026-10-20",
+    lastUpdatedAt: "2026-10-23",
     summary:
       "A local-first calculation workspace that turns readable notes into live results, with focused macOS, Windows, and Linux companions for quick calculations.",
     currentState:
-      "Published version 1.3.0 connects Quick Calculation, the full editor, and Canvas calculators to the same documents, with conflict recovery and live variable cards. Results reveal their source, while compatible calculations carry currency units without implying exchange conversion. Formula suggestions, guides, and the Companion film explain the workflow. Developer tools and a free local file reviewer remain available; hosted API access stays closed pending its release gates. The macOS release has native acceptance; Windows and Linux packages are verified, with their application runtimes untested.",
+      "Published version 1.3.0 connects Quick Calculation, the full editor, and Canvas calculators to the same documents, with conflict recovery and live variable cards. Results reveal their source, while compatible calculations carry currency units without implying exchange conversion. Subsequent merged editor work adds named calculation groups, collapse and expand controls, and a manager for renaming, reordering, and ungrouping regions; a new desktop release is not yet confirmed. Developer tools and a free local file reviewer remain available; hosted API access stays closed pending its release gates. The macOS release has native acceptance; Windows and Linux packages are verified, with their application runtimes untested.",
     progressStage: 5,
     progressLabel: "Shipped, learning, refining",
     lesson:
@@ -125,6 +125,11 @@ const indieProjectRecords: IndieProject[] = [
         date: "2026-10-20",
         label: "Version 1.3.0 connects calculations across surfaces",
         description: "Published downloads add shared document editing across Quick Calculation, the editor, and Canvas, with live variable cards, conflict recovery, source inspection, and currency-aware results. Native macOS acceptance is recorded; Windows and Linux runtime checks remain outstanding.",
+      },
+      {
+        date: "2026-10-23",
+        label: "Editor groups gain direct controls",
+        description: "Merged editor work adds named regions, bulk folding controls, and a group manager that preserves calculations when groups are moved or removed. Inclusion in a new desktop release remains unconfirmed.",
       },
     ],
     metrics: [
@@ -272,11 +277,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "live",
     statusLabel: "Live product",
     startedAt: "2025-09-01",
-    lastUpdatedAt: "2026-10-15",
+    lastUpdatedAt: "2026-10-28",
     summary:
       "A local-first desktop application for exploring contribution patterns, repository activity, and the rhythm behind a body of Git work.",
     currentState:
-      "The Tauri and Rust desktop product spans macOS, Windows, and Linux. Version 2.0.5 keeps selected diffs and agent-run attention current in the redesigned workspace. Beginner lessons, practical Git exercises, AI-change review guides, and a sourced GitHub Desktop comparison connect learning to everyday review. The homepage now includes an official Product Hunt badge and a film with real staging, checks, terminal, and agent-monitoring footage. Hands-on desktop release acceptance remains macOS-only, with package checks for Windows and Linux.",
+      "The Tauri and Rust desktop product spans macOS, Windows, and Linux. Published version 2.0.7 adds bounded product analytics enabled by default, with a first-launch notice and a free off switch on every plan; existing opt-outs stay off. Repository content, account identity, typed text, and screen recordings are excluded. Beginner lessons, practical Git exercises, AI-change review guides, a sourced GitHub Desktop comparison, and the authentic homepage film connect learning to everyday review. The macOS package is signed and notarized; Windows remains unsigned. Package verification does not establish Windows or Linux runtime acceptance or customer usage.",
     progressStage: 5,
     progressLabel: "Released, operating, learning",
     lesson:
@@ -349,6 +354,11 @@ const indieProjectRecords: IndieProject[] = [
         date: "2026-10-15",
         label: "Real review work becomes a product film",
         description: "The homepage adds an on-demand film showing precise staging, checks, terminal work, and authentic agent monitoring, with a privacy-enhanced player that loads after Play.",
+      },
+      {
+        date: "2026-10-28",
+        label: "Version 2.0.7 adds controllable product measurement",
+        description: "The published release explains bounded product analytics at first launch and keeps a free privacy off switch on every plan. Existing opt-outs remain off; disabling analytics stops new requests and resets the installation ID.",
       },
     ],
     metrics: [
@@ -929,16 +939,16 @@ const indieProjectRecords: IndieProject[] = [
     status: "active-build",
     statusLabel: "Private operations system",
     startedAt: "2026-08-07",
-    lastUpdatedAt: "2026-10-23",
+    lastUpdatedAt: "2026-10-30",
     summary:
       "A private campaign workspace for drafting, reviewing, and coordinating social content, newsletters, and community follow-ups with explicit approval before delivery.",
     currentState:
-      "Renamed from Postiz Chat Bridge, Hypeford now brings a rebuilt campaign desk, saved profile previews, a multi-project Today view, and device-local calendar times together. Drafting can begin before accounts are connected, while delivery still checks the assigned account and exact approval. Social Scanner and Agent Flows have durable execution workflows with launch checks outstanding. Newsletter editing and journeys persist but delivery is simulation-only; Community Desk saves manual engagement, approvals, and follow-ups while live social adapters remain pending. The rename preserves existing data and browser sessions.",
+      "Hypeford combines a campaign desk, saved profile previews, multi-project planning, and device-local calendar times. Publishing is user-owned, with copy and export first and a private Buffer CSV/media handoff. The landing page now explains agent outcomes and a shorter signup path. Private launch work adds guarded checkout and recovery, usage limits, and email controls, while charging, customer admission, and operational email remain disabled. Newsletter execution remains simulation-only, and Community Desk retains manual engagement and approvals with live adapters pending. Private acceptance work does not establish production capacity or a public product launch.",
     progressStage: 4,
     progressLabel: "Connected workflow, guarded writes",
     lesson:
       "Automation feels safer when the unavailable actions are visible, approval context is explicit, and a demo never pretends to contact a live service.",
-    nextObjective: "Complete launch acceptance for account and agent workflows, then validate newsletter delivery and Community Desk adapters before enabling live actions.",
+    nextObjective: "Resolve the remaining private-scope acceptance decision before customer admission; validate newsletter delivery and Community Desk adapters when demand requires them.",
     capabilities: ["Operations console", "MCP", "Marketing Brain", "Guarded writes"],
     milestones: [
       {
@@ -1005,6 +1015,11 @@ const indieProjectRecords: IndieProject[] = [
         date: "2026-10-23",
         label: "Postiz Chat Bridge becomes Hypeford",
         description: "The existing product adopts the Hypeford name while preserving its data and browser sessions; saved profile previews also become visible on campaign timelines.",
+      },
+      {
+        date: "2026-10-30",
+        label: "Publishing handoffs and private launch work consolidate",
+        description: "Copy and export become the primary publishing path, with a private Buffer handoff and refined campaign-date editing. Billing, limits, and recovery work consolidate privately while charging and customer admission remain disabled.",
       },
     ],
     metrics: [
@@ -1111,7 +1126,7 @@ const indieProjectRecords: IndieProject[] = [
   },
 ];
 
-export const indieSnapshotDate = "2026-10-23";
+export const indieSnapshotDate = "2026-10-30";
 
 function validateIndieProjectRecords(projects: IndieProject[]) {
   const ids = new Set<string>();
