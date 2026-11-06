@@ -168,17 +168,17 @@ const indieProjectRecords: IndieProject[] = [
     status: "live",
     statusLabel: "Live product",
     startedAt: "2025-08-04",
-    lastUpdatedAt: "2026-10-15",
+    lastUpdatedAt: "2026-11-02",
     summary:
       "A Chrome extension that gives Google Keep stronger folder organization, focused note workflows, and local-first preferences.",
     currentState:
-      "The published extension is being refined through the 0.0.8 release line. Merged work adds an existing-label picker, sidebar groups, guided setup, move previews with Undo, and more reliable navigation across localized Keep interfaces. The 0.0.8.1 candidate improves wrapping, dark dialogs, and group icons; Store publication of these changes and any retention improvement remain unconfirmed. A new captioned landing-page film and transcript demonstrate label organization and Zen Mode, with the Pro feature boundary visible. Optional usage sharing and uninstall feedback prepare retention measurement.",
+      "The extension is being refined through the 0.0.8 release line, with label picking, sidebar groups, guided setup, move previews with Undo, and localized navigation fixes. Merged 0.0.8.2 work clarifies Free and Pro plans and opens trial signup on a dedicated extension page. Starting a trial requires an explicit choice and successful verification; ordinary sign-in does not start one. A follow-up fixes hidden account controls and centers the trial page. Store publication of the candidate and any retention or conversion improvement remain unconfirmed. The captioned product film demonstrates organization and Zen Mode; usage sharing remains optional.",
     progressStage: 5,
     progressLabel: "Shipped, listening, improving",
     lesson:
       "Browser-extension quality depends as much on defensive DOM behavior and clear permission boundaries as it does on the visible feature.",
     nextObjective:
-      "Validate the exact 0.0.8.1 package and Store rollout, then measure first successful organization and returning use from mature, opted-in cohorts.",
+      "Validate the exact 0.0.8.2 package and confirm Store publication, then evaluate the trial journey and returning use from opted-in observations.",
     capabilities: ["Chrome extension", "Svelte", "Local-first", "Fixture E2E"],
     milestones: [
       {
@@ -240,6 +240,11 @@ const indieProjectRecords: IndieProject[] = [
         date: "2026-10-15",
         label: "A short film explains the organization loop",
         description: "An on-demand landing-page film shows label organization and Zen Mode with English captions, a keyboard-accessible transcript, and a visible Pro feature boundary.",
+      },
+      {
+        date: "2026-11-02",
+        label: "Plans and trial signup become clearer",
+        description: "Merged 0.0.8.2 work labels Free and Pro capabilities, streamlines explicitly requested trials, and fixes signed-out account controls. Store publication and conversion gains remain unconfirmed.",
       },
     ],
     metrics: [
@@ -939,11 +944,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "active-build",
     statusLabel: "Private operations system",
     startedAt: "2026-08-07",
-    lastUpdatedAt: "2026-10-30",
+    lastUpdatedAt: "2026-11-02",
     summary:
       "A private campaign workspace for drafting, reviewing, and coordinating social content, newsletters, and community follow-ups with explicit approval before delivery.",
     currentState:
-      "Hypeford combines a campaign desk, saved profile previews, multi-project planning, and device-local calendar times. Publishing is user-owned, with copy and export first and a private Buffer CSV/media handoff. The landing page now explains agent outcomes and a shorter signup path. Private launch work adds guarded checkout and recovery, usage limits, and email controls, while charging, customer admission, and operational email remain disabled. Newsletter execution remains simulation-only, and Community Desk retains manual engagement and approvals with live adapters pending. Private acceptance work does not establish production capacity or a public product launch.",
+      "Hypeford combines a campaign desk, saved profile previews, multi-project planning, and device-local calendar times. Postiz read-back and local campaign associations have been repaired without changing provider posts. Publishing is user-owned, with copy and export first and a private Buffer CSV/media handoff. The landing page now explains agent outcomes and a shorter signup path. Private launch work adds guarded checkout and recovery, usage limits, and email controls, while charging, customer admission, and operational email remain disabled. Newsletter execution remains simulation-only, and Community Desk retains manual engagement and approvals with live adapters pending. Private acceptance work does not establish production capacity or a public product launch.",
     progressStage: 4,
     progressLabel: "Connected workflow, guarded writes",
     lesson:
@@ -1020,6 +1025,11 @@ const indieProjectRecords: IndieProject[] = [
         date: "2026-10-30",
         label: "Publishing handoffs and private launch work consolidate",
         description: "Copy and export become the primary publishing path, with a private Buffer handoff and refined campaign-date editing. Billing, limits, and recovery work consolidate privately while charging and customer admission remain disabled.",
+      },
+      {
+        date: "2026-11-02",
+        label: "Campaign read-back regains reliability",
+        description: "Private synchronization fixes restore delivery read-back and local campaign associations without modifying provider posts or expanding publishing access.",
       },
     ],
     metrics: [
@@ -1126,7 +1136,7 @@ const indieProjectRecords: IndieProject[] = [
   },
 ];
 
-export const indieSnapshotDate = "2026-10-30";
+export const indieSnapshotDate = "2026-11-06";
 
 function validateIndieProjectRecords(projects: IndieProject[]) {
   const ids = new Set<string>();
