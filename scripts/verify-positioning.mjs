@@ -13,17 +13,31 @@ async function readDist(...segments) {
   return fs.readFile(path.join(root, "dist", ...segments), "utf8");
 }
 
-const [homeHtml, servicesHtml, writingHtml, articleHtml, feedXml] = await Promise.all([
+const [homeHtml, servicesHtml, writingHtml, articleHtml, feedXml, cvHtml] = await Promise.all([
   readDist("index.html"),
   readDist("services", "index.html"),
   readDist("writing", "index.html"),
   readDist("writing", "mcp-project-brains", "index.html"),
   readDist("feed.xml"),
+  readDist("cv", "index.html"),
 ]);
 
 expect(
-  homeHtml.includes("AI systems &amp; MCP integrations"),
-  "The homepage capability band is missing the MCP integration positioning.",
+  homeHtml.includes("Senior Android engineer"),
+  "The homepage hero must lead with the senior Android positioning.",
+);
+expect(
+  homeHtml.includes('href="/cv/"'),
+  "The homepage is missing a link to the CV page.",
+);
+expect(
+  cvHtml.includes("Pollard Digital Solutions") && cvHtml.includes("SumUp"),
+  "The CV page is missing current or past roles.",
+);
+
+expect(
+  homeHtml.includes("AI-assisted engineering &amp; MCP"),
+  "The homepage capability band is missing the AI-assisted engineering and MCP positioning.",
 );
 expect(
   homeHtml.includes('href="/writing/a-better-reading-order-is-a-better-job-for-ai/"'),
@@ -50,7 +64,7 @@ expect(
   "The services page is missing the bounded MCP capability claim.",
 );
 expect(
-  servicesHtml.includes("production-minded integrations and product workflows"),
+  servicesHtml.includes("built these integrations for my own products"),
   "The services page is missing the explicit evidence boundary.",
 );
 expect(
@@ -95,4 +109,4 @@ if (failures.length > 0) {
   process.exit(1);
 }
 
-console.log("Positioning verification passed: homepage, services, article, internal routing, canonical, and feed checks.");
+console.log("Positioning verification passed: homepage, CV, services, article, internal routing, canonical, and feed checks.");
