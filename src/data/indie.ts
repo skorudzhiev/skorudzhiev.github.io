@@ -28,11 +28,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "public-preview",
     statusLabel: "Public preview",
     startedAt: "2026-02-26",
-    lastUpdatedAt: "2026-10-23",
+    lastUpdatedAt: "2026-11-13",
     summary:
       "A local-first calculation workspace that turns readable notes into live results, with focused macOS, Windows, and Linux companions for quick calculations.",
     currentState:
-      "Published version 1.3.0 connects Quick Calculation, the full editor, and Canvas calculators to the same documents, with conflict recovery and live variable cards. Results reveal their source, while compatible calculations carry currency units without implying exchange conversion. Subsequent merged editor work adds named calculation groups, collapse and expand controls, and a manager for renaming, reordering, and ungrouping regions; a new desktop release is not yet confirmed. Developer tools and a free local file reviewer remain available; hosted API access stays closed pending its release gates. The macOS release has native acceptance; Windows and Linux packages are verified, with their application runtimes untested.",
+      "Published desktop version 1.3.1 adds named calculation groups, controls to collapse or expand them, and a manager to rename, reorder, or ungroup regions. Pin and copy actions now use icons in the result rail. Quick Calculation, the full editor, and Canvas still share documents with conflict recovery and live variable cards. The signed and notarized macOS build passed desktop and MCP smoke tests. Windows and Linux packages passed structure checks, with installation and runtime tests outstanding. The free local file reviewer remains available, and hosted API access stays closed.",
     progressStage: 5,
     progressLabel: "Shipped, learning, refining",
     lesson:
@@ -129,7 +129,12 @@ const indieProjectRecords: IndieProject[] = [
       {
         date: "2026-10-23",
         label: "Editor groups gain direct controls",
-        description: "Merged editor work adds named regions, bulk folding controls, and a group manager that preserves calculations when groups are moved or removed. Inclusion in a new desktop release remains unconfirmed.",
+        description: "Merged editor work adds named regions, bulk folding controls, and a group manager that preserves calculations when groups are moved or removed. These controls later shipped in desktop version 1.3.1.",
+      },
+      {
+        date: "2026-11-13",
+        label: "Version 1.3.1 ships editor group controls",
+        description: "The desktop release adds region management and simplifies result actions to pin and copy icons. The product site also adds desktop download entry points to its navigation and footer.",
       },
     ],
     metrics: [
@@ -282,11 +287,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "live",
     statusLabel: "Live product",
     startedAt: "2025-09-01",
-    lastUpdatedAt: "2026-10-28",
+    lastUpdatedAt: "2026-11-10",
     summary:
       "A local-first desktop application for exploring contribution patterns, repository activity, and the rhythm behind a body of Git work.",
     currentState:
-      "The Tauri and Rust desktop product spans macOS, Windows, and Linux. Published version 2.0.7 adds bounded product analytics enabled by default, with a first-launch notice and a free off switch on every plan; existing opt-outs stay off. Repository content, account identity, typed text, and screen recordings are excluded. Beginner lessons, practical Git exercises, AI-change review guides, a sourced GitHub Desktop comparison, and the authentic homepage film connect learning to everyday review. The macOS package is signed and notarized; Windows remains unsigned. Package verification does not establish Windows or Linux runtime acceptance or customer usage.",
+      "GitGlow runs on macOS, Windows, and Linux. Published version 2.0.8 adds approximate active minutes based on foreground interaction, feature navigation, and selected completed workflows to product analytics. Analytics is on by default, existing opt-outs are preserved, and anyone can turn it off in Settings for free. It excludes repository contents, paths, prompts, account identity, and arbitrary text. Session recording and automatic interaction capture are disabled. The macOS build is signed and notarized, and the Windows installer is unsigned. The release verification covered packages for Windows and Linux.",
     progressStage: 5,
     progressLabel: "Released, operating, learning",
     lesson:
@@ -364,6 +369,11 @@ const indieProjectRecords: IndieProject[] = [
         date: "2026-10-28",
         label: "Version 2.0.7 adds controllable product measurement",
         description: "The published release explains bounded product analytics at first launch and keeps a free privacy off switch on every plan. Existing opt-outs remain off; disabling analytics stops new requests and resets the installation ID.",
+      },
+      {
+        date: "2026-11-10",
+        label: "Version 2.0.8 expands optional product analytics",
+        description: "The release adds approximate active time and selected completed-workflow events, with an updated privacy notice and the existing free opt-out.",
       },
     ],
     metrics: [
@@ -1136,7 +1146,7 @@ const indieProjectRecords: IndieProject[] = [
   },
 ];
 
-export const indieSnapshotDate = "2026-11-06";
+export const indieSnapshotDate = "2026-11-13";
 
 function validateIndieProjectRecords(projects: IndieProject[]) {
   const ids = new Set<string>();
