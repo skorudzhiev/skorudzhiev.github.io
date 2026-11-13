@@ -49,7 +49,8 @@ test("publishes a printable CV with current and past roles", async ({ page }) =>
   }
   await expect(page.getByRole("button", { name: "Save as PDF" })).toBeVisible();
   await expect(page.getByRole("img", { name: "Portrait of Stoyan Korudzhiev" })).toBeVisible();
-  await expect(page.getByRole("navigation", { name: "Primary navigation" }).getByRole("link", { name: "CV" })).toHaveAttribute("href", "/cv/");
+  // The primary navigation is collapsed behind the menu button on mobile, so match the link without requiring visibility.
+  await expect(page.locator('#site-navigation a[href="/cv/"]')).toHaveText("CV");
   await expectNoHorizontalOverflow(page);
 });
 
