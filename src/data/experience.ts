@@ -33,11 +33,11 @@ export const roles: Role[] = [
     industry: "iLottery",
     location: "Sofia, Bulgaria",
     summary:
-      "Joined when Pollard Digital Solutions acquired Roller Gaming. I kept ownership of the iLottery products I led, and my work has since expanded from Android into the web frontend.",
+      "Senior Software Engineer on iLottery products. My work has expanded from Android into the web frontend.",
     highlights: [
       "Work on browser-based iLottery experiences in Vue, TypeScript, and Phaser.",
       "Carry Android tech-lead practices into the web team: architecture boundaries, code review, and test discipline.",
-      "Keep supporting the white-label Android app through the post-acquisition transition.",
+      "Continue to support the white-label Android app.",
     ],
     stack: ["Vue", "TypeScript", "Phaser", "Kotlin", "Jetpack Compose"],
   },
