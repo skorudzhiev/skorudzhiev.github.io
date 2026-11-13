@@ -10,8 +10,19 @@ import { earlierRoles, education, independentWork, profile, roles, skillGroups }
 >
   <header class="page-intro cv-intro shell">
     <p class="eyebrow">Curriculum vitae</p>
-    <h1>{siteConfig.name}</h1>
-    <p class="cv-headline">{profile.headline} <span>·</span> {profile.focus}</p>
+    <div class="cv-identity">
+      <img
+        class="cv-portrait"
+        src="/assets/images/stoyan-korudzhiev.jpeg"
+        alt="Portrait of Stoyan Korudzhiev"
+        width="400"
+        height="400"
+      />
+      <div>
+        <h1>{siteConfig.name}</h1>
+        <p class="cv-headline">{profile.headline} <span>·</span> {profile.focus}</p>
+      </div>
+    </div>
     <p class="page-lede">{profile.summary}</p>
     <ul class="cv-contact" aria-label="Contact details">
       <li>{profile.location}</li>
@@ -104,8 +115,28 @@ import { earlierRoles, education, independentWork, profile, roles, skillGroups }
     font-size: clamp(2.6rem, 5vw, 4.4rem);
   }
 
+  .cv-identity {
+    display: flex;
+    align-items: center;
+    gap: clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .cv-identity h1 {
+    margin: 0;
+  }
+
+  .cv-portrait {
+    flex: none;
+    width: clamp(96px, 14vw, 152px);
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+  }
+
   .cv-headline {
-    margin: 1rem 0 0;
+    margin: 0.6rem 0 0;
     color: var(--signal-dark);
     font-size: clamp(1rem, 1.6vw, 1.2rem);
     font-weight: 700;
@@ -284,6 +315,13 @@ import { earlierRoles, education, independentWork, profile, roles, skillGroups }
 
     .cv-intro {
       padding: 0 0 1rem;
+    }
+
+    .cv-portrait {
+      width: 96px;
+      border-color: #ccc;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
     }
 
     .cv-section {

@@ -48,6 +48,7 @@ test("publishes a printable CV with current and past roles", async ({ page }) =>
     await expect(page.locator(".cv-company").filter({ hasText: company })).toHaveCount(1);
   }
   await expect(page.getByRole("button", { name: "Save as PDF" })).toBeVisible();
+  await expect(page.getByRole("img", { name: "Portrait of Stoyan Korudzhiev" })).toBeVisible();
   await expect(page.getByRole("navigation", { name: "Primary navigation" }).getByRole("link", { name: "CV" })).toHaveAttribute("href", "/cv/");
   await expectNoHorizontalOverflow(page);
 });
