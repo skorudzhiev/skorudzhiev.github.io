@@ -2522,6 +2522,25 @@ html[data-theme="dark"] .form-status--success {
   color: #8bc89a;
 }
 
+/* Fixed light surfaces keep dark text in dark mode: --ink flips to a light colour there. */
+html[data-theme="dark"] .system-layer:nth-child(3),
+html[data-theme="dark"] .system-output {
+  color: #171713;
+}
+
+html[data-theme="dark"] .system-output b {
+  color: #a53a28;
+}
+
+/* Dark mode lightens --signal-dark, which washed out the cream text; keep the deeper light-mode tone. */
+html[data-theme="dark"] .closing-cta {
+  background: #a53a28;
+}
+
+html[data-theme="dark"] .closing-cta .button {
+  color: #171713;
+}
+
 @media (max-width: 900px) {
   .hero-grid,
   .continuum-feature,
