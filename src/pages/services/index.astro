@@ -8,11 +8,11 @@ const mcpArticle = await getEntry("writing", "mcp-project-brains");
 const mcpArticleHref = mcpArticle?.data.path ?? mcpArticle?.data.canonicalUrl;
 ---
 
-<BaseLayout title="How I can help" description="Product clarity, end-to-end engineering, AI systems, MCP integrations, launch systems, and technical product advisory from Stoyan Korudzhiev.">
+<BaseLayout title="Services" description="Android contract and tech-lead work, mobile and web product builds, and Android codebase reviews from Stoyan Korudzhiev, a Senior Software Engineer with 7+ years of production Android experience.">
   <header class="page-intro services-page-intro shell">
     <p class="eyebrow">How I can help</p>
-    <h1>Useful when the product still has hard questions.</h1>
-    <p class="page-lede">I’m interested in problems that need both judgment and implementation: shaping the product, proving the critical path, building it properly, and connecting the result to the way it reaches people.</p>
+    <h1>Senior Android and frontend help, hands-on or as a lead.</h1>
+    <p class="page-lede">I've spent 7+ years shipping production Android apps in fintech, health tech, and iLottery, about two of them as an Android tech lead, and I now work in Vue, TypeScript, and Phaser too. Here are three concrete ways I can help. If your situation fits none of them, <a href="/start/">tell me about it anyway</a>.</p>
   </header>
 
   <section class="page-section services-page-section shell services-stack">
@@ -35,7 +35,7 @@ const mcpArticleHref = mcpArticle?.data.path ?? mcpArticle?.data.canonicalUrl;
     <div class="shell">
       <div class="context-systems-heading">
         <div>
-          <p class="eyebrow">Context-aware product systems</p>
+          <p class="eyebrow">Also: AI and MCP integrations</p>
           <h2>Give AI the right context.<br />Keep the boundary visible.</h2>
         </div>
         <p>I build and operationalize MCP integrations that connect AI assistants to project knowledge, real workflows, and human-approved actions. The protocol is only the interface; the product still needs clear state, permissions, review, and failure behavior.</p>
@@ -73,7 +73,7 @@ const mcpArticleHref = mcpArticle?.data.path ?? mcpArticle?.data.canonicalUrl;
         </div>
       </div>
 
-      <p class="context-systems-boundary"><strong>The claim is practical:</strong> production-minded integrations and product workflows—not generic protocol demos, autonomous access, or unevidenced commercial outcomes.</p>
+      <p class="context-systems-boundary"><strong>Where this stands:</strong> I've built these integrations for my own products. If you need something similar, it fits best as part of a build or review engagement.</p>
     </div>
   </section>
 
@@ -81,7 +81,7 @@ const mcpArticleHref = mcpArticle?.data.path ?? mcpArticle?.data.canonicalUrl;
     <div class="shell">
       <div class="ai-delivery-heading">
         <div>
-          <p class="eyebrow">AI-enabled delivery</p>
+          <p class="eyebrow">How I use AI</p>
           <h2>Models in the loop.<br />Judgment at the center.</h2>
         </div>
         <p>I use AI to shorten the path from an ambiguous question to a reviewed, useful output. The leverage comes from fitting models into a clear product workflow—not asking them to replace context, verification, or responsibility.</p>
@@ -116,22 +116,10 @@ const mcpArticleHref = mcpArticle?.data.path ?? mcpArticle?.data.canonicalUrl;
     </div>
   </section>
 
-  <section class="page-section services-page-section services-advisory-section shell">
-    <div class="section-heading">
-      <div><p class="eyebrow">A lighter format</p><h2>Technical product advisory.</h2></div>
-      <p>For situations where the most valuable next step is a sharper decision rather than a larger build.</p>
-    </div>
-    <div class="advisory-grid">
-      <article class="advisory-card"><h3>Architecture and scope</h3><p>Review tradeoffs, reduce unnecessary surface area, and identify the risks worth solving early.</p></article>
-      <article class="advisory-card"><h3>Product rescue planning</h3><p>Untangle a stalled product, clarify the critical path, and turn broad frustration into a workable sequence.</p></article>
-      <article class="advisory-card"><h3>AI workflow review</h3><p>Identify where models can create useful leverage, define the guardrails, and turn the strongest opportunity into one small, testable workflow.</p></article>
-    </div>
-  </section>
-
   <section class="closing-cta services-closing-cta">
     <div class="shell closing-cta-grid">
-      <div><p class="eyebrow">Selective conversations</p><h2>Start with the product context.</h2><p>No polished request for proposal required. A clear problem, current stage, and honest constraint are enough.</p></div>
-      <a class="button" href="/start/">Share what you’re building <span aria-hidden="true">↗</span></a>
+      <div><p class="eyebrow">Next step</p><h2>Tell me what you need.</h2><p>A few sentences about the role, product, or codebase are enough. I reply to every relevant message by email.</p></div>
+      <a class="button" href="/start/">Work with me <span aria-hidden="true">↗</span></a>
     </div>
   </section>
 </BaseLayout>

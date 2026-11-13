@@ -31,7 +31,9 @@ const personSchema = {
   "@type": "Person",
   name: siteConfig.name,
   url: siteConfig.url,
-  jobTitle: "Software engineer and product builder",
+  jobTitle: "Senior Software Engineer",
+  homeLocation: { "@type": "Place", name: "Sofia, Bulgaria" },
+  knowsAbout: ["Android", "Kotlin", "Jetpack Compose", "Vue", "TypeScript", "Phaser", "Software architecture", "Model Context Protocol"],
   sameAs: Object.values(siteConfig.social),
 };
 ---

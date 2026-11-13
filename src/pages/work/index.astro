@@ -6,11 +6,11 @@ import ProjectCard from "../../components/ProjectCard.astro";
 const work = (await getCollection("work")).sort((a, b) => a.data.featuredOrder - b.data.featuredOrder);
 ---
 
-<BaseLayout title="Selected work" description="Selected products across mobile, web, desktop, product systems, and launch execution by Stoyan Korudzhiev.">
+<BaseLayout title="Selected work" description="Independent products Stoyan Korudzhiev designed, built, and shipped across desktop, browser, mobile, and web.">
   <header class="page-intro work-page-intro shell">
     <p class="eyebrow">Selected work</p>
-    <h1>Products, not just screens.</h1>
-    <p class="page-lede">Each project starts with a different constraint. The through-line is ownership: clarify what matters, build the system, and make the result useful and understandable.</p>
+    <h1>Products I built and shipped myself.</h1>
+    <p class="page-lede">These are independent products I own end to end, built alongside my full-time engineering work. Each one solves a different problem on a different platform. What they share is that I did all of it: the product decisions, the architecture, and the release.</p>
   </header>
   <section class="page-section work-page-section shell">
     <div class="work-grid work-grid--wide">
@@ -19,8 +19,8 @@ const work = (await getCollection("work")).sort((a, b) => a.data.featuredOrder -
   </section>
   <section class="closing-cta work-closing-cta">
     <div class="shell closing-cta-grid">
-      <div><p class="eyebrow">A relevant problem?</p><h2>Share the context, not a polished brief.</h2><p>A useful conversation can start before every detail is settled.</p></div>
-      <a class="button" href="/start/">Discuss a product <span aria-hidden="true">↗</span></a>
+      <div><p class="eyebrow">A relevant problem?</p><h2>Need someone who can ship like this on your team?</h2><p>I take on Android and frontend contracts, fixed-scope codebase reviews, and conversations about senior roles.</p></div>
+      <a class="button" href="/start/">Work with me <span aria-hidden="true">↗</span></a>
     </div>
   </section>
 </BaseLayout>

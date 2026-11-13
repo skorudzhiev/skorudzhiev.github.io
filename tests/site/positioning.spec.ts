@@ -7,10 +7,13 @@ async function expectNoHorizontalOverflow(page: Page) {
   expect(overflow).toBeLessThanOrEqual(1);
 }
 
-test("presents MCP as part of the broader product practice", async ({ page }) => {
+test("leads with senior Android experience and keeps MCP as a supporting capability", async ({ page }) => {
   await page.goto("/", { waitUntil: "domcontentloaded" });
 
-  await expect(page.getByText("AI systems & MCP integrations", { exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("Senior Android engineer");
+  await expect(page.getByText("AI-assisted engineering & MCP", { exact: true })).toBeVisible();
+  await expect(page.locator(".experience-strip li")).toHaveCount(5);
+  await expect(page.getByRole("link", { name: /View my CV/ })).toHaveAttribute("href", "/cv/");
   const articleCard = page.locator(".writing-card").filter({
     hasText: "A better reading order is a better job for AI",
   });
@@ -34,6 +37,27 @@ test("presents MCP as part of the broader product practice", async ({ page }) =>
   expect(socialLinkBoxes).toHaveLength(4);
   expect(new Set(socialLinkBoxes.map(({ left }) => Math.round(left))).size).toBe(1);
   expect(Math.max(...socialLinkBoxes.map(({ height }) => height))).toBeLessThanOrEqual(24);
+  await expectNoHorizontalOverflow(page);
+});
+
+test("publishes a printable CV with current and past roles", async ({ page }) => {
+  await page.goto("/cv/", { waitUntil: "domcontentloaded" });
+
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Stoyan Korudzhiev");
+  for (const company of ["Pollard Digital Solutions", "Roller Gaming", "Clue", "Xapo Bank", "SumUp"]) {
+    await expect(page.locator(".cv-company").filter({ hasText: company })).toHaveCount(1);
+  }
+  await expect(page.getByRole("button", { name: "Save as PDF" })).toBeVisible();
+  await expect(page.getByRole("navigation", { name: "Primary navigation" }).getByRole("link", { name: "CV" })).toHaveAttribute("href", "/cv/");
+  await expectNoHorizontalOverflow(page);
+});
+
+test("keeps the contact form short with optional budget and timing", async ({ page }) => {
+  await page.goto("/start/", { waitUntil: "domcontentloaded" });
+
+  await expect(page.locator("#topic")).toHaveAttribute("required", "");
+  await expect(page.locator("#budget")).not.toHaveAttribute("required");
+  await expect(page.locator("#timing")).not.toHaveAttribute("required");
   await expectNoHorizontalOverflow(page);
 });
 
@@ -62,7 +86,7 @@ test("shows the bounded service claim and two implementation examples", async ({
     "href",
     "/writing/mcp-project-brains/",
   );
-  await expect(section).toContainText("not generic protocol demos");
+  await expect(section).toContainText("built these integrations for my own products");
   await expectNoHorizontalOverflow(page);
 });
 
