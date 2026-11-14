@@ -17,7 +17,7 @@
   "dependencies": {
     "@astrojs/rss": "latest",
     "@astrojs/sitemap": "latest",
-    "astro": "7.3.3"
+    "astro": "7.4.7"
   },
   "devDependencies": {
     "@astrojs/check": "latest",
