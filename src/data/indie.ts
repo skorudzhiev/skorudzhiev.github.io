@@ -173,17 +173,17 @@ const indieProjectRecords: IndieProject[] = [
     status: "live",
     statusLabel: "Live product",
     startedAt: "2025-08-04",
-    lastUpdatedAt: "2026-11-02",
+    lastUpdatedAt: "2026-11-16",
     summary:
       "A Chrome extension that gives Google Keep stronger folder organization, focused note workflows, and local-first preferences.",
     currentState:
-      "The extension is being refined through the 0.0.8 release line, with label picking, sidebar groups, guided setup, move previews with Undo, and localized navigation fixes. Merged 0.0.8.2 work clarifies Free and Pro plans and opens trial signup on a dedicated extension page. Starting a trial requires an explicit choice and successful verification; ordinary sign-in does not start one. A follow-up fixes hidden account controls and centers the trial page. Store publication of the candidate and any retention or conversion improvement remain unconfirmed. The captioned product film demonstrates organization and Zen Mode; usage sharing remains optional.",
+      "Merged version 0.0.8.3 work limits Free workspaces to three active sidebar items, including groups, with a selection users can change at any time. Locked items remain visible and exportable, and Pro restores the saved hierarchy. Eligible email verification in the extension starts a seven-day trial; the website retains an explicit trial button. Eligible profiles that used an earlier trial or transition can receive a 14-day grace period. Optional usage sharing is presented inline. Store publication of this candidate and any retention or conversion improvement remain unconfirmed.",
     progressStage: 5,
     progressLabel: "Shipped, listening, improving",
     lesson:
       "Browser-extension quality depends as much on defensive DOM behavior and clear permission boundaries as it does on the visible feature.",
     nextObjective:
-      "Validate the exact 0.0.8.2 package and confirm Store publication, then evaluate the trial journey and returning use from opted-in observations.",
+      "Validate the exact 0.0.8.3 package and confirm Store publication, then evaluate Free workspace selection, the trial journey, and returning use from opted-in observations.",
     capabilities: ["Chrome extension", "Svelte", "Local-first", "Fixture E2E"],
     milestones: [
       {
@@ -250,6 +250,11 @@ const indieProjectRecords: IndieProject[] = [
         date: "2026-11-02",
         label: "Plans and trial signup become clearer",
         description: "Merged 0.0.8.2 work labels Free and Pro capabilities, streamlines explicitly requested trials, and fixes signed-out account controls. Store publication and conversion gains remain unconfirmed.",
+      },
+      {
+        date: "2026-11-16",
+        label: "Free workspace selection and trial signup are refined",
+        description: "Merged 0.0.8.3 work adds a changeable three-item Free workspace, preserves access to locked items for viewing and export, and starts eligible extension trials through email verification. Store publication remains unconfirmed.",
       },
     ],
     metrics: [
@@ -1146,7 +1151,7 @@ const indieProjectRecords: IndieProject[] = [
   },
 ];
 
-export const indieSnapshotDate = "2026-11-13";
+export const indieSnapshotDate = "2026-11-20";
 
 function validateIndieProjectRecords(projects: IndieProject[]) {
   const ids = new Set<string>();
