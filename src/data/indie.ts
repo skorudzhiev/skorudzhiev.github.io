@@ -28,11 +28,11 @@ const indieProjectRecords: IndieProject[] = [
     status: "public-preview",
     statusLabel: "Public preview",
     startedAt: "2026-02-26",
-    lastUpdatedAt: "2026-11-13",
+    lastUpdatedAt: "2026-11-26",
     summary:
       "A local-first calculation workspace that turns readable notes into live results, with focused macOS, Windows, and Linux companions for quick calculations.",
     currentState:
-      "Published desktop version 1.3.1 adds named calculation groups, controls to collapse or expand them, and a manager to rename, reorder, or ungroup regions. Pin and copy actions now use icons in the result rail. Quick Calculation, the full editor, and Canvas still share documents with conflict recovery and live variable cards. The signed and notarized macOS build passed desktop and MCP smoke tests. Windows and Linux packages passed structure checks, with installation and runtime tests outstanding. The free local file reviewer remains available, and hosted API access stays closed.",
+      "Published desktop version 1.3.1 adds named calculation groups, controls to collapse or expand them, and a manager to rename, reorder, or ungroup regions. Pin and copy actions now use icons in the result rail. Quick Calculation, the full editor, and Canvas still share documents with conflict recovery and live variable cards. The homepage now presents widescreen and portrait product films, loading YouTube only after an explicit play action, and navigation fits narrow phones. The signed and notarized macOS build passed desktop and MCP smoke tests. Windows and Linux packages passed structure checks, with installation and runtime tests outstanding. The free local file reviewer remains available, and hosted API access stays closed.",
     progressStage: 5,
     progressLabel: "Shipped, learning, refining",
     lesson:
@@ -135,6 +135,11 @@ const indieProjectRecords: IndieProject[] = [
         date: "2026-11-13",
         label: "Version 1.3.1 ships editor group controls",
         description: "The desktop release adds region management and simplifies result actions to pin and copy icons. The product site also adds desktop download entry points to its navigation and footer.",
+      },
+      {
+        date: "2026-11-26",
+        label: "The product film adapts to desktop and mobile",
+        description: "Widescreen and portrait films replace the homepage walkthrough, with a local still until visitors choose to play and a direct viewing link if embedding is unavailable. Navigation now wraps on narrow phones. Player-opening requests are measured separately from confirmed playback or watch time.",
       },
     ],
     metrics: [
@@ -1151,7 +1156,7 @@ const indieProjectRecords: IndieProject[] = [
   },
 ];
 
-export const indieSnapshotDate = "2026-11-20";
+export const indieSnapshotDate = "2026-11-27";
 
 function validateIndieProjectRecords(projects: IndieProject[]) {
   const ids = new Set<string>();
